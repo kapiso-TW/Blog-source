@@ -24,7 +24,7 @@ menu:
 nav:
   enable: false
   travelling: false
-  clock: false
+  clock: true
   menu:
     - title: 网页
       item:
@@ -645,7 +645,7 @@ sidebar:
   menus_items: true
   tags_cloud: true
   display_mode: true
-  nav_menu_project: true
+  nav_menu_project: false
 
 # 文章h2添加分隔线
 h2Divider: false
@@ -1103,7 +1103,7 @@ bubble:
 
 #  控制台打印信息
 console:
-  enable: true
+  enable: false
 
 # 51a统计配置
 LA:
