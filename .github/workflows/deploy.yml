@@ -31,4 +31,4 @@ jobs:
           folder: public
           repository-name: kapiso-TW/kapiso-TW.github.io # 部署到的目標倉庫
           branch: main # 目標倉庫的分支
-          token: ${{ secrets.BLOG_DEPLOY_TOKEN }} # 需要你在 Blog-source 倉庫設定這個 Secret
+          token: ${{ secrets.BLOG_DEPLOY_TOKEN }} # 需要你在 your backup 倉庫設定這個 Secret
