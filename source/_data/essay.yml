@@ -1,0 +1,19 @@
+- title: 便利貼
+  subTitle: 大學牲活
+  tips: 起床後來個高效小睡
+  buttonText: 關於我
+  buttonLink: /about/
+  limit: 30
+  home_essay: true
+  top_background: /img/essay/dance.gif
+  essay_list:
+    - content: 我試試有沒有用
+      date: 2026/02/05 00:09:31
+      from: kapiso
+      address: 台灣
+      image: 
+         - /img/essay/pica.gif
+    - content: 睡覺囉~~
+      date: 2026/02/05 01:30:31
+      from: kapiso
+      address: 台灣

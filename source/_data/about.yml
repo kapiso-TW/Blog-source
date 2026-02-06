@@ -1,0 +1,102 @@
+- class_name: 关于页
+  subtitle: 
+  avatarImg: /img/rem.png
+  avatarSkills:
+    left:
+      - 什麼都不會
+      - 資安新手
+      - 大學牲
+    right:
+      - 程式還可以
+      - 只出一張嘴
+      - 雷姆教徒
+  name: 林冠宏
+  description: 是一名 全職大學牲
+  aboutsiteTips:
+    tips: 追求
+    title1: 源自
+    title2: 熱愛而去 感受
+    word:
+      - 生活
+      - 程序
+      - 體驗
+  helloAbout: Life
+  skillsTips:
+    tips: 技能
+    title: 把電腦用壞
+  careers:
+    tips: 生涯
+    title: 無限進步
+    # 40px one year, canva (https://tw.clippingmagic.com/)
+    list:
+      - desc: 彰化縣立彰泰國民中學
+        color: "#ff00b3"
+      - desc: 國立彰化高級中學
+        color: "#cca300"
+      - desc: THU,資訊工程
+        color: "#357ef5"
+    img: /img/time.png
+  statistic:
+    link: /archives
+    text: 文章隧道
+    cover: https://bu.dusays.com/2023/05/01/644f4b037b930.jpg
+  map:
+    title: 我現在住在
+    StrengthenTitle: 台灣，彰化市
+    background: /img/taiwan.png
+    backgroundDark: /img/taiwan.png
+  selfInfo:
+    selfInfoTips1: 生於
+    selfInfoContentYear: 2007
+    selfInfoTips2: THU
+    selfInfoContent2: 資訊工程
+    selfInfoTips3: 現在職業
+    selfInfoContent3: 全職學生
+  personalities:
+    author_name: 調停者
+    personality_type: INFP
+    photo_url: /img/smile.jpg
+    personality_img: https://www.16personalities.com/static/images/personality-types/avatars/infp-mediator-female.svg?v=3
+    name_url: https://www.16personalities.com/tw/infp-%E6%80%A7%E6%A0%BC
+  maxim:
+    maxim_tips: 座右铭
+    maxim_top: 不忘初衷
+    maxim_bottom: 無限進步
+  buff:
+    buff_tips: 特長
+    buff_top: 創造新的 Bug
+    buff_bottom: 教徒
+  game:
+    game_tips: 愛好遊戲
+    game_title: MINECRAFT
+    game_uid: "ID: kapiso"
+    game_bg: https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/game-updates/MCV_SpringDrop2026_BPS_Feb3_Editorial_1170x500.jpg
+  comic:
+    comic_tips: 愛好動漫
+    comic_title: 追番
+    comic_list:
+      - name: 膽大黨
+        href: https://youtube.com/playlist?list=PL12UaAf_xzfq5SwaJ7I9QsUglCml7_HDn&si=1kWRvb5RxOxgaagV
+        cover: /img/poster/Dandadan.jpg
+      - name: Re:從零開始的異世界生活
+        href: https://youtube.com/playlist?list=PL12UaAf_xzfrzEb8v_1R2HTbm_QZ5Omjv&si=zr-zhVpJfQmiMbqV
+        cover: /img/poster/Re_Zero.jpg
+      - name: 孤獨搖滾
+        href: https://ani.gamer.com.tw/animeVideo.php?sn=31599
+        cover: /img/poster/band.jpg
+      - name: 一拳超人
+        href: https://youtube.com/playlist?list=PL12UaAf_xzfpXxM1j_aMxdEdpUXCDscCE&si=EBBgBghOu-nWjdSb
+        cover: /img/poster/one_pounch.jpg
+      - name: 獵人
+        href: https://ani.gamer.com.tw/animeVideo.php?sn=5575
+        cover: /img/poster/hunter.jpg
+  like:
+    like_tips: 關注偏好
+    like_title: 科技發展
+    like_bg: /img/spaceX.jpg
+    like_bottom: 軟硬件、資安
+  music:
+    music_tips: 音樂偏好
+    music_title: Yorushika, R&b
+    music_bg: /img/yorushika.png
+    music_link: https://music.apple.com/tw/playlist/life/pl.u-oZylDyZtG7NPAY2
