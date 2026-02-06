@@ -503,7 +503,7 @@ footer:
       #     - title: 文档
       #       link: /docs/
            - title: 源碼
-             link: https://github.com/kapiso-TW/kapiso-TW.github.io
+             link: https://github.com/kapiso-TW/Blog-source
            - title: 更新日誌
              link: /update/
        - title: 導航
@@ -566,7 +566,7 @@ baidu_analytics:
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics:
+google_analytics: https://www.googletagmanager.com/gtag/js?id=G-VWKEWHJX6L
 
 # CNZZ Analytics
 # https://www.umeng.com/
