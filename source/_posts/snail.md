@@ -8,7 +8,7 @@ keywords: 志工
 description: 新生始業輔導志工
 top_img: /img/snail/CHSH_Logo_1.png
 cover: /img/snail/CHSH_Logo_2.png
-comments: false
+comments: true
 toc:
 toc_number:
 toc_style_simple:
