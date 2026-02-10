@@ -308,6 +308,8 @@ addtoany:
 
 # Comments System
 # --------------------------------------
+# https://vercel.com/kapiso-tws-projects/waline
+# https://console.neon.tech/app/projects/nameless-queen-24719422
 
 comments:
   # Up to two comments system, the first will be shown as default
@@ -317,7 +319,7 @@ comments:
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
   lazyload: false
-  count: false # Display comment count in post's top_img
+  count: true # Display comment count in post's top_img
   card_post_count: false # Display comment count in Home Page
 
 # valine
@@ -348,12 +350,59 @@ valine:
 # https://waline.js.org/
 waline:
   serverURL: https://waline-beige-nine.vercel.app/ # Waline server address url
-  bg: # Waline background
-  pageview: false
-  meta_css: false # 是否引入 waline-meta.css ,以便显示 meta图标
-  imageUploader: true # 配置为 > 换行后可自定义图片上传逻辑，示例: https://waline.js.org/cookbook/customize/upload-image.html#案例
-  # 以下为可选配置，后续若有新增/修改配置参数可在此自行添加/修改
+  bg: /img/noot.png # Waline background
+  pageview: true
+  meta_css: true # 是否引入 waline-meta.css ,以便显示 meta图标
+  imageUploader: true # 圖片上傳開關
+  placeholder: "歡迎留言討論！請遵守網路禮儀"
+  copyright: true # 是否顯示版權信息
+  dark: true # 深色模式 auto/true/false
+  # 以下是可選配置
   option:
+    lang: zh-TW
+    meta: ['nick', 'mail', 'link'] # 評論者信息字段
+    requiredMeta: ['nick', 'mail'] # 必填字段
+    avatar: 'mp' # Gravatar 頭像樣式
+    avatarCDN: 'https://sdn.geekzu.org/avatar/' # Gravatar CDN 地址（中國用戶推薦）
+    login: 'enable' # 登錄模式：enable/disable/force
+    wordLimit: 1000 # 評論字數限制，0 表示無限制
+    pageSize: 10 # 評論列表分頁大小
+    locale:
+      placeholder: "💭 歡迎留言討論！請遵守網路禮儀～"
+      sofa: "來當第一個評論的人吧～"
+      submit: "提交"
+      reply: "回覆"
+      cancelReply: "取消回覆"
+      comment: "留言"
+      refresh: "重新整理"
+      more: "載入更多..."
+      preview: "預覽"
+      emoji: "表情"
+      uploadImage: "上傳圖片"
+      nick: "暱稱"
+      nickError: "暱稱不能少於3個字符"
+      mail: "郵箱"
+      mailError: "請填寫正確的郵件地址"
+      link: "網站"
+      optional: "可選"
+      gifSearchPlaceholder: "搜尋 GIF"
+      profile: "個人資料"
+      admin: "管理員"
+      sticky: "置頂"
+      word: "字"
+      wordHint: "評論字數限制：$0"
+      anonymous: "匿名"
+      login: "登錄"
+      logout: "登出"
+      signed: "已登錄"
+      approve: "通過"
+      waiting: "待審核"
+      spam: "垃圾"
+      unsticky: "取消置頂"
+      oldest: "按時間正序"
+      latest: "按時間倒序"
+      hottest: "按熱度排序"
+      reactionTitle: "你認為這篇文章怎麼樣？"
 
 # Twikoo
 # https://github.com/imaegoo/twikoo
@@ -867,7 +916,7 @@ runtimeshow:
 
 # Console - Newest Comments
 newest_comments:
-  enable: true
+  enable: false
   sort_order: # Don't modify the setting unless you know how it works
   limit: 6
   storage: 10 # unit: mins, save data to localStorage
