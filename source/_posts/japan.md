@@ -8,7 +8,7 @@ keywords: japan
 description: Travel to japan
 top_img: /img/japan/street.JPG
 cover: /img/japan/street.JPG
-comments: false
+comments: true
 toc:
 toc_number:
 toc_style_simple:
