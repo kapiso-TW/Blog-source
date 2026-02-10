@@ -4,28 +4,30 @@
     color: "#f2babf"
   - name: CSS3
     icon: https://files.svgcdn.io/logos/css-3.svg
-    color: "#dde4ef"
+    color: "#66ccff"
   - name: JavaScript
     icon: https://files.svgcdn.io/skill-icons/javascript.svg
     color: "#dde4ef"
   - name: Node.js
     icon: https://files.svgcdn.io/logos/nodejs-icon-alt.svg
-    color: "#dde4ef"
+    color: "#ffcc00"
   - name: Python
     icon: https://files.svgcdn.io/logos/python.svg
-    color: "#dde4ef"
+    color: "#f08300"
   - name: C++
     icon: https://files.svgcdn.io/logos/c-plusplus.svg
-    color: "#dde4ef"
+    color: "#cc3366"
   - name: Linux
     icon: https://files.svgcdn.io/devicon/linux.svg
     color: "#dde4ef"
   - name: vscode
     icon: https://files.svgcdn.io/devicon/vscode.svg
-    color: "#dde4ef"
+    color: "#bcc7c7"
   - name: docker
-    icon: https://files.svgcdn.io/devicon/docker-wordmark.svg
-    color: "#dde4ef"
+    icon: https://files.svgcdn.io/logos/docker-icon.svg
+    color: "#f0dfee"
   - name: kaliLinux
     icon: https://files.svgcdn.io/devicon/kalilinux.svg
-    color: "#dde4ef"
+    color: "#cadcb6"
+
+# color from https://traditionalcolors.com/zh
