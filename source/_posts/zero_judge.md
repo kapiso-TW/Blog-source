@@ -29,7 +29,7 @@ background:
 
 # ℹ️總覽
 這裡記錄了我在ZeroJudge**解題的思路及感想**，且按照題目分類整理。從基礎輸入輸出至演算法，每道題目皆**包含程式碼以及解題觀念**，較困難題目可能含有**詳細思路**。<br><br>
-**目前包含題數**：8 題
+**目前包含題數**：11 題
 **程式語言**：C & C++
 <hr>
 
@@ -208,35 +208,151 @@ int main(){
 }
 ```
 
-<!--
+
 ## a013. 羅馬數字
 **題目網址**:https://zerojudge.tw/ShowProblem?problemid=a013
-**解題觀念**:基礎變數、輸入輸出控制、變數運算
+**解題觀念**:變數運算、邏輯判斷
 ``` C++
+#include <bits/stdc++.h>
+using namespace std;
+int cti(char c){		//單一羅馬數字轉數字
+	switch(c){
+		case 'I': return 1;
+		case 'V': return 5;
+		case 'X': return 10;
+		case 'L': return 50;
+		case 'C': return 100;
+		case 'D': return 500;
+		case 'M': return 1000;
+		default : return 0;
+	}
+}
 
+int rti(string s){		//分解羅馬數字並判斷加減
+	int p=0,ans=0;		//p為上一位數
+	for(char c:s){
+		int n=cti(c);
+		ans+=n;
+		if(n>p)
+			ans-=2*p;	//MCM
+		p=n;		
+	}
+	return ans;
+}
+
+string itr(int n){		//數字轉羅馬
+	if(n==0)
+		return "ZERO";
+	
+	int v[]=   {1000, 900, 500, 400, 100, 90 , 50, 40 , 10,  9 , 5 , 4  ,  1};
+    string s[]={"M" ,"CM", "D","CD", "C","XC","L","XL","X","IX","V","IV","I"};
+    
+    string ans="";
+    for(int i=0;i<13;i++){
+    	while(n>=v[i]){		//重複減直到小於當前檢查的數字
+    		n-=v[i];
+    		ans+=s[i];
+		}
+	}
+	return ans;
+}
+
+int main(){
+	string s;
+	while(getline(cin,s) && s!="#"){
+		string f="",t="";
+		for(int i=0;i<s.length();i++){
+		 	if(s[i]==' '){
+		 		for(int j=i+1;j<s.length();j++)
+		 			t+=s[j];
+		 		break;
+			}else
+				f+=s[i];
+		}
+		cout << itr(abs(rti(t)-rti(f))) << '\n';
+	}
+	return 0;
+}
 ```
 
+## a015. 矩陣的翻轉
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a015
+**解題觀念**:基礎迴圈控制
+``` C++
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	int a,b;
+	while(cin >> a >> b){
+		vector<vector <int>> v(a,vector<int>(b));
+		for(int i=0;i<a;i++){
+			for(int j=0;j<b;j++)
+				cin >> v[i][j];
+		}
+		
+		for(int i=0;i<b;i++){
+			for(int j=0;j<a;j++)
+				cout << v[j][i] << ' ';
+			cout << '\n';
+		}
+	}
+	return 0;
+}
+```
+<!--
 ## 
 **題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
 **解題觀念**:基礎變數、輸入輸出控制、變數運算
 ``` C++
 
 ```
+-->
 
-## 
-**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
-**解題觀念**:基礎變數、輸入輸出控制、變數運算
+## a020. 身分證檢驗
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a020
+**解題觀念**:基礎邏輯判斷、變數運算
 ``` C++
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	string s;
+	int t=0;
+	cin >> s;
+	
+	if(s[0]=='I')
+		t=34;
+	else if(s[0]=='O')
+		t=35;
+	else if(s[0]=='W')
+		t=32;
+	else if(s[0]=='X')
+		t=30;
+	else if(s[0]=='Y')
+		t=31;
+	else if(s[0]=='Z')
+		t=33;
+	else if(s[0]>='A' && s[0]<='H')
+		t=s[0]-'A'+10;
+	else if(s[0]>='J' && s[0]<='N')
+		t=s[0]-'J'+18;
+	else if(s[0]>='P' && s[0]<='V')
+		t=s[0]-'P'+23;
 
+	t=(t%10)*9+t/10;
+	
+	for(int i=1;i<s.length()-1;i++)
+		t+=(s[i]-'0')*(9-i);
+	t+=s[s.length()-1]-'0';
+	
+	if(t%10==0)
+		cout << "real\n";
+	else
+		cout << "fake\n";
+	return 0;
+}
 ```
 
-## 
-**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
-**解題觀念**:基礎變數、輸入輸出控制、變數運算
-``` C++
-
-```
-
+<!--
 ## 
 **題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
 **解題觀念**:基礎變數、輸入輸出控制、變數運算
