@@ -1,10 +1,14 @@
 ---
 title: The first Traveling
 date: 2024-02-24
-update: 2026-02-04
+update: 2026-02-11
 tags: japan
 categories: life
-keywords: japan
+keywords:
+    - japan
+    - life
+    - 日本
+    - 旅遊
 description: Travel to japan
 top_img: /img/japan/street.JPG
 cover: /img/japan/street.JPG

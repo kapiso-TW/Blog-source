@@ -1,14 +1,14 @@
 ---
 title: ZERO JUDGE 解題紀錄
 date: 2026-02-09
-update: 2026-02-09
+update: 2026-02-11
 tags: code
 categories: coding
 keywords: code
 description: ZERO JUDGE
 top_img: /img/zero_judge/zerojudge.svg
 cover: /img/zero_judge/zerojudge.svg
-comments: false
+comments: true
 toc:
 toc_number:
 toc_style_simple:

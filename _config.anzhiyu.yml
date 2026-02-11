@@ -486,30 +486,30 @@ footer:
   # 徽标部分配置项 https://shields.io/
   # https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr
   bdageitem:
-    enable: false
+    enable: true
     list:
-      - link: https://hexo.io/ #徽标指向网站链接
-        shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg #徽标API
-        message: 博客框架为Hexo_v5.4.0 #徽标提示语
+      - link: https://hexo.io/ #標誌指向网站链接
+        shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg #標誌API
+        message: 本站框架為Hexo_v5.4.0 #標誌提示
       - link: https://hexo.anheyu.com/
         shields: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg
-        message: 本站使用AnZhiYu主题
+        message: 本站使用AnZhiYu主題
       # - link: https://www.dogecloud.com/
       #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg
       #   message: 本站使用多吉云为静态资源提供CDN加速
-      # - link: https://github.com/
-      #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg
-      #   message: 本站项目由Github托管
-      # - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
+      - link: https://github.com/
+        shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg
+        message: 本站由Github托管
+      - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
       #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg
-      #   message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
+      #   message: 本站采用知識共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
   socialBar:
     enable: true
     centerImg: 
     left:
-       - title: email
-         link: mailto:000617jason@gmail.com
-         icon: anzhiyu-icon-envelope
+      - title: email
+        link: mailto:000617jason@gmail.com
+        icon: anzhiyu-icon-envelope
       # - title: 微博
       #   link: https://weibo.com/u/6378063631
       #   icon: anzhiyu-icon-weibo
@@ -519,59 +519,59 @@ footer:
       # - title: RSS
       #   link: atom.xml
       #   icon: anzhiyu-icon-rss
-       - title: hackmd
-         link: https://hackmd.io/@kapiso
-         icon: /img/hackmd.svg
+      # - title: hackmd
+      #   link: https://hackmd.io/@kapiso
+      #   icon: /img/hackmd.svg
     right:
-       - title: Github
-         link: https://github.com/kapiso-TW
-         icon: anzhiyu-icon-github
+      - title: Github
+        link: https://github.com/kapiso-TW
+        icon: anzhiyu-icon-github
       # - title: Bilibili
       #   link: https://space.bilibili.com/372204786
       #   icon: anzhiyu-icon-bilibili
       # - title: 抖音
       #   link: https://v.douyin.com/DwCpMEy/
       #   icon: anzhiyu-icon-tiktok
-       - title: CC
-         link: /copyright
-         icon: anzhiyu-icon-copyright-line
+      # - title: CC
+      #   link: /copyright
+      #   icon: anzhiyu-icon-copyright-line
   list:
     enable: true
     randomFriends: 0
     project:
-      # - title: 服务
-      #   links:
+      - title: 服務
+        links:
       #     - title: 51la统计
       #       link: https://v6.51.la/
       #     - title: 十年之约
       #       link: https://www.foreverblog.cn/
-      #     - title: 开往
-      #       link: https://github.com/travellings-link/travellings
-       - title: 主題
-         links:
+          - title: 還沒想好要放啥
+            link: https://youtu.be/oGFSnHnjqso?si=SyHJMUVXQ31l2gqW
+      - title: 網站
+        links:
       #     - title: 文档
       #       link: /docs/
-           - title: 源碼
-             link: https://github.com/kapiso-TW/Blog-source
-           - title: 更新日誌
-             link: /update/
-       - title: 導航
-         links:
-           - title: 短文
-             link: /essay/
-           - title: 版權協議
-             link: /copyright/
+          - title: 源碼
+            link: https://github.com/kapiso-TW/Blog-source
+          - title: 更新日誌
+            link: https://github.com/kapiso-TW/Blog-source/actions
+      - title: 導航
+        links:
+          - title: 短文
+            link: /essay/
       #     - title: 友链文章
       #       link: /fcircle/
       #     - title: 留言板
       #       link: /comments/
-      # - title: 協議
-      #   links:
-      #     - title: 隱私協議
-      #       link: /privacy/
+      - title: 協議
+        links:
+          - title: 隱私協議
+            link: /privacy/
       #     - title: Cookies
       #       link: /cookies/
-           
+          - title: 版權協議
+            link: /copyright/
+
   footerBar:
     enable: true
     authorLink: /
@@ -674,8 +674,8 @@ theme_color:
   link_color: "var(--anzhiyu-fontcolor)"
   meta_color: "var(--anzhiyu-fontcolor)"
   hr_color: "#729BBF"
-  code_foreground: "#729BBF"
-  code_background: "var(--anzhiyu-code-stress)"
+  code_foreground: "#dde4ef"
+  code_background: "#484848"
   toc_color: "#729BBF" #
   #   blockquote_padding_color: "#729BBF"
   #   blockquote_background_color: "#729BBF"
