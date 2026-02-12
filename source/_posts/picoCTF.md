@@ -8,6 +8,7 @@ keywords:
     - CTF
     - picoCTF
     - 資安
+    - 解題
 description: picoCTF write up
 top_img: /img/picoCTF/picoctf.svg
 cover: /img/picoCTF/icon.png

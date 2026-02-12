@@ -4,7 +4,10 @@ date: 2026-02-09
 update: 2026-02-11
 tags: code
 categories: coding
-keywords: code
+keywords: 
+	- code
+	- zerojudge
+	- 解題
 description: ZERO JUDGE
 top_img: /img/zero_judge/zerojudge.svg
 cover: /img/zero_judge/zerojudge.svg
@@ -29,7 +32,7 @@ background:
 
 # ℹ️總覽
 這裡記錄了我在ZeroJudge**解題的思路及感想**，且按照題目分類整理。從基礎輸入輸出至演算法，每道題目皆**包含程式碼以及解題觀念**，較困難題目可能含有**詳細思路**。<br><br>
-**目前包含題數**：11 題
+**目前包含題數**：12 題
 **程式語言**：C & C++
 <hr>
 
@@ -352,14 +355,186 @@ int main(){
 }
 ```
 
-<!--
-## 
-**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
-**解題觀念**:基礎變數、輸入輸出控制、變數運算
+
+## a021. 大數運算
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a021
+**解題觀念**:變數運算、陣列應用、函式運用
 ``` C++
+#include <bits/stdc++.h>
+using namespace std;
 
+//a<b回傳 -1; a>b回傳 1; 一樣回傳0;
+int compare(string a, string b){ 
+	if(a.length()>b.length())
+		return 1;
+	if(a.length()<b.length())
+		return -1;
+	if(a>b)
+		return 1;
+	if(a<b)
+		return -1;
+	return 0;
+	
+}
+
+//加法 
+string pluss(string a, string c){
+	string ans="";
+	int p=0;	//進位計數器
+	
+	//始終以 a 為較大者 
+	if(compare(c,a)<0)
+		swap(a,c);
+		
+	reverse(a.begin(),a.end());
+	reverse(c.begin(),c.end());
+	for(int i=0;i<a.length();i++){
+		int n=a[i]-'0'+p;
+		
+		//如果已超過 c 的位數則忽略 c 
+		if(i<c.length())
+			n+=(c[i]-'0');
+		ans+=n%10+'0';
+		p=n/10;
+	}
+	
+	//若計數器有殘餘則加回 
+	if(p!=0)
+		ans+=p+'0';
+		
+	reverse(ans.begin(),ans.end());
+	return ans;
+}
+
+//乘法 (直式乘法)
+string cross(string a, string c){
+	string ans="";
+	vector<int> v(a.length()+c.length(),0);	//直式位數暫存器 
+	reverse(a.begin(),a.end());
+	reverse(c.begin(),c.end());
+	
+	//直式乘法 
+	for(int i=0;i<c.length();i++){
+		for(int j=0;j<a.length();j++){
+			int n=(a[j]-'0')*(c[i]-'0');
+			v[j+i]+=n;
+		}
+	}
+	
+	//進位處理 
+	int p=0;
+	for(int i=0;i<v.size();i++){
+		int c=v[i]+p;
+		ans+=c%10+'0';
+		p=c/10;
+	}
+	
+	//殘餘進位補回 
+	while(p){
+		ans+=p%10+'0';
+		p/=10;
+	}
+	
+	//去除可能出現在首位的 0
+	while (ans.size()>1 && ans.back()=='0')
+        ans.pop_back();
+	
+	reverse(ans.begin(),ans.end());
+	return ans;
+}
+
+//減法 (輸入前須做大小檢查，前者需為較大者)
+string minuss(string a, string c){
+	string ans="";
+	reverse(a.begin(),a.end());
+	reverse(c.begin(),c.end());
+	
+	int m=0;	//借位暫存器 
+	
+	//以較短位數為目標施行減法
+	for(int i=0;i<c.length();i++){ 
+		int n=(a[i]-'0')-(c[i]-'0')-m;
+		if(n<0){
+			m=1;
+			n+=10;
+		}else
+			m=0;
+		ans+=n%10+'0';
+	}
+	
+	//補回較長者剩餘位數
+	for(int i=c.length();i<a.length();i++){ 
+		int n=(a[i]-'0')-m;
+		if(n<0){
+			m=1;
+			n+=10;
+		}else
+			m=0;
+			ans+=n%10+'0';
+	}
+	reverse(ans.begin(), ans.end());
+	
+	//去除可能出現在首位的 0 
+	while(ans.length()>1 && ans[0]=='0')
+       	ans.erase(0, 1);
+	return ans;
+}
+
+//除法 (長除法)
+string divded(string a, string c){
+	if(compare(a,c)<0)
+		return "0";
+	string ans="0";
+	string q="";	//被除數 
+	
+	
+	for(int i=0;i<a.length();i++){
+		
+		q+=a[i];	//一次取一位
+		
+		//去除可能出現在首位的 0 
+		while(q.length()>1 && q[0]=='0')
+            q.erase(0, 1);
+        
+        //商數計數器 
+		int n=0;
+		
+		//以減法取代除法
+		while(compare(q,c)>=0){ 
+			q=minuss(q,c);
+			n++;
+		}
+		ans+=n+'0';
+	}
+	
+	//去除可能出現在首位的 0 
+	while(ans.length() > 1 && ans[0]=='0')
+        ans.erase(0, 1);
+    return ans;
+}
+
+int main(){
+	string s,a,b,c;
+	getline(cin,s);
+	stringstream ss(s);	//https://www.runoob.com/cplusplus/cpp-libs-sstream.html
+	ss >> a >> b >> c;	//分離 數字(a,c)及運算子(c)
+	
+	if(b=="+"){
+		cout << pluss(a,c) << '\n';
+	}else if(b=="*"){
+		cout << cross(a,c) << '\n';
+	}else if(b=="-"){
+		if(compare(a,c)<0)
+			cout << '-' << minuss(c,a) << '\n';
+		else
+			cout << minuss(a,c) << '\n';
+	}else if(b=="/"){
+		cout << divded(a,c) << '\n';
+	}
+	return 0;
+}
 ```
-
+<!--
 ## 
 **題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
 **解題觀念**:基礎變數、輸入輸出控制、變數運算
