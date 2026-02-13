@@ -32,7 +32,7 @@ background:
 
 # ℹ️總覽
 這裡記錄了我在ZeroJudge**解題的思路及感想**，且按照題目分類整理。從基礎輸入輸出至演算法，每道題目皆**包含程式碼以及解題觀念**，較困難題目可能含有**詳細思路**。<br><br>
-**目前包含題數**：12 題
+**目前包含題數**：14 題
 **程式語言**：C & C++
 <hr>
 
@@ -302,14 +302,109 @@ int main(){
 	return 0;
 }
 ```
-<!--
-## 
-**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
-**解題觀念**:基礎變數、輸入輸出控制、變數運算
-``` C++
 
+## a017
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a017
+**解題觀念**:變數運算、轉換、迴圈控制
+``` C++
+#include <bits/stdc++.h>
+using namespace std;
+
+//解無括號之算式 
+long long slove(string s){
+	
+	//https://www.runoob.com/cplusplus/cpp-libs-sstream.html
+	stringstream ss(s);
+	
+	//暫存器 
+	string a;
+	vector<long long> v;	//運算元儲存器 
+	vector<string> c;		//運算子儲存器
+	
+	//字串拆分 
+	while(ss >> a){
+		if(isdigit(a[0]) || (a.length()>1 && a[0]=='-'))
+			v.push_back(stoll(a));
+		else
+			c.push_back(a);
+	}
+	
+	// * / % 先計算 
+	for(int i=0;i<c.size();i++){
+		if(c[i]=="*"){
+			c.erase(c.begin()+i);
+			v[i]*=v[i+1];
+			v.erase(v.begin()+i+1);
+			
+			//避免因前一元素擦除而忽略元素或溢位
+			i--; 
+		}else if(c[i]=="/"){
+			c.erase(c.begin()+i);
+			v[i]/=v[i+1];
+			v.erase(v.begin()+i+1);
+			i--;
+		}else if(c[i]=="%"){
+			c.erase(c.begin()+i);
+			v[i]%=v[i+1];
+			v.erase(v.begin()+i+1);
+			i--;
+		}
+	}
+	
+	// + - 後處理 
+	for(int i=0;i<c.size();i++){
+		if(c[i]=="+"){
+			c.erase(c.begin()+i);
+			v[i]+=v[i+1];
+			v.erase(v.begin()+i+1);
+			i--;
+		}else if(c[i]=="-"){
+			c.erase(c.begin()+i);
+			v[i]-=v[i+1];
+			v.erase(v.begin()+i+1);
+			i--;
+		}
+	}
+	
+	//回傳解 
+	return v[0];
+}
+
+//含有括號的算式處理 
+long long re_slove(string s){
+	while(1){
+		
+		//左右括號索引暫存器
+		int l=-1,r=-1;
+		
+		//尋找一對括號 
+		for(int i=0;i<s.length();i++){
+			if(s[i]=='(')
+				l=i;
+			else if(s[i]==')'){
+				r=i;
+				break;
+			}	
+		}
+		
+		//未找到則跳出迴圈 
+		if(l==-1)
+			break;
+			
+		//找到則計算並替換原有括號處 
+		long long m=slove(s.substr(l+1,r-l));
+		s.replace(l,r-l+1,to_string(m));
+	}
+	return slove(s);
+}
+
+int main(){
+	string s;
+	while(getline(cin,s))
+		cout << re_slove(s) << '\n';
+	return 0;
+}
 ```
--->
 
 ## a020. 身分證檢驗
 **題目網址**:https://zerojudge.tw/ShowProblem?problemid=a020
@@ -534,11 +629,118 @@ int main(){
 	return 0;
 }
 ```
+
+## a022. 迴文
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a022
+**解題觀念**:基礎迴圈使用
+``` C++
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	string s;
+	int c=0;
+	cin >> s;
+	for(int i=0;i<s.length();i++)
+		if(s[i]!=s[s.length()-1-i]){
+			c=1;
+			break;
+		}
+	if(c)
+		cout << "no\n";
+	else
+		cout << "yes\n";
+	return 0;
+}
+``` 
 <!--
 ## 
-**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
-**解題觀念**:基礎變數、輸入輸出控制、變數運算
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
 ``` C++
 
-``` 
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
+
+## 
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=
+**解題觀念**:基礎迴圈使用
+``` C++
+
+```
 -->
