@@ -9,9 +9,9 @@
     right:
       - 程式還可以
       - 只出一張嘴
-      - 雷姆教徒
+      - 森上沒有錢
   name: 林冠宏
-  description: 是一名 全職大學牲
+  description: 是一名 全職大學生
   aboutsiteTips:
     tips: 追求
     title1: 源自
@@ -65,7 +65,7 @@
   buff:
     buff_tips: 特長
     buff_top: 創造新的 Bug
-    buff_bottom: 教徒
+    buff_bottom: 修也修不好
   game:
     game_tips: 愛好遊戲
     game_title: MINECRAFT
