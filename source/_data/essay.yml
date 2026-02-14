@@ -12,8 +12,12 @@
       from: kapiso
       address: 台灣
       image: 
-         - /img/essay/pica.gif
+        - /img/essay/pica.gif
     - content: 睡覺囉~~
       date: 2026/02/05 01:30:31
+      from: kapiso
+      address: 台灣
+    - content: Lazy day
+      date: 2026/02/15 00:12:32
       from: kapiso
       address: 台灣

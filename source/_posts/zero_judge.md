@@ -1,7 +1,7 @@
 ---
 title: ZERO JUDGE 解題紀錄
 date: 2026-02-09
-update: 2026-02-11
+update: 2026-02-15
 tags: code
 categories: coding
 keywords: 
@@ -32,7 +32,7 @@ background:
 
 # ℹ️總覽
 這裡記錄了我在ZeroJudge**解題的思路及感想**，且按照題目分類整理。從基礎輸入輸出至演算法，每道題目皆**包含程式碼以及解題觀念**，較困難題目可能含有**詳細思路**。<br><br>
-**目前包含題數**：14 題
+**目前包含題數**：27 題
 **程式語言**：C & C++
 <hr>
 
@@ -303,7 +303,7 @@ int main(){
 }
 ```
 
-## a017
+## a017. 五則運算
 **題目網址**:https://zerojudge.tw/ShowProblem?problemid=a017
 **解題觀念**:變數運算、轉換、迴圈控制
 ``` C++
