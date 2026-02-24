@@ -911,6 +911,31 @@ int main(){
 }
 ```
 
+## a104. 排序
+**題目網址**:https://zerojudge.tw/ShowProblem?problemid=a014
+**解題觀念**:基礎迴圈使用
+``` C++
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	int n;
+	while(cin >> n){
+		vector<int> v(n);
+		int z=0;
+		for(int i=0;i<n;i++)
+			cin >> v[i];
+		sort(v.begin(),v.end());
+		
+		cout << v[0];
+		for(int i=1;i<n;i++)
+			cout << ' ' << v[i];
+		cout << endl;
+	}
+	return 0;
+}
+
+```
+
 <!--
 ## 
 **題目網址**:https://zerojudge.tw/ShowProblem?problemid=a
