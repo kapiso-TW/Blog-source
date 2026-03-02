@@ -1,7 +1,7 @@
 menu:
-   文章:
-     全部: /archives/ || anzhiyu-icon-box-archive
-     分類: /categories/ || anzhiyu-icon-shapes
+  文章:
+    全部: /archives/ || anzhiyu-icon-box-archive
+    分類: /categories/ || anzhiyu-icon-shapes
   #   標籤: /tags/ || anzhiyu-icon-tags
 
   # 友链:
@@ -15,10 +15,10 @@ menu:
   #   相册集: /album/ || anzhiyu-icon-images
   #   小空调: /air-conditioner/ || anzhiyu-icon-fan
 
-   關於:
-     關於我: /about/ || anzhiyu-icon-paper-plane
-     碎碎念: /essay/ || anzhiyu-icon-lightbulb
-     随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
+  關於:
+    關於我: /about/ || anzhiyu-icon-paper-plane
+    碎碎念: /essay/ || anzhiyu-icon-lightbulb
+    随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
 
 # nav相关配置
 nav:
@@ -38,7 +38,7 @@ nav:
           icon: https://image.anheyu.com/favicon.ico
 
 # mourn （哀悼日，指定日期网站简单变灰，不包括滚动条）
-# 注意： 仅网站首页变灰，其他页面正常显示
+# 注意： 仅网站首頁变灰，其他页面正常显示
 mourn:
   enable: false
   days: [4-5, 5-12, 7-7, 9-18, 12-13]
@@ -46,7 +46,7 @@ mourn:
 # Code Blocks (代码相关)
 # --------------------------------------
 
-highlight_theme: darker #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: ocean #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
@@ -59,15 +59,15 @@ code_word_wrap: false
 copy:
   enable: true
   copyright:
-    enable: false
+    enable: true
     limit_count: 50
 
 # social settings (社交图标设置)
 # formal:
 #   name: link || icon
 social:
-   Github: https://github.com/kapiso-TW || anzhiyu-icon-github
-  # BiliBili: https://space.bilibili.com/372204786 || anzhiyu-icon-bilibili
+  Github: https://github.com/kapiso-TW || anzhiyu-icon-github
+  BiliBili: https://space.bilibili.com/3493135988558536?spm_id_from=333.1007.0.0 || anzhiyu-icon-bilibili
 
 # 作者卡片 状态
 author_status:
@@ -85,6 +85,7 @@ author_status:
     # - 💢 壮汉人狠话不多
 
 # search (搜索)
+# see https://blog.anheyu.com/posts/c27d.html#搜索系统
 # --------------------------------------
 
 # Algolia search
@@ -109,7 +110,7 @@ docsearch:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   preload: true
   CDN:
 
@@ -171,7 +172,7 @@ error_img:
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: "請嘗試站內搜尋尋找文章"
+  subtitle: "沒這東西@@"
   background: /img/swing_404.gif
 
 post_meta:
@@ -180,7 +181,7 @@ post_meta:
     date_format: simple # date/relative/simple 显示日期还是相对日期 或者 简单日期
     categories: true # true or false 主页是否显示分类
     tags: true # true or false 主页是否显示标籤
-    label: false # true or false 显示描述性文字
+    label: true # true or false 显示描述性文字
   post:
     date_type: both # created or updated or both 文章页日期是创建日或者更新日或都显示
     date_format: date # date/relative 显示日期还是相对日期
@@ -192,12 +193,13 @@ post_meta:
 # 主色调相关配置
 mainTone:
   enable: true # true or false 文章是否启用获取图片主色调
-  mode: both # colorthief/cdn/api/both colorthief模式为前端获取图片主色调，cdn模式为图片url+imageAve参数获取主色调，api模式为请求API获取主色调，both模式会先请求cdn参数，无法获取的情况下将请求API获取，可以在文章内配置main_color: '#3e5658'，使用十六进制颜色，则不会请求colorthief/cdn/api/both获取主色调，而是直接使用配置的颜色
+  mode: both # cdn/api/both cdn模式为图片url+imageAve参数获取主色调，api模式为请求API获取主色调，both模式会先请求cdn参数，无法获取的情况下将请求API获取，可以在文章内配置main_color: '#3e5658'，使用十六进制颜色，则不会请求both/cdn/api获取主色调，而是直接使用配置的颜色
   # 项目地址：https://github.com/anzhiyu-c/img2color-go
   api: https://img2color-go.vercel.app/api?img= # mode为api时可填写
-  cover_change: false # 整篇文章跟随cover修改主色调
+  cover_change: true # 整篇文章跟随cover修改主色调
 
 # wordcount (字数统计)
+# see https://blog.anheyu.com/posts/c27d.html#字数统计
 wordcount:
   enable: true
   post_wordcount: true
@@ -223,7 +225,7 @@ anchor: false
 # toc (目录)
 toc:
   post: true
-  page: false
+  page: true
   number: true
   expand: false
   style_simple: false # for post
@@ -231,12 +233,12 @@ toc:
 post_copyright:
   enable: true
   decode: false
-  author_href: 
+  author_href:
   location: 台灣
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-  avatarSinks: false # hover时头像下沉
-  copyright_author_img_back: 
+  avatarSinks: true # hover时头像下沉
+  copyright_author_img_back:
   copyright_author_img_front:
   copyright_author_link: /
 
@@ -244,10 +246,10 @@ post_copyright:
 reward:
   enable: false
   QR_code:
-    - img: 
+    - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png
       link:
       text: 微信
-    - img: 
+    - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png
       link:
       text: 支付宝
 
@@ -407,10 +409,12 @@ waline:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId:
-  region:
-  visitor: false
+  envId: # 你的環境 ID，需要在騰訊雲開發中獲取
+  region:  # 環境地域，默認為 ap-shanghai
+  visitor: false # 是否顯示文章閱讀數
   option:
+    # 更多選項可以在這裡配置
+    # 詳細配置請參考：https://twikoo.js.org/
 
 # Artalk
 # https://artalk.js.org/guide/frontend/config.html
@@ -662,26 +666,27 @@ site_verification:
 
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
-
 #729BBF
+
 theme_color:
   enable: true
   main: "#729BBF"
-  dark_main: "#729BBF"
-  paginator: "#729BBF" #
-  #   button_hover: "#FF7242"
+  dark_main: "#5d7da1"
+  paginator: "#729BBF"
+  #   button_hover: "#FF7242"
   text_selection: "#729BBF"
   link_color: "var(--anzhiyu-fontcolor)"
   meta_color: "var(--anzhiyu-fontcolor)"
   hr_color: "#729BBF"
-  code_foreground: "#dde4ef"
-  code_background: "#484848"
-  toc_color: "#729BBF" #
-  #   blockquote_padding_color: "#729BBF"
-  #   blockquote_background_color: "#729BBF"
+  code_foreground: "#fff"
+  code_background: "var(--anzhiyu-code-stress)"
+  toc_color: "#729BBF"
+  #   blockquote_padding_color: "#425AEF"
+  #   blockquote_background_color: "#425AEF"
   scrollbar_color: "var(--anzhiyu-scrollbar)"
-  meta_theme_color_light: "#729BBF"
-  meta_theme_color_dark: "#729BBF"
+  meta_theme_color_light: "#f7f9fe"
+  meta_theme_color_dark: "#18171d"
+
 
 # 移动端侧栏
 sidebar:
@@ -700,7 +705,7 @@ h2Divider: false
 # 表格隔行变色
 table_interlaced_discoloration: false
 
-# 首页双栏显示
+# 首頁双栏显示
 article_double_row: true
 
 # The top_img settings of home page
@@ -711,7 +716,7 @@ index_site_info_top:
 index_top_img_height:
 
 # The user interface setting of category and tag page (category和tag页的UI设置)
-# index - same as Homepage UI (index 值代表 UI将与首页的UI一样)
+# index - same as Homepage UI (index 值代表 UI将与首頁的UI一样)
 # default - same as archives UI 默认跟archives页面UI一样
 category_ui: # 留空或 index
 tag_ui: # 留空或 index
@@ -753,7 +758,7 @@ canvas_nest:
 # Typewriter Effect (打字效果)
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true # open particle animation (冒光特效)
   shake: false #  open shake (抖动特效)
   mobile: false
@@ -773,9 +778,9 @@ click_heart:
 ClickShowText:
   enable: false
   text:
-    # - I
-    # - LOVE
-    # - YOU
+    - owo
+    - meow
+    - MEOW
   fontSize: 15px
   random: false
   mobile: false
@@ -842,8 +847,8 @@ preloader:
   # else all
   source: 1
   # pace theme (see https://codebyzach.github.io/pace/)
-  pace_css_url: css\bounce.css
-  avatar: img/rem.png # 自定加载动画义头像
+  pace_css_url:
+  avatar: img/rem.png
 
 # aside (侧边栏)
 # --------------------------------------
@@ -931,7 +936,7 @@ translate:
   # The text of a button
   default: 繁
   # Right-click menu default text
-  rightMenuMsgDefault: "轉為繁體"
+  rightMenuMsgDefault: "轉為簡體"
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
   defaultEncoding: 2
   # Time delay
@@ -941,9 +946,9 @@ translate:
   # The text of the button when the language is Traditional Chinese
   msgToSimplifiedChinese: "简"
   # Right-click the menu to traditional Chinese
-  rightMenuMsgToTraditionalChinese: "转为繁体"
+  rightMenuMsgToTraditionalChinese: "轉為繁體"
   # Right-click menu to simplified Chinese
-  rightMenuMsgToSimplifiedChinese: "转为简体"
+  rightMenuMsgToSimplifiedChinese: "轉為簡體"
 
 # Read Mode (閲读模式)
 readmode: true
@@ -1055,7 +1060,7 @@ aplayerInject:
 snackbar:
   enable: true
   position: top-center
-  bg_light: "#425AEF" # The background color of Toast Notification in light mode
+  bg_light: "#729BBF" # The background color of Toast Notification in light mode
   bg_dark: "#1f1f1f" # The background color of Toast Notification in dark mode
 
 # https://instant.page/
@@ -1081,15 +1086,15 @@ lazyload:
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
 pwa:
-  enable: false
+  enable: true
   startup_image_enable: true
   manifest: /manifest.json
   theme_color: var(--anzhiyu-main)
-  mask_icon: /img/siteicon/apple-icon-180.png
-  apple_touch_icon: /img/siteicon/apple-icon-180.png
-  bookmark_icon: /img/siteicon/apple-icon-180.png
-  favicon_32_32: /img/siteicon/32.png
-  favicon_16_16: /img/siteicon/16.png
+  mask_icon: /img/icon.jpg
+  apple_touch_icon: /img/icon.jpg
+  bookmark_icon: /img/icon.jpg
+  favicon_32_32: /img/icon.jpg
+  favicon_16_16: /img/icon.jpg
 
 # Open graph meta tags
 # https://developers.facebook.com/docs/sharing/webmasters/
@@ -1098,7 +1103,7 @@ Open_Graph_meta: true
 # Add the vendor prefixes to ensure compatibility
 css_prefix: true
 
-# 首页顶部相关配置
+# 首頁顶部相关配置
 home_top:
   enable: true # 开关
   timemode: date #date/updated
@@ -1146,28 +1151,17 @@ universe:
 
 # 页面卡片顶部气泡升起效果
 bubble:
-  enable: false
+  enable: true
 
 #  控制台打印信息
 console:
-  enable: false
+  enable: true
 
 # 51a统计配置
 LA:
   enable: false
   ck:
   LingQueMonitorID:
-
-# Umami 统计配置（关于页面访问统计卡片）
-# 文档: https://umami.is/docs/api
-umami:
-  enable: false
-  # Umami API 地址，如 https://analytics.example.com
-  apiHost:
-  # 网站 ID
-  websiteId:
-  # API Token（在 Umami 后台 Settings -> API Keys 中生成）
-  token:
 
 # 标签卖萌
 diytitle:
@@ -1179,7 +1173,7 @@ diytitle:
 comment_barrage_config:
   enable: false
   # 同时最多显示弹幕数
-  maxBarrage: 3
+  maxBarrage: 1
   # 弹幕显示间隔时间ms
   barrageTime: 4000
   # token，在控制台中获取
@@ -1195,14 +1189,14 @@ nav_music:
   id: 8152976493
   server: netease
   volume: 0.7 # 默认音量
-  all_playlist: https://y.qq.com/n/ryqq/playlist/8802438608
+  all_playlist: 
 
 # 路径为 /music 的音乐页面默认加载的歌单 1. nav_music 2. custom
 music_page_default: nav_music
 
 # 评论匿名邮箱
 visitorMail:
-  enable: false
+  enable: true
   mail: ""
 
 # ptool 文章底部工具
@@ -1214,40 +1208,40 @@ ptool:
   categories: true # 是否显示分类
   mode: # 运营模式与责任，不配置不显示
 
-# 欢迎语配置
+# 歡迎語配置
 greetingBox:
-  enable: false #开启后必须配置下面的list对应的时间段，不然会出现小白条
+  enable: false # 開啟後必須配置下面的 list 對應的時間段，否則會出現小白條
   default: 晚上好👋
   list:
     # - greeting: 晚安😴
     #   startTime: 0
     #   endTime: 5
-    # - greeting: 早上好鸭👋, 祝你一天好心情！
+    # - greeting: 早安鴨👋，祝你一天好心情！
     #   startTime: 6
     #   endTime: 9
-    # - greeting: 上午好👋, 状态很好，鼓励一下～
+    # - greeting: 上午好👋，狀態很好，鼓勵一下～
     #   startTime: 10
     #   endTime: 10
-    # - greeting: 11点多啦, 在坚持一下就吃饭啦～
+    # - greeting: 現在是11點多啦，再堅持一下就吃飯囉～
     #   startTime: 11
     #   endTime: 11
-    # - greeting: 午安👋, 宝贝
+    # - greeting: 午安👋 OwO
     #   startTime: 12
     #   endTime: 14
-    # - greeting: 🌈充实的一天辛苦啦！
+    # - greeting: 🌈充實的一天辛苦了！
     #   startTime: 14
     #   endTime: 18
-    # - greeting: 19点喽, 奖励一顿丰盛的大餐吧🍔。
+    # - greeting: 19點囉，獎勵自己一頓豐盛大餐吧🍔。
     #   startTime: 19
     #   endTime: 19
-    # - greeting: 晚上好👋, 在属于自己的时间好好放松😌~
+    # - greeting: 晚上好👋，在屬於自己的時間好好放鬆😌～
     #   startTime: 20
     #   endTime: 24
 
 # 文章顶部ai摘要
 post_head_ai_description:
   enable: false
-  gptName: kapiso
+  gptName: AnZhiYu
   mode: local # 默认模式 可选值: tianli/local
   switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local
   btnLink: https://afdian.net/item/886a79d4db6711eda42a52540025c377
@@ -1262,30 +1256,30 @@ shortcutKey:
   delay: 100 # 所有键位延时触发而不是立即触发（包括shift，以解决和浏览器键位冲突问题）
   shiftDelay: 200 # shift按下延时多久开启
 
-# 无障碍优化（在首页按下「shift + ?」以查看效果）
+# 无障碍优化（在首頁按下「shift + ?」以查看效果）
 accesskey:
   enable: true
 
 # 友情链接顶部相关配置
 linkPageTop:
   enable: false
-  title: 与数百名博主无限进步
+  title: 與無數有趣的靈魂相遇
   # 添加博主友链的评论自定义格式
-  addFriendPlaceholder: "昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"
+  addFriendPlaceholder: "暱稱（請勿包含部落格等字樣）：\n網站地址（需要提供部落格網址，請勿提交個人主頁）：\n頭像圖片網址（請提供盡可能清晰的圖片，我會上傳到我自己的圖床）：\n描述：\n網站截圖（可選）：\n"
 
 # 缩略图后缀 archive/tag/category 页面单独开启后缀
 pageThumbnailSuffix: ""
 
 # 隐私协议弹窗
 agreementPopup:
-  enable: false
+  enable: true
   url: /privacy
 
 # 右键菜单
 rightClickMenu:
   enable: true
 
-# 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
+# 首頁随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
   enable: false
   img: https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png
@@ -1302,7 +1296,6 @@ dynamicEffect:
 inject:
   head:
     # 自定义css
-    # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 
   bottom:
     # 自定义js
@@ -1393,4 +1386,3 @@ CDN:
     # waterfall:
     # ali_iconfont_css:
     # accesskey_js:
-    # colorthief:

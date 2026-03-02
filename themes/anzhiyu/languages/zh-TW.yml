@@ -1,10 +1,6 @@
 footer:
   framework: 框架
   theme: 主題
-  back_to_top: 返回頂部
-  friend_links: 友鏈
-  refresh_friends: 換一批友情連結
-  cc_license: CC協議
 
 copy:
   success: 複製成功
@@ -28,8 +24,6 @@ post:
   wordcount: 字數總計
   min2read: 閱讀時長
   min2read_unit: 分鐘
-  new: 最新
-  unread: 未讀
   page_pv: 閱讀量
   comments: 評論數
   copyright:
@@ -134,83 +128,3 @@ loading: 載入中...
 load_more: 載入更多
 
 error404: 頁面沒有找到
-
-shortcut:
-  title: 部落格快捷鍵
-  close_shortcut: 關閉快捷鍵功能
-  toggle_console: 打開/關閉中控台
-  play_music: 播放/暫停音樂
-  toggle_mode: 深色/淺色顯示模式
-  search: 站內搜尋
-  random: 隨機訪問
-  home: 返回首頁
-  fish_pond: 友鏈魚塘
-  links: 友鏈頁面
-  about: 關於本站
-  context_menu: 原版/本站右鍵選單
-
-flink:
-  title: 友情連結
-  friend_links: 友鏈
-  latest_articles: 最新文章訂閱
-  about_me: 關於本人
-  fishing: 🎣 釣魚
-  all_links: 全部友鏈
-  random_visit: 隨機訪問
-  apply_link: 申請友鏈
-  recommend: 薦
-
-console:
-  title: 中控台
-  interaction: 互動
-  music: 音樂
-  music_desc: 靈魂的碰撞💥
-  interests: 興趣點
-  interests_desc: 尋找你感興趣的領域
-  articles: 文章
-  toggle_mode: 顯示模式切換
-  toggle_aside: 邊欄顯示控制
-  toggle_barrage: 熱評開關
-  toggle_music: 音樂開關
-  toggle_keyboard: 快捷鍵開關
-
-reward:
-  title: 讚賞作者
-  button: 打賞作者
-  thanks: 感謝你賜予我前進的力量
-  list: 讚賞者名單
-  list_desc: 因為你們的支持讓我意識到寫文章的價值🙏
-
-nav:
-  travelling: 隨機前往一個開往項目網站
-  random_post: 隨機前往一個文章
-  search: 搜尋🔍
-  toggle_menu: 切換
-
-about:
-  title: 關於我
-  hello: 你好，很高興認識你👋
-  im: 我叫
-  data: 數據
-  visit_stats: 訪問統計
-  stats_from: 統計資訊來自
-  enjoy_music_with: 跟 %s 一起欣賞更多音樂
-  more_recommend: 更多推薦
-  thanks: 致謝
-  reward_list: 讚賞名單
-  reward_thanks: 感謝因為有你們，讓我更加有創作的動力。
-  last_update: 最新更新時間：
-  charge_for_ta: 為TA充電
-  total_people: 共 %s 人
-  personality: 性格
-  personality_img_alt: 人格
-  selfie_alt: 自拍
-  learn_more_at: 在 %s 了解更多關於 %s
-  stats:
-    today_visitors: 今日人數
-    today_views: 今日訪問
-    yesterday_visitors: 昨日人數
-    yesterday_views: 昨日訪問
-    month_views: 本月訪問
-    total_views: 總訪問量
-    fetch_failed: 統計數據獲取失敗

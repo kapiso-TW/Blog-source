@@ -15,9 +15,8 @@ if home_top_config.enable
             include ../anzhiyu/tags-group-all.pug
 
           a#random-hover(href='javascript:toRandomPost()')
-            svg.rocket(xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24")
-              path(fill="none" stroke="#ffffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.801 6.49l1.486-1.486c1.673-1.673 3.862-2.367 6.18-2.48c.902-.044 1.352-.066 1.714.295c.361.362.34.812.295 1.714c-.113 2.318-.807 4.507-2.48 6.18L17.511 12.2c-1.224 1.223-1.572 1.571-1.315 2.898c.254 1.014.499 1.995-.238 2.732c-.894.895-1.71.895-2.604 0l-7.183-7.183c-.895-.894-.895-1.71 0-2.604c.737-.737 1.718-.492 2.732-.238c1.327.257 1.675-.091 2.898-1.315m5.195.51h.009M2.5 21.5l5-5m1 5l2-2m-8-4l2-2" color="currentColor")
-            .bannerText 隨機飛往一個星球
+            i.anzhiyufont.anzhiyu-icon-paper-plane
+            .bannerText 随便逛逛
               i.anzhiyufont.anzhiyu-icon-arrow-right
         .categoryGroup
           each item in home_top_config.category
@@ -51,7 +50,7 @@ if home_top_config.enable
                     - content.length > theme.index_post_content.length ? expert += ' ...' : ''
                     a.blog-slider__title(href=item.path, alt=item.title)= item.title
                     .blog-slider__text= item.description ? item.description : expert
-                    a.blog-slider__button(href=item.path, alt=item.title) 詳情   
+                    a.blog-slider__button(href=item.path, alt=item.title) 詳情  
             //- 轮播图组件
             .blog-slider__pagination.swiper-pagination-clickable.swiper-pagination-bullets
 
@@ -80,7 +79,7 @@ if home_top_config.enable
             .recent-post-item(onclick=`pjax.loadUrl("${url_for(item.path)}")`)
               .post_cover.left_radius
                 a(href=item.path, title=item.title)
-                  span.recent-post-top-text 荐
+                  span.recent-post-top-text 薦
                   img.post_bg(onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`, alt='cover',  src=item.cover)
               .recent-post-info
                 a.article-title(href=item.path, title=item.title)=item.title
@@ -92,7 +91,7 @@ if home_top_config.enable
             .banner-button-group
               .banner-button(onclick='event.stopPropagation();event.preventDefault();anzhiyu.hideTodayCard();')
                 i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                span.banner-button-text 更多推荐
+                span.banner-button-text 更多推薦
         
         link(rel="stylesheet", href=theme.home_top.banner.top_group_banner_css)
       

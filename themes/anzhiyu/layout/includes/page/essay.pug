@@ -50,9 +50,9 @@ if site.data.essay
                         i.anzhiyufont.anzhiyu-icon-clock
                         time.datatime(datetime= item.date)= datedata
                       if item.link 
-                        a.bber-content-link(title="跳轉到短文指引的網址", href=url_for(item.link), rel="external nofollow")
+                        a.bber-content-link(title="跳到短文指引的連結", href=url_for(item.link), rel="external nofollow")
                           i.anzhiyufont.anzhiyu-icon-link
-                          | 網址
+                          | 連結
                       if item.from
                         .bber-info-from
                           i.anzhiyufont.anzhiyu-icon-fw-fire
@@ -61,7 +61,7 @@ if site.data.essay
                         .bber-info-from
                           i.anzhiyufont.anzhiyu-icon-location-dot
                           span=item.address
-                    //- .bber-reply(onclick="rm.rightMenuCommentText(" + `'${item.content}'` + ")")
-                    //-   i.anzhiyufont.anzhiyu-icon-message
+                    .bber-reply(onclick="rm.rightMenuCommentText(" + `'${item.content}'` + ")")
+                      i.anzhiyufont.anzhiyu-icon-message
       #bber-tips(style='color: var(--anzhiyu-secondtext);')
         ="- 只展示最近" + i.limit + "條短文 -"

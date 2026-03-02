@@ -3,22 +3,22 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: kapiso's Blog
-subtitle: 'Bug Master'
+title: kapiso
+subtitle: 'Bug master'
 description: "Weclome to kapiso's Blog"
-keywords:
+keywords: 'kapiso, Blog, Coding, Learning, Life'
 author: kapiso
 language: zh-TW
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://kapiso-TW.github.io/
+url: https://kapiso-tw.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -98,6 +98,27 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: anzhiyu
 
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
+# Feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: /img/icon.jpg
+  autodiscovery: true
+  template:
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
@@ -115,11 +136,11 @@ envelope_comment:
     beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
     afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png # 信封后半部分
   message: #信笺正文，多行文本，写法如下
-    - 有什么想问的？
-    - 有什么想说的？
+    - 有什么想問的？
+    - 有什么想說的？
     - 有什么想吐槽的？
-    - 哪怕是有什么想吃的，都可以告诉我哦~
-  bottom: 自动书记人偶竭诚为您服务！ #仅支持单行文本
+    - 哪怕是有什么想吃的，都可以告訴我哦~
+  bottom: 自動書記人偶竭誠為您服務！ #仅支持单行文本
   height: #1024px，信封划出的高度
   path: #【可选】comments 的路径名称。默认为 comments，生成的页面为 comments/index.html
   front_matter: #【可选】comments页面的 front_matter 配置
@@ -127,3 +148,60 @@ envelope_comment:
     comments: true
     top_img: false
     type: envelope
+
+# 追番插件（已停用，改用自定義頁面）
+# https://github.com/HCLonely/hexo-bilibili-bangumi
+bangumi: # 追番设置
+  enable: false
+  source: bili
+  path:
+  vmid: 372204786
+  title: "追番列表"
+  quote: "生命不息，追番不止！"
+  show: 1
+  lazyload: false
+  loading:
+  showMyComment: false
+  pagination: false
+  metaColor:
+  color:
+  webp:
+  progress:
+  extraOrder:
+  proxy:
+    host: "代理host"
+    port: "代理端口"
+  extra_options:
+    top_img: false
+    lazyload:
+      enable: false
+
+# APlayer
+# https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
+aplayer:
+  meting: true
+  asset_inject: false
+
+swpp:
+  # 是否启用插件
+  enable: false
+  # 是否在发布前自动执行脚本
+  # auto_exec: true
+
+# 壓縮優化設定
+# 需要安裝: npm install hexo-neat --save
+# 或者: npm install hexo-all-minifier --save
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  compress:
+  exclude:
+    - '*.min.js'

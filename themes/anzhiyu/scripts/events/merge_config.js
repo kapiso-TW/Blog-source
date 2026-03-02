@@ -40,7 +40,7 @@ hexo.extend.filter.register(
       },
       error_404: {
         enable: true,
-        subtitle: "请尝试站内搜索寻找文章",
+        subtitle: "請嘗試站內搜尋尋找文章",
         background: "https://bu.dusays.com/2023/05/08/645907596997d.gif",
       },
       post_meta: {
@@ -90,7 +90,7 @@ hexo.extend.filter.register(
         enable: true,
         decode: false,
         author_href: null,
-        location: "长沙",
+        location: "台灣",
         license: "CC BY-NC-SA 4.0",
         license_url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
         avatarSinks: false,
@@ -142,12 +142,12 @@ hexo.extend.filter.register(
             {
               link: "https://hexo.io/",
               shields: "https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg",
-              message: "博客框架为Hexo_v5.4.0",
+              message: "部落格框架為 Hexo_v5.4.0",
             },
             {
               link: "https://hexo.anheyu.com/",
               shields: "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg",
-              message: "本站使用AnZhiYu主题",
+              message: "本站使用 AnZhiYu主题",
             },
           ],
         },
@@ -172,7 +172,7 @@ hexo.extend.filter.register(
           linkList: [
             {
               link: "https://github.com/anzhiyu-c/hexo-theme-anzhiyu",
-              text: "主题",
+              text: "主題",
             },
           ],
           subTitle: {
@@ -208,7 +208,7 @@ hexo.extend.filter.register(
         },
         card_announcement: {
           enable: false,
-          content: "欢迎来看我的博客鸭~",
+          content: "歡迎來看我的部落格鴨~",
         },
         card_weixin: {
           enable: true,
@@ -559,7 +559,7 @@ hexo.extend.filter.register(
       diytitle: {
         enable: true,
         leaveTitle: "w(ﾟДﾟ)w 不要走！再看看嘛！",
-        backTitle: "♪(^∇^*)欢迎肥来！",
+        backTitle: "♪(^∇^*)歡迎肥來！",
       },
       comment_barrage_config: {
         enable: false,
@@ -608,9 +608,9 @@ hexo.extend.filter.register(
       },
       linkPageTop: {
         enable: false,
-        title: "与数百名博主无限进步",
+        title: "與數百位部落客無限進步",
         addFriendPlaceholder:
-          "昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n",
+          "暱稱（請勿包含部落格等字樣）：\n網站地址（要求部落格地址，請勿提交個人主頁）：\n頭像圖片url（請提供盡可能清晰的圖片，我會上傳到我自己的圖床）：\n描述：\n網站截圖（可選）：\n",
       },
       pageThumbnailSuffix: null,
       agreementPopup: {

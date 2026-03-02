@@ -2,14 +2,14 @@
   - let album_background = page.top_background
   .author-content.author-content-item.album.single(style=`${album_background ? `background: url(${album_background}) top / cover no-repeat;` : ""}`)
     .card-content
-      .author-content-item-tips 相簿
-      span.author-content-item-title 這裡是我的相簿哦😯
+      .author-content-item-tips 相簿集
+      span.author-content-item-title 這裡是我的相簿集哦😯
       .content-bottom
-        .tips 每一張照片都是一次美好的記憶。
+        .tips 每一張照片都是美好的回憶。
       .banner-button-group
         a.banner-button(onclick='pjax.loadUrl("/about/")')
           i.anzhiyufont.anzhiyu-icon-arrow-circle-right(style='font-size: 1.5rem')
-          span.banner-button-text 關於我
+          span.banner-button-text 關於本人
   .card-album
     each i in site.data.album
       .card(onclick=`pjax.loadUrl("${i.path_name}")`)
