@@ -79,4 +79,6 @@ int main(){
 	cout << "The 1500'th ugly number is " << ugly[1499] << ".\n";
 	return 0;
 }
-```
+```  
+
+# [⬅️ 回到總覽索引](/2026/02/09/zero_judge/)
