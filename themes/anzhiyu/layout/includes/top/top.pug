@@ -16,7 +16,7 @@ if home_top_config.enable
 
           a#random-hover(href='javascript:toRandomPost()')
             i.anzhiyufont.anzhiyu-icon-paper-plane
-            .bannerText 随便逛逛
+            .bannerText 隨便逛逛
               i.anzhiyufont.anzhiyu-icon-arrow-right
         .categoryGroup
           each item in home_top_config.category
@@ -60,7 +60,7 @@ if home_top_config.enable
               .top-group-list-item
                 .post_cover.left_radius
                   a(href=item.path title=item.title)
-                    span.top-group-text 荐
+                    span.top-group-text 薦
                     img.post_bg(alt=item.title, src=item.cover, onerror=`this.src=` + error_img + `; this.onerror = null;`)
                 .top-group-info
                   a.article-title(href=item.path title=item.title)=item.title

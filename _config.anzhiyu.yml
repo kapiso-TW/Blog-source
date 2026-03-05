@@ -26,12 +26,12 @@ nav:
   travelling: false
   clock: true
   menu:
-    - title: 网页
+    - title: 網頁
       item:
-        - name: 博客
+        - name: 部落格
           link: https://hexo.anheyu.com/
           icon: /img/favicon.ico
-    - title: 项目
+    - title: 項目
       item:
         - name: 安知鱼图床
           link: https://image.anheyu.com/
