@@ -7,7 +7,6 @@ comments: true
 copyright_author: kapiso
 copyright_author_href: https://kapiso-tw.github.io/
 copyright_url: write by kapiso
-layout: page
 ---
 
 # 🟢基礎題庫 
