@@ -140,7 +140,7 @@ favicon: /img/icon.jpg
 
 # Avatar (头像)
 avatar:
-  img: /img/rem.png
+  img: /img/about/rem.png
   effect: false
 
 # Disable all banner image
@@ -1134,7 +1134,7 @@ home_top:
   banner:
     tips: Weclome
     title: kapiso's blog
-    image: /img/smile.jpg
+    image: /img/about/smile.jpg
     link: /
 
 # 朋友圈配置

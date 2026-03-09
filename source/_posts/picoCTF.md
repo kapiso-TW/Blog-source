@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup
 date: 2026-01-11
-update: 2026-03-07
+update: 2026-03-09
 tags: 資安
 categories: coding
 keywords:

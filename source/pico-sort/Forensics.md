@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - Forensics
 date: 2026-03-06
-update: 2026-03-06
+update: 2026-03-09
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -195,6 +195,44 @@ picoCTF{p33k_@_b00_a81f0a35}
 
 ---
 
+### Secret of the Polyglot
+**題目連結**: https://play.picoctf.org/practice/challenge/423
+>The Network Operations Center (NOC) of your local institution picked up a suspicious file, they're getting conflicting information on what type of file it is. They've brought you in as an external expert to examine the file. Can you extract all the information from this strange file?
+Download the suspicious file [here](https://artifacts.picoctf.net/c_titan/9/flag2of2-final.pdf).
+
+先下載檔案並使用 `file` 檢查檔案格式
+
+![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/01.png)
+
+發現為 `PNG image`，複製一份並改為 `.png` 即可獲得前半個 flag，後半個直接開啟 pdf 即可獲得
+
+![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/02.png)
+
+![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/03.png)
+
+``` TXT
+picoCTF{f1u3n7_1n_pn9_&_pdf_7f9bccd1}
+```
+
+---
+
+### CanYouSee
+**題目連結**: https://play.picoctf.org/practice/challenge/408
+>How about some hide and seek?
+Download this file [here](https://artifacts.picoctf.net/c_titan/129/unknown.zip).
+
+下載並解壓所檔案會獲得一張圖片，使用各種指令檢查後在 `head ukn_reality.jpg` 內發現疑似 base64 的文字
+
+![image](/img/picoCTF/Forensics/CanYouSee/01.png)
+
+使用 `echo "cGljb0NURntNRTc0RDQ3QV9ISUREM05fYjMyMDQwYjh9Cg==" | base64 -d` 即可獲得 flag
+
+``` TXT
+picoCTF{ME74D47A_HIDD3N_b32040b8}
+```
+
+---
+
 ## 🟠Medium
 
 ### DISKO 2
@@ -217,3 +255,5 @@ Download the disk image [here](https://artifacts.picoctf.net/c/540/disko-2.dd.gz
 ``` TXT
 picoCTF{4_P4Rt_1t_i5_a93c3ba0}
 ```
+
+# [⬅️ 回到總覽索引](/2026/01/11/picoCTF/)

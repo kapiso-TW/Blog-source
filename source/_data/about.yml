@@ -1,6 +1,6 @@
 - class_name: 關於頁面
   subtitle: 
-  avatarImg: /img/rem.png
+  avatarImg: /img/about/rem.png
   avatarSkills:
     left:
       - 什麼都不會
@@ -35,7 +35,7 @@
         color: "#cca300"
       - desc: THU,資訊工程
         color: "#357ef5"
-    img: /img/time.png
+    img: /img/about/time.png
   statistic:
     link: /archives
     text: 文章隧道
@@ -43,8 +43,8 @@
   map:
     title: 我現在住在
     StrengthenTitle: 台灣，彰化市
-    background: /img/taiwan.png
-    backgroundDark: /img/taiwan.png
+    background: /img/about/taiwan.png
+    backgroundDark: /img/about/taiwan.png
   selfInfo:
     selfInfoTips1: 生於
     selfInfoContentYear: 2007
@@ -55,7 +55,7 @@
   personalities:
     author_name: 調停者
     personality_type: INFP
-    photo_url: /img/smile.jpg
+    photo_url: /img/about/smile.jpg
     personality_img: https://www.16personalities.com/static/images/personality-types/avatars/infp-mediator-female.svg?v=3
     name_url: https://www.16personalities.com/tw/infp-%E6%80%A7%E6%A0%BC
   maxim:
@@ -77,26 +77,26 @@
     comic_list:
       - name: 膽大黨
         href: https://youtube.com/playlist?list=PL12UaAf_xzfq5SwaJ7I9QsUglCml7_HDn&si=1kWRvb5RxOxgaagV
-        cover: /img/poster/Dandadan.jpg
+        cover: /img/about/poster/Dandadan.jpg
       - name: Re:從零開始的異世界生活
         href: https://youtube.com/playlist?list=PL12UaAf_xzfrzEb8v_1R2HTbm_QZ5Omjv&si=zr-zhVpJfQmiMbqV
-        cover: /img/poster/Re_Zero.jpg
+        cover: /img/about/poster/Re_Zero.jpg
       - name: 孤獨搖滾
         href: https://ani.gamer.com.tw/animeVideo.php?sn=31599
-        cover: /img/poster/band.jpg
+        cover: /img/about/poster/band.jpg
       - name: 一拳超人
         href: https://youtube.com/playlist?list=PL12UaAf_xzfpXxM1j_aMxdEdpUXCDscCE&si=EBBgBghOu-nWjdSb
-        cover: /img/poster/one_pounch.jpg
-      - name: 獵人
-        href: https://ani.gamer.com.tw/animeVideo.php?sn=5575
-        cover: /img/poster/hunter.jpg
+        cover: /img/about/poster/one_pounch.jpg
+      - name: 葬送的芙莉蓮
+        href: https://youtube.com/playlist?list=PL12UaAf_xzfpHlIkQd-mHKo6pBQYEPDV-&si=1sWv-Ce8t0_OO9ep
+        cover: /img/about/poster/frieren.jpg
   like:
     like_tips: 關注偏好
     like_title: 科技發展
-    like_bg: /img/spaceX.jpg
+    like_bg: /img/about/spaceX.jpg
     like_bottom: 軟硬件、資安
   music:
     music_tips: 音樂偏好
     music_title: Yorushika, R&b
-    music_bg: /img/yorushika.png
+    music_bg: /img/about/yorushika.png
     music_link: https://music.apple.com/tw/playlist/life/pl.u-oZylDyZtG7NPAY2

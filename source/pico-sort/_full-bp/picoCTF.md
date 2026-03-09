@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup
 date: 2026-01-11
-update: 2026-02-11
+update: 2026-03-09
 tags: 資安
 categories: coding
 keywords:
@@ -867,6 +867,44 @@ picoCTF{p33k_@_b00_a81f0a35}
 
 ---
 
+### Secret of the Polyglot
+**題目連結**: https://play.picoctf.org/practice/challenge/423
+>The Network Operations Center (NOC) of your local institution picked up a suspicious file, they're getting conflicting information on what type of file it is. They've brought you in as an external expert to examine the file. Can you extract all the information from this strange file?
+Download the suspicious file [here](https://artifacts.picoctf.net/c_titan/9/flag2of2-final.pdf).
+
+先下載檔案並使用 `file` 檢查檔案格式
+
+![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/01.png)
+
+發現為 `PNG image`，複製一份並改為 `.png` 即可獲得前半個 flag，後半個直接開啟 pdf 即可獲得
+
+![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/02.png)
+
+![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/03.png)
+
+``` TXT
+picoCTF{f1u3n7_1n_pn9_&_pdf_7f9bccd1}
+```
+
+---
+
+### CanYouSee
+**題目連結**: https://play.picoctf.org/practice/challenge/408
+>How about some hide and seek?
+Download this file [here](https://artifacts.picoctf.net/c_titan/129/unknown.zip).
+
+下載並解壓所檔案會獲得一張圖片，使用各種指令檢查後在 `head ukn_reality.jpg` 內發現疑似 base64 的文字
+
+![image](/img/picoCTF/Forensics/CanYouSee/01.png)
+
+使用 `echo "cGljb0NURntNRTc0RDQ3QV9ISUREM05fYjMyMDQwYjh9Cg==" | base64 -d` 即可獲得 flag
+
+``` TXT
+picoCTF{ME74D47A_HIDD3N_b32040b8}
+```
+
+---
+
 ## 🟠Medium
 
 ### DISKO 2
@@ -1185,6 +1223,66 @@ picoCTF{g00d_gu355_1597707f}
 
 ---
 
+### endianness
+**題目連結**:https://play.picoctf.org/practice/challenge/414
+>Know of little and big endian?
+[Source](https://artifacts.picoctf.net/c_titan/79/flag.c)
+nc titan.picoctf.net 49874
+
+先下載檔案並觀察，查看 `main function` 後發現是一個比對字串的遊戲。
+
+``` C++
+char *find_little_endian(const char *word)
+{
+    size_t word_len = strlen(word);
+    char *little_endian = (char *)malloc((2 * word_len + 1) * sizeof(char));
+
+    for (size_t i = word_len; i-- > 0;)
+    {
+        snprintf(&little_endian[(word_len - 1 - i) * 2], 3, "%02X", (unsigned char)word[i]);
+    }
+
+    little_endian[2 * word_len] = '\0';
+    return little_endian;
+}
+```
+
+再深入查看要比對字串的函式定義後發現 `"%02X"` ，推測目標字串應該是十六進位的，且有正反兩個目標。結合其變數名稱 `Little/Big Endian` ，應該是將原指 **記憶體寫入方式** 的定義轉化為 **字串正反轉後的十六進位數值**。
+
+![image](/img/picoCTF/General_Skills/endianness/01.png)
+
+連線獲得字串後分別使用 `echo "fzcgq" | rev | xxd -p -u` 與 `echo "fzcgq" | xxd -p -u`，獲得 Little/Big Endian 後輸入即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/endianness/02.png)
+
+![image](/img/picoCTF/General_Skills/endianness/03.png)
+
+``` TXT
+picoCTF{3ndi4n_sw4p_su33ess_d58517b6}
+```
+
+---
+
+### Commitment Issues
+**題目連結**:https://play.picoctf.org/practice/challenge/411
+>I accidentally wrote the flag down. Good thing I deleted it!
+You download the challenge files here:
+[challenge.zip](https://artifacts.picoctf.net/c_titan/138/challenge.zip)
+
+先下載並解壓縮進入資料夾探索
+
+![image](/img/picoCTF/General_Skills/Commitment_Issues/01.png)
+
+解壓縮時發現有 `.git` 資料夾，題目應該和其有關，根據提示使用 `git log` 檢查 commit，發現 commit b562f... 有 creat flag ，使用 `git checkout b562f0b425907789d11d2fe2793e67592dc6be93` 將版本切換至其即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/Commitment_Issues/02.png)
+
+``` TXT
+picoCTF{s@n1t1z3_c785c319}
+```
+
+---
+
 # Binary Exploitation
 **題目類別連結**: https://play.picoctf.org/practice?category=6
 
@@ -1224,9 +1322,10 @@ picoCTF{b4s1c_p051t10n_1nd3p3nd3nc3_0392ebba}
 
 # 參考資料(網站)
 >https://www.dcode.fr/en
->https://www.base64decode.org/
->https://gemini.google.com/app
->https://10015.io/
->https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#HeroSection
+https://www.base64decode.org/
+https://gemini.google.com/app
+https://10015.io/
+https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#HeroSection
+https://mangonote.blogspot.com/2025/08/c-little-endian-big-endian.html
 
 # 發現本網站資料有任何錯誤之處，歡迎提供您的意見

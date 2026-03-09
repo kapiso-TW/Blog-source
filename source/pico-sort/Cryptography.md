@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - Cryptography
 date: 2026-03-06
-update: 2026-03-06
+update: 2026-03-09
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -93,3 +93,5 @@ picoCTF{caesar_d3cr9pt3d_890d2379}
 ``` txt
 picoCTF{next_time_I'll_try_2_rounds_of_rot13_45559abd}
 ```
+
+# [⬅️ 回到總覽索引](/2026/01/11/picoCTF/)
