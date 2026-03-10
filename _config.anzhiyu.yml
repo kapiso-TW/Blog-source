@@ -578,7 +578,7 @@ footer:
 
   footerBar:
     enable: true
-    authorLink: /
+    authorLink: /about/
     cc:
       enable: true
       link: /copyright/
@@ -848,7 +848,7 @@ preloader:
   source: 1
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: img/rem.png
+  avatar: img/about/rem.png
 
 # aside (侧边栏)
 # --------------------------------------
