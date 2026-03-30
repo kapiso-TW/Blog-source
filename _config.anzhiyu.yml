@@ -1109,7 +1109,7 @@ home_top:
   timemode: date #date/updated
   title: 不忘初衷
   subTitle: 無限進步
-  siteText: anheyu.com
+  siteText: kapiso-tw.github.io
   category:
     - name: 程式開發
       path: /categories/coding/
