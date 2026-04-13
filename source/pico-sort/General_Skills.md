@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - General Skills
 date: 2026-03-06
-update: 2026-03-09
+update: 2026-04-14
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -358,6 +358,66 @@ You download the challenge files here:
 
 ``` TXT
 picoCTF{s@n1t1z3_c785c319}
+```
+
+---
+
+### Undo
+**題目連結**:https://play.picoctf.org/practice/challenge/766
+>Can you reverse a series of Linux text transformations to recover the original flag?
+Start searching for the flag here nc foggy-cliff.picoctf.net 51531
+
+直接連線可以看到題目，要求輸入對應的指令。
+
+![image](/img/picoCTF/General_Skills/Undo/01.png)
+
+第一題是Base64 encoded string，使用指令 `base64 -d` 即可進入下一題
+
+![image](/img/picoCTF/General_Skills/Undo/02.png)
+
+第二題是Reversed text，使用指令 `rev` 即可進入下一題
+
+![image](/img/picoCTF/General_Skills/Undo/03.png)
+
+第三題是要用 _ 替代 -，使用指令 `tr '-' '_'` 即可進入下一題
+
+![image](/img/picoCTF/General_Skills/Undo/04.png)
+
+第四題是要用 {} 替換 ()，使用指令 `tr '()' '{}'` 即可進入下一題
+
+![image](/img/picoCTF/General_Skills/Undo/05.png)
+
+第五題要用 ROT13 進行轉換，使指令 `tr 'A-Za-z' 'N-ZA-Mn-za-m'` 即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/Undo/06.png)
+
+```TXT
+picoCTF{Revers1ng_t3xt_Tr4nsf0rm@t10ns_3a939318}
+```
+
+---
+
+### MY GIT
+>I have built my own Git server with my own rules!
+You can clone the challenge repo using the command below.
+git clone ssh://git@foggy-cliff.picoctf.net:60852/git/challenge.git
+Here's the password: 550851c0
+Check the README to get your flag!
+
+根據題目將檔案下載並查看 README
+
+![image](/img/picoCTF/General_Skills/MY_GIT/01.png)
+
+只有當 flag.txt 被 root:root@picoctf 上傳時才能獲取 flag，先透過`echo flag > flag.txt`創建檔案，並將名字與郵件設成題目所需
+
+![image](/img/picoCTF/General_Skills/MY_GIT/02.png)
+
+完成後 push 即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/MY_GIT/03.png)
+
+```TXT
+picoCTF{1mp3rs0n4t4_g17_345y_506743df}
 ```
 
 # [⬅️ 回到總覽索引](/2026/01/11/picoCTF/)

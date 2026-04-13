@@ -54,5 +54,6 @@ https://www.base64decode.org/
 https://gemini.google.com/app
 https://10015.io/
 https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#HeroSection
+https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed
 
 # 發現本網站資料有任何錯誤之處，歡迎提供您的意見

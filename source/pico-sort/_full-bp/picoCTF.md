@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup
 date: 2026-01-11
-update: 2026-03-09
+update: 2026-04-14
 tags: 資安
 categories: coding
 keywords:
@@ -535,6 +535,35 @@ round 5 過濾 `or and = like > < -- union admin`，繼續使用 `ad'||'min'/*` 
 
 ``` TXT
 picoCTF{y0u_m4d3_1t_79a0ddc6}
+```
+
+---
+
+### Old Sessions
+**題目連結**: https://play.picoctf.org/practice/challenge/739
+>Proper session timeout controls are critical for securing user accounts. If a user logs in on a public or shared computer but doesn’t explicitly log out (instead simply closing the browser tab), and session expiration dates are misconfigured, the session may remain active indefinitely.
+This then allows an attacker using the same browser later to access the user’s account without needing credentials, exploiting the fact that sessions never expire and remain authenticated.
+Your friend tells you to check out a new social media platform he built a few years ago. Although its still under development, he said the site is almost complete. He also mentioned that he hates constantly logging into sites, and so has made his page that 'once you login, you never have to log-out again'!
+Browse [here](http://dolphin-cove.picoctf.net:54958/), and find the flag!
+
+連線後發現是一個登入網站，有個Register，點擊後可以創建帳號
+
+![image](/img/picoCTF/Web_Exploitation/Old_Sessions/01.png)
+
+隨便打然後去登入就可以進入網站，發現有人提到他找到了奇怪的頁面，跳轉過去看看
+
+![image](/img/picoCTF/Web_Exploitation/Old_Sessions/02.png)
+
+![image](/img/picoCTF/Web_Exploitation/Old_Sessions/03.png)
+
+發現有 admin 的 session，在 cookie 中發現有 session 可以更改，將自己的改為 admin 的並返回主頁即可獲得 flag
+
+![image](/img/picoCTF/Web_Exploitation/Old_Sessions/04.png)
+
+![image](/img/picoCTF/Web_Exploitation/Old_Sessions/05.png)
+
+```TXT
+picoCTF{s3t_s3ss10n_3xp1rat10n5_77b6684a}
 ```
 
 ---
@@ -1283,6 +1312,66 @@ picoCTF{s@n1t1z3_c785c319}
 
 ---
 
+### Undo
+**題目連結**:https://play.picoctf.org/practice/challenge/766
+>Can you reverse a series of Linux text transformations to recover the original flag?
+Start searching for the flag here nc foggy-cliff.picoctf.net 51531
+
+直接連線可以看到題目，要求輸入對應的指令。
+
+![image](/img/picoCTF/General_Skills/Undo/01.png)
+
+第一題是Base64 encoded string，使用指令 `base64 -d` 即可進入下一題
+
+![image](/img/picoCTF/General_Skills/Undo/02.png)
+
+第二題是Reversed text，使用指令 `rev` 即可進入下一題
+
+![image](/img/picoCTF/General_Skills/Undo/03.png)
+
+第三題是要用 _ 替代 -，使用指令 `tr '-' '_'` 即可進入下一題
+
+![image](/img/picoCTF/General_Skills/Undo/04.png)
+
+第四題是要用 {} 替換 ()，使用指令 `tr '()' '{}'` 即可進入下一題
+
+![image](/img/picoCTF/General_Skills/Undo/05.png)
+
+第五題要用 ROT13 進行轉換，使指令 `tr 'A-Za-z' 'N-ZA-Mn-za-m'` 即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/Undo/06.png)
+
+```TXT
+picoCTF{Revers1ng_t3xt_Tr4nsf0rm@t10ns_3a939318}
+```
+
+---
+
+### MY GIT
+>I have built my own Git server with my own rules!
+You can clone the challenge repo using the command below.
+git clone ssh://git@foggy-cliff.picoctf.net:60852/git/challenge.git
+Here's the password: 550851c0
+Check the README to get your flag!
+
+根據題目將檔案下載並查看 README
+
+![image](/img/picoCTF/General_Skills/MY_GIT/01.png)
+
+只有當 flag.txt 被 root:root@picoctf 上傳時才能獲取 flag，先透過`echo flag > flag.txt`創建檔案，並將名字與郵件設成題目所需
+
+![image](/img/picoCTF/General_Skills/MY_GIT/02.png)
+
+完成後 push 即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/MY_GIT/03.png)
+
+```TXT
+picoCTF{1mp3rs0n4t4_g17_345y_506743df}
+```
+
+---
+
 # Binary Exploitation
 **題目類別連結**: https://play.picoctf.org/practice?category=6
 
@@ -1327,5 +1416,6 @@ https://gemini.google.com/app
 https://10015.io/
 https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#HeroSection
 https://mangonote.blogspot.com/2025/08/c-little-endian-big-endian.html
+https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed
 
 # 發現本網站資料有任何錯誤之處，歡迎提供您的意見
