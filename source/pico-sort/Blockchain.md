@@ -1,7 +1,7 @@
 ---
-title: picoCTF writeup - Binary Exploitation
+title: picoCTF writeup - Blockchain
 date: 2026-03-06
-update: 2026-03-09
+update: 2026-04-25
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso

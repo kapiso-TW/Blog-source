@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - General Skills
 date: 2026-03-06
-update: 2026-04-14
+update: 2026-04-25
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -418,6 +418,24 @@ Check the README to get your flag!
 
 ```TXT
 picoCTF{1mp3rs0n4t4_g17_345y_506743df}
+```
+
+---
+
+## ping-cmd
+>Can you make the server reveal its secrets? It seems to be able to ping Google DNS, but what happens if you get a little creative with your input?
+You can connect to the service here nc mysterious-sea.picoctf.net 51563
+
+根據題目連線後發現可以自行輸入 IP 做使用，結合提示說可以執行多項指令，輸入 `8.8.8.8 | ls` 看看有什麼
+
+![image](/img/picoCTF/General_Skills/ping-cmd/01.png)
+
+發現有 flag.txt，改成 `cat flag.txt` 即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/ping-cmd/02.png)
+
+```TXT
+picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_b75fc848}
 ```
 
 # [⬅️ 回到總覽索引](/2026/01/11/picoCTF/)

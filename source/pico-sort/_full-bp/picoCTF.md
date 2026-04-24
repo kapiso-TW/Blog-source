@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup
 date: 2026-01-11
-update: 2026-04-14
+update: 2026-04-25
 tags: 資安
 categories: coding
 keywords:
@@ -355,6 +355,70 @@ picoCTF{th4ts_4_l0t_0f_pl4c3s_2_lO0k_9588550}
 
 ---
 
+## logon
+>The factory is hiding things from all of its users.
+Can you login as Joe and find what they've been looking at? http://fickle-tempest.picoctf.net:60547
+
+進入網站後發現是一個簡單的等入網頁，嘗試幾次後發現其實什麼都不打也可以登入，且 cookie 內有一個 admin 的值為 `False`，改為 `True` 後重新載入頁面即可獲得 flag
+
+![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/01.png)
+
+```TXT
+picoCTF{th3_c0nsp1r4cy_l1v3s_4d184b0d}
+```
+
+---
+
+## dont-use-client-side
+>Can you break into this super secure portal?
+http://fickle-tempest.picoctf.net:57428
+
+連線後在原始碼的 script 內可以看到被拆開的 flag，照順序組回去即可獲得 flag
+
+![image](/img/picoCTF/Web_Exploitation/dont-use-client-side/01.png)
+
+```TXT
+picoCTF{no_clients_plz_2eb02b45}
+```
+
+---
+
+## where are the robots
+>Can you find the robots?
+http://fickle-tempest.picoctf.net:52269
+
+題目提到 robots，直接查看 robots.txt
+
+![image](/img/picoCTF/Web_Exploitation/where_are_the_robots/01.png)
+
+看到 `disallow: /cc6b1.html` 前往察看即可獲得 flag
+
+![image](/img/picoCTF/Web_Exploitation/where_are_the_robots/02.png)
+
+```TXT
+picoCTF{ca1cu1at1ng_Mach1n3s_cc6b1}
+```
+
+---
+
+## Insp3ct0r
+>Kishor Balan tipped us off that the following code may need inspection:
+http://fickle-tempest.picoctf.net:50602
+
+連線後可以分別在 html, css, js 找到 flag 的一部份，組起來即可
+
+![image](/img/picoCTF/Web_Exploitation/Insp3ct0r/01.png)
+
+![image](/img/picoCTF/Web_Exploitation/Insp3ct0r/02.png)
+
+![image](/img/picoCTF/Web_Exploitation/Insp3ct0r/03.png)
+
+```TXT
+picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?302945a7}
+```
+
+---
+
 ## 🟠Medium
 
 ### MatchTheRegex
@@ -564,6 +628,28 @@ Browse [here](http://dolphin-cove.picoctf.net:54958/), and find the flag!
 
 ```TXT
 picoCTF{s3t_s3ss10n_3xp1rat10n5_77b6684a}
+```
+
+---
+
+## Hashgate
+>You have gotten access to an organisation's portal. Submit your email and password, and it redirects you to your profile. But be careful: just because access to the admin isn’t directly exposed doesn’t mean it’s secure. Maybe someone forgot that obscurity isn’t security... Can you find your way into the admin’s profile for this organisation and capture the flag?
+The website is running [here](http://crystal-peak.picoctf.net:51259/).
+
+連線後發現是登入網站，可以在 html 內找到 guest 的帳號密碼，嘗試登入看看
+
+![image](/img/picoCTF/Web_Exploitation/Hashgate/01.png)
+
+![image](/img/picoCTF/Web_Exploitation/Hashgate/02.png)
+
+觀察登入後的頁面，發現網址有一串加密文字，嘗試後發現是 MD5，結合提示所述，公司有 20 人製作 playload 並執行即可獲得 flag
+
+![image](/img/picoCTF/Web_Exploitation/Hashgate/03.png)
+
+![image](/img/picoCTF/Web_Exploitation/Hashgate/04.png)
+
+```TXT
+picoCTF{id0r_unl0ck_8b02a9fd}
 ```
 
 ---
@@ -1372,6 +1458,24 @@ picoCTF{1mp3rs0n4t4_g17_345y_506743df}
 
 ---
 
+## ping-cmd
+>Can you make the server reveal its secrets? It seems to be able to ping Google DNS, but what happens if you get a little creative with your input?
+You can connect to the service here nc mysterious-sea.picoctf.net 51563
+
+根據題目連線後發現可以自行輸入 IP 做使用，結合提示說可以執行多項指令，輸入 `8.8.8.8 | ls` 看看有什麼
+
+![image](/img/picoCTF/General_Skills/ping-cmd/01.png)
+
+發現有 flag.txt，改成 `cat flag.txt` 即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/ping-cmd/02.png)
+
+```TXT
+picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_b75fc848}
+```
+
+---
+
 # Binary Exploitation
 **題目類別連結**: https://play.picoctf.org/practice?category=6
 
@@ -1417,5 +1521,6 @@ https://10015.io/
 https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#HeroSection
 https://mangonote.blogspot.com/2025/08/c-little-endian-big-endian.html
 https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed
+https://geek-docs.com/python/python-ask-answer/148_hk_1707485569.html
 
 # 發現本網站資料有任何錯誤之處，歡迎提供您的意見

@@ -1135,7 +1135,7 @@ home_top:
     tips: Weclome
     title: kapiso's blog
     image: /img/about/smile.jpg
-    link: /
+    link: /about/
 
 # 朋友圈配置
 friends_vue:
