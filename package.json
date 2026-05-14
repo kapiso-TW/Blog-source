@@ -36,5 +36,8 @@
     "pwa-asset-generator": "^8.1.2",
     "strip-ansi": "7.1.2",
     "swpp-backends": "^3.0.0-alpha.908"
+  },
+  "devDependencies": {
+    "shadcn": "^4.7.0"
   }
 }
