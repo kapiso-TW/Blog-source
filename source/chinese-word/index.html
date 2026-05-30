@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Word Cloud - Real-time Interactive Word Cloud</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- PeerJS for WebRTC -->
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <!-- QRCode.js for generating join links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- html2canvas for downloading the word cloud as PNG -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Background glow meshes -->
+    <div class="ambient-glow bg-orb-1"></div>
+    <div class="ambient-glow bg-orb-2"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- MAIN APP WRAPPER -->
+    <main id="app-container">
+
+        <!-- 1. LANDING VIEW -->
+        <section id="landing-view" class="view-panel active">
+            <div class="landing-card glass">
+                <div class="brand">
+                    <div class="brand-icon">
+                        <i data-lucide="cloud"></i>
+                    </div>
+                    <h1>LiveCloud</h1>
+                    <p>Create interactive word clouds with your audience in real time.</p>
+                </div>
+
+                <div class="landing-actions">
+                    <button id="btn-create-session" class="btn primary-btn">
+                        <i data-lucide="plus-circle"></i> Create a Session
+                    </button>
+
+                    <div class="divider">
+                        <span>or join existing</span>
+                    </div>
+
+                    <div class="join-form">
+                        <div class="input-wrapper">
+                            <i data-lucide="hash"></i>
+                            <input type="text" id="join-code-input" placeholder="Enter 6-digit Code" maxlength="6" autocomplete="off">
+                        </div>
+                        <button id="btn-join-session" class="btn secondary-btn">Join</button>
+                    </div>
+                    <p id="landing-error" class="error-message"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PRESENTER VIEW -->
+        <section id="presenter-view" class="view-panel">
+            <!-- Sidebar / Control drawer -->
+            <aside id="presenter-sidebar" class="glass">
+                <div class="sidebar-header">
+                    <h2>Settings</h2>
+                    <button id="btn-close-sidebar" class="icon-btn"><i data-lucide="x"></i></button>
+                </div>
+                <div class="sidebar-content">
+                    <div class="setting-group">
+                        <label>Color Theme</label>
+                        <div class="theme-selector">
+                            <button class="theme-option active" data-theme="sunset" style="background: linear-gradient(135deg, #ff7e5f, #feb47b);"></button>
+                            <button class="theme-option" data-theme="neon" style="background: linear-gradient(135deg, #00f2fe, #4facfe);"></button>
+                            <button class="theme-option" data-theme="cyber" style="background: linear-gradient(135deg, #f857a6, #ff5858);"></button>
+                            <button class="theme-option" data-theme="emerald" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></button>
+                            <button class="theme-option" data-theme="mono" style="background: linear-gradient(135deg, #e0e0e0, #424242);"></button>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <label for="input-max-words">Max Words Displayed</label>
+                        <input type="number" id="input-max-words" min="10" max="200" value="80">
+                    </div>
+
+                    <div class="setting-group">
+                        <label for="input-limit-per-user">Max Words Per User</label>
+                        <input type="number" id="input-limit-per-user" min="1" max="20" value="5">
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Physics Settings</label>
+                        <div class="range-wrapper">
+                            <span>Gravity:</span>
+                            <input type="range" id="range-gravity" min="0.005" max="0.1" step="0.005" value="0.03">
+                        </div>
+                        <div class="range-wrapper">
+                            <span>Repulsion:</span>
+                            <input type="range" id="range-repulsion" min="0.5" max="3" step="0.1" value="1.2">
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <button id="btn-export-png" class="btn block-btn secondary-btn">
+                            <i data-lucide="download"></i> Download Cloud Image
+                        </button>
+                    </div>
+
+                    <div class="setting-group">
+                        <button id="btn-clear-cloud" class="btn block-btn danger-btn">
+                            <i data-lucide="trash-2"></i> Reset Word Cloud
+                        </button>
+                    </div>
+
+                    <div class="setting-group test-panel">
+                        <label>Simulate Submissions</label>
+                        <div class="join-form">
+                            <input type="text" id="sim-input" placeholder="Type a word" class="glass-input">
+                            <button id="btn-sim-submit" class="btn primary-btn small-btn">Add</button>
+                        </div>
+                        <button id="btn-sim-autopilot" class="btn block-btn secondary-btn mt-2">
+                            <i data-lucide="play"></i> Start Autopilot Test
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main presentation board -->
+            <div class="presenter-workspace">
+                <!-- Top controls / display bar -->
+                <header class="presenter-header glass">
+                    <div class="session-brand">
+                        <button id="btn-leave-presenter" class="icon-btn tooltip" data-tooltip="Leave Session">
+                            <i data-lucide="arrow-left"></i>
+                        </button>
+                        <span class="logo-text">LiveCloud</span>
+                    </div>
+
+                    <div class="join-info-bar">
+                        <div class="join-step">
+                            <span class="step-num">1</span>
+                            <span class="step-desc">Scan QR or Go to URL</span>
+                        </div>
+                        <div class="join-step clickable" id="btn-toggle-qr-modal">
+                            <span class="step-num">2</span>
+                            <span class="step-desc code-badge" id="display-room-code">Generating...</span>
+                        </div>
+                    </div>
+
+                    <div class="session-states">
+                        <div class="state-indicator tooltip" data-tooltip="Connections" id="connections-count">
+                            <i data-lucide="users"></i> <span>0</span>
+                        </div>
+                        <div class="state-indicator tooltip" data-tooltip="Total Submissions" id="submissions-count">
+                            <i data-lucide="message-square"></i> <span>0</span>
+                        </div>
+                        <button id="btn-toggle-pause" class="icon-btn tooltip" data-tooltip="Pause/Resume Submissions">
+                            <i data-lucide="pause" id="pause-icon"></i>
+                        </button>
+                        <button id="btn-open-sidebar" class="icon-btn tooltip" data-tooltip="Settings">
+                            <i data-lucide="settings"></i>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Word cloud visualization area -->
+                <div id="cloud-container">
+                    <div id="cloud-canvas-target">
+                        <!-- Dynamic absolute divs placed here by physics engine -->
+                    </div>
+                </div>
+
+                <!-- Feed ticker of recent words at bottom -->
+                <div class="ticker-wrapper glass">
+                    <div class="ticker-label">Incoming:</div>
+                    <div class="ticker-content" id="ticker-feed">
+                        <span class="ticker-placeholder">Waiting for submissions...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Join Modal -->
+            <div id="qr-modal" class="modal-overlay">
+                <div class="modal-content glass">
+                    <button id="btn-close-qr-modal" class="modal-close"><i data-lucide="x"></i></button>
+                    <h3>Join this session</h3>
+                    <p>Scan the code with your phone or visit the link to type words.</p>
+                    <div id="qr-code-container"></div>
+                    <div class="modal-url">
+                        <input type="text" id="modal-url-input" readonly>
+                        <button id="btn-copy-url" class="icon-btn" data-tooltip="Copy URL"><i data-lucide="copy"></i></button>
+                    </div>
+                    <div class="room-code-large">
+                        Code: <span id="display-room-code-modal">------</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. AUDIENCE VIEW -->
+        <section id="audience-view" class="view-panel">
+            <header class="audience-header glass">
+                <button id="btn-leave-audience" class="icon-btn"><i data-lucide="log-out"></i></button>
+                <div class="audience-title">
+                    <h2>LiveCloud Session</h2>
+                    <p>Room: <span id="audience-room-code">------</span></p>
+                </div>
+                <div class="connection-status" id="audience-status">
+                    <span class="status-dot yellow"></span>
+                    <span class="status-text">Connecting</span>
+                </div>
+            </header>
+
+            <div class="audience-content">
+                <div class="audience-card glass">
+                    <div class="card-brand">
+                        <i data-lucide="message-square"></i>
+                        <h3>Submit Your Word</h3>
+                        <p>What word comes to mind? Enter it below.</p>
+                    </div>
+
+                    <div class="submit-form">
+                        <div class="word-input-container">
+                            <input type="text" id="word-input" maxlength="25" placeholder="Type a word..." autocomplete="off">
+                            <span id="char-counter">0/25</span>
+                        </div>
+
+                        <button id="btn-submit-word" class="btn primary-btn block-btn" disabled>
+                            <span>Send to Cloud</span>
+                        </button>
+                        <p id="submission-feedback" class="feedback-message"></p>
+                    </div>
+
+                    <div class="submission-limit-info">
+                        <span id="words-remaining-text">Submissions: 0 / 5</span>
+                        <div class="limit-bar">
+                            <div class="limit-bar-fill" id="limit-bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-submissions glass">
+                    <h4>Your Submissions</h4>
+                    <ul id="my-words-list">
+                        <li class="empty-list-placeholder">No words submitted yet.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
