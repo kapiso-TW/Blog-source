@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup
 date: 2026-01-11
-update: 2026-04-25
+update: 2026-06-17
 tags: 資安
 categories: coding
 keywords:
@@ -32,12 +32,12 @@ background:
 ---
 
 # Web Exploitation
-**題目類別連結**: https://play.picoctf.org/practice?category=1
+**題目類別連結**: https://learn.cylabacademy.org/library?category=1&page=1
 
 ## 🟢Easy
 
 ### Crack the Gate 1
-**題目連結**: https://play.picoctf.org/practice/challenge/520
+**題目連結**: https://learn.cylabacademy.org/library/520
 
 > We’re in the middle of an investigation. One of our persons of interest, ctf player, is believed to be hiding sensitive data inside a restricted web portal. We’ve uncovered the email address he uses to log in: ctf-player@picoctf.org. Unfortunately, we don’t know the password, and the usual guessing techniques haven’t worked. But something feels off... it’s almost like the developer left a secret way in. Can you figure it out?
 The website is running [here](http://amiable-citadel.picoctf.net:51437/). Can you try to log in?
@@ -69,7 +69,7 @@ picoCTF{brut4_f0rc4_49d1d186}
 ---
 
 ### head-dump
-**題目連結**: https://play.picoctf.org/practice/challenge/476
+**題目連結**: https://learn.cylabacademy.org/library/476
 >Welcome to the challenge! In this challenge, you will explore a web application and find an endpoint that exposes a file containing a hidden flag.
 The application is a simple blog website where you can read articles about various topics, including an article about API Documentation. Your goal is to explore the application and find the endpoint that generates files holding the server’s memory, where a secret flag is hidden.
 The website is running [picoCTF News](http://verbal-sleep.picoctf.net:51371/).
@@ -91,7 +91,7 @@ picoCTF{Pat!3nt_15_Th3_K3y_871ffa9a}
 ---
 
 ### Unminify
-**題目連結**: https://play.picoctf.org/practice/challenge/426
+**題目連結**: https://learn.cylabacademy.org/library/426
 
 >I don't like scrolling down to read the code of my website, so I've squished it. As a bonus, my pages load faster!
 Browse [here](http://titan.picoctf.net:55350/), and find the flag!
@@ -107,7 +107,7 @@ picoCTF{pr3tty_c0d3_743d0f9b}
 ---
 
 ### IntroToBurp
-**題目連結**: https://play.picoctf.org/practice/challenge/419
+**題目連結**: https://learn.cylabacademy.org/library/419
 
 >Try [here](http://titan.picoctf.net:55297/) to find the flag
 
@@ -132,7 +132,7 @@ picoCTF{#0TP_Bypvss_SuCc3$S_2e80f1fd}
 ---
 
 ### Includes
-**題目連結**: https://play.picoctf.org/practice/challenge/274
+**題目連結**: https://learn.cylabacademy.org/library/274
 
 >Can you get the flag?
 Go to this [website](http://saturn.picoctf.net:51364/) and see what you can discover.
@@ -151,7 +151,7 @@ picoCTF{1nclu51v17y_1of2_f7w_2of2_b8f4b022}
 ---
 
 ### Local Authority
-**題目連結**: https://play.picoctf.org/practice/challenge/278
+**題目連結**: https://learn.cylabacademy.org/library/278
 
 >Can you get the flag?
 Go to this [website](http://saturn.picoctf.net:54847/) and see what you can discover.
@@ -173,7 +173,7 @@ picoCTF{j5_15_7r4n5p4r3n7_a8788e61}
 ---
 
 ### Inspect HTML
-**題目連結**: https://play.picoctf.org/practice/challenge/275
+**題目連結**: https://learn.cylabacademy.org/library/275
 
 >Can you get the flag?
 Go to this [website](http://saturn.picoctf.net:63132/) and see what you can discover.
@@ -189,7 +189,7 @@ picoCTF{1n5p3t0r_0f_h7ml_1fd8425b}
 ---
 
 ### Cookie Monster Secret Recipe
-**題目連結**: https://play.picoctf.org/practice/challenge/469?page=2
+**題目連結**: https://learn.cylabacademy.org/library/469?page=2
 
 >Cookie Monster has hidden his top-secret cookie recipe somewhere on his website. As an aspiring cookie detective, your mission is to uncover this delectable secret. Can you outsmart Cookie Monster and find the hidden recipe?
 You can access the Cookie Monster [here](http://verbal-sleep.picoctf.net:56097/) and good luck
@@ -217,7 +217,7 @@ picoCTF{c00k1e_m0nster_l0ves_c00kies_C430AE20}
 ---
 
 ### WebDecode
-**題目連結**: https://play.picoctf.org/practice/challenge/427
+**題目連結**: https://learn.cylabacademy.org/library/427
 
 >Do you know how to use the web inspector?
 Start searching [here](http://titan.picoctf.net:63456/) to find the flag
@@ -243,7 +243,7 @@ picoCTF{web_succ3ssfully_d3c0ded_02cdcb59}
 ---
 
 ### Bookmarklet
-**題目連結**: https://play.picoctf.org/practice/challenge/406
+**題目連結**: https://learn.cylabacademy.org/library/406
 
 >Why search for the flag when I can make a bookmarklet to print it for me?
 Browse [here](http://titan.picoctf.net:58038/), and find the flag!
@@ -278,7 +278,7 @@ picoCTF{p@g3_turn3r_1d1ba7e0}
 ---
 
 ### Cookies
-**題目連結**: https://play.picoctf.org/practice/challenge/173?page=5
+**題目連結**: https://learn.cylabacademy.org/library/173?page=5
 
 >Who doesn't love cookies? Try to figure out the best one.
 http://wily-courier.picoctf.net:64779/
@@ -314,7 +314,7 @@ picoCTF{3v3ry1_l0v3s_c00k135_a4dadb49}
 ---
 
 ### Scavenger Hunt
-**題目連結**: https://play.picoctf.org/practice/challenge/161
+**題目連結**: https://learn.cylabacademy.org/library/161
 
 >There is some interesting information hidden around this site. Can you find it?
 http://wily-courier.picoctf.net:53152/
@@ -422,7 +422,7 @@ picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?302945a7}
 ## 🟠Medium
 
 ### MatchTheRegex
-**題目連結**: https://play.picoctf.org/practice/challenge/356
+**題目連結**: https://learn.cylabacademy.org/library/356
 
 >How about trying to match a regular expression
 The website is running [here](http://saturn.picoctf.net:65046/).
@@ -442,7 +442,7 @@ picoCTF{succ3ssfully_matchtheregex_f89ea585}
 ---
 
 ### Search source
-**題目連結**: https://play.picoctf.org/practice/challenge/295
+**題目連結**: https://learn.cylabacademy.org/library/295
 
 >The developer of this website mistakenly left an important artifact in the website source, can you find it?
 The website is [here](http://saturn.picoctf.net:56826/)
@@ -462,7 +462,7 @@ picoCTF{1nsp3ti0n_0f_w3bpag3s_8de925a7}
 ---
 
 ### Roboto Sans
-**題目連結**: https://play.picoctf.org/practice/challenge/291
+**題目連結**: https://learn.cylabacademy.org/library/291
 
 >The flag is somewhere on this web application not necessarily on the website. Find it.
 Check [this](http://saturn.picoctf.net:57473/) out.
@@ -484,7 +484,7 @@ picoCTF{Who_D03sN7_L1k5_90B0T5_718c9043}
 ---
 
 ### Forbidden Paths
-**題目連結**: https://play.picoctf.org/practice/challenge/270
+**題目連結**: https://learn.cylabacademy.org/library/270
 
 >Can you get the flag?
 We know that the website files live in /usr/share/nginx/html/ and the flag is at /flag.txt but the website is filtering absolute file paths. Can you get past the filter to read the flag?
@@ -503,7 +503,7 @@ picoCTF{7h3_p47h_70_5ucc355_e5a6fcbc}
 ---
 
 ### caas
-**題目連結**: https://play.picoctf.org/practice/challenge/202
+**題目連結**: https://learn.cylabacademy.org/library/202
 
 >Now presenting [cowsay as a service](https://caas.mars.picoctf.net/)
 Challenge Endpoints
@@ -532,7 +532,7 @@ picoCTF{moooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo0o}
 ---
 
 ### findme
-**題目連結**: https://play.picoctf.org/practice/challenge/349
+**題目連結**: https://learn.cylabacademy.org/library/349
 >Help us test the form by submiting the username as test and password as test!
 The website running [here](http://saturn.picoctf.net:59765/).
 
@@ -553,7 +553,7 @@ picoCTF{proxies_all_the_way_01e748db}
 ---
 
 ### Web Gauntlet
-**題目連結**: https://play.picoctf.org/practice/challenge/88
+**題目連結**: https://learn.cylabacademy.org/library/88
 >Can you beat the filters?
 Log in as admin http://shape-facility.picoctf.net:51151/ http://shape-facility.picoctf.net:51151/filter.php
 
@@ -604,7 +604,7 @@ picoCTF{y0u_m4d3_1t_79a0ddc6}
 ---
 
 ### Old Sessions
-**題目連結**: https://play.picoctf.org/practice/challenge/739
+**題目連結**: https://learn.cylabacademy.org/library/739
 >Proper session timeout controls are critical for securing user accounts. If a user logs in on a public or shared computer but doesn’t explicitly log out (instead simply closing the browser tab), and session expiration dates are misconfigured, the session may remain active indefinitely.
 This then allows an attacker using the same browser later to access the user’s account without needing credentials, exploiting the fact that sessions never expire and remain authenticated.
 Your friend tells you to check out a new social media platform he built a few years ago. Although its still under development, he said the site is almost complete. He also mentioned that he hates constantly logging into sites, and so has made his page that 'once you login, you never have to log-out again'!
@@ -655,12 +655,12 @@ picoCTF{id0r_unl0ck_8b02a9fd}
 ---
 
 # Cryptography
-**題目類別連結**: https://play.picoctf.org/practice?category=2
+**題目類別連結**: https://learn.cylabacademy.org/library?category=2&page=1
 
 ## 🟢Easy
 
 ### hashcrack
-**題目連結**: https://play.picoctf.org/practice/challenge/475
+**題目連結**: https://learn.cylabacademy.org/library/475
 
 >A company stored a secret message on a server which got breached due to the admin using weakly hashed passwords. Can you gain access to the secret stored within the server?
 Access the server using nc verbal-sleep.picoctf.net 57421
@@ -696,7 +696,7 @@ picoCTF{UseStr0nG_h@shEs_&PaSswDs!_4c95d69f}
 ---
 
 ### interencdec
-**題目連結**: https://play.picoctf.org/practice/challenge/418
+**題目連結**: https://learn.cylabacademy.org/library/418
 
 >Can you get the real meaning from this file.
 Download the file [here](https://artifacts.picoctf.net/c_titan/111/enc_flag).
@@ -726,7 +726,7 @@ picoCTF{caesar_d3cr9pt3d_890d2379}
 ---
 
 ### Mod 26
-**題目連結**: https://play.picoctf.org/practice/challenge/144
+**題目連結**: https://learn.cylabacademy.org/library/144
 
 >Cryptography can be easy, do you know what ROT13 is?
 [values.txt](https://challenge-files.picoctf.net/c_wily_courier/8b42cf1faceb5224789128447ae1c7682ae59c3e9810825a8fcef944e5687fdf/values.txt)
@@ -742,12 +742,12 @@ picoCTF{next_time_I'll_try_2_rounds_of_rot13_45559abd}
 ---
 
 # Reverse Engineering
-**題目類別連結**: https://play.picoctf.org/practice?category=3
+**題目類別連結**: https://learn.cylabacademy.org/library?category=3&page=1
 
 ## 🟢Easy
 
 ### Flag Hunters
-**題目連結**: https://play.picoctf.org/practice/challenge/472
+**題目連結**: https://learn.cylabacademy.org/library/472
 >Lyrics jump from verses to the refrain kind of like a subroutine call. There's a hidden refrain this program doesn't print by default. Can you get it to print it? There might be something in it for you.
 The program's source code can be downloaded [here](https://challenge-files.picoctf.net/c_verbal_sleep/16af4dbf5dde07d6b920829561f50f7afe9e9e457733e422537c64525e1a6772/lyric-reader.py).
 Connect to the program with netcat: $ nc verbal-sleep.picoctf.net 49285
@@ -797,12 +797,12 @@ picoCTF{70637h3r_f0r3v3r_836f0788}
 ---
 
 # Forensics
-**題目類別連結**: https://play.picoctf.org/practice?category=4
+**題目類別連結**: https://learn.cylabacademy.org/library?category=4&page=1
 
 ## 🟢Easy
 
 ### Riddle Registry
-**題目連結**: https://play.picoctf.org/practice/challenge/530
+**題目連結**: https://learn.cylabacademy.org/library/530
 
 > Hi, intrepid investigator! 📄🔍 You've stumbled upon a peculiar PDF filled with what seems like nothing more than garbled nonsense. But beware! Not everything is as it appears. Amidst the chaos lies a hidden treasure—an elusive flag waiting to be uncovered.
 Find the PDF file here [Hidden Confidential Document](https://challenge-files.picoctf.net/c_amiable_citadel/ec88ce83253c1bd53af98533a401b9ea0b37602fd6276271c724d5cdd126b285/confidential.pdf) and uncover the flag within the metadata.
@@ -825,7 +825,7 @@ picoCTF{puzzl3d_m3tadata_f0und!_0e2de5a1}
 ---
 
 ### Hidden in plainsight
-**題目連結**: https://play.picoctf.org/practice/challenge/524
+**題目連結**: https://learn.cylabacademy.org/library/524
 
 > You’re given a seemingly ordinary JPG image. Something is tucked away out of sight inside the file. Your task is to discover the hidden payload and extract the flag.
 Download the jpg image [here](https://challenge-files.picoctf.net/c_amiable_citadel/618fe22499d6c52fd1de495424be4ee540886e1d066fad4b2474d695757a50da/img.jpg).
@@ -863,7 +863,7 @@ picoCTF{h1dd3n_1n_1m4g3_67479645}
 ---
 
 ### Flag in Flame
-**題目連結**: https://play.picoctf.org/practice/challenge/523
+**題目連結**: https://learn.cylabacademy.org/library/523
 
 > The SOC team discovered a suspiciously large log file after a recent breach. When they opened it, they found an enormous block of encoded text instead of typical logs. Could there be something hidden within? Your mission is to inspect the resulting file and reveal the real purpose of it. The team is relying on your skills to uncover any concealed information within this unusual log.
 Download the encoded data here: [Logs Data](https://challenge-files.picoctf.net/c_amiable_citadel/3c1d1fea48e203c9c5d64c32d94aa1f091a6b72b4cebd35a761b09d4f9c0f0d2/logs.txt). Be prepared—the file is large, and examining it thoroughly is crucial .
@@ -887,7 +887,7 @@ picoCTF{forensics_analysis_is_amazing_5daa4a2f}
 ---
 
 ### DISKO 1
-**題目連結**: https://play.picoctf.org/practice/challenge/505
+**題目連結**: https://learn.cylabacademy.org/library/505
 
 >Can you find the flag in this disk image?
 Download the disk image [here](https://artifacts.picoctf.net/c/538/disko-1.dd.gz).
@@ -915,7 +915,7 @@ picoCTF{1t5_ju5t_4_5tr1n9_e3408eef}
 ---
 
 ### RED
-**題目連結**: https://play.picoctf.org/practice/challenge/460
+**題目連結**: https://learn.cylabacademy.org/library/460
 
 >RED, RED, RED, RED
 Download the image: [red.png](https://challenge-files.picoctf.net/c_verbal_sleep/831307718b34193b288dde31e557484876fb84978b5818e2627e453a54aa9ba6/red.png)
@@ -939,7 +939,7 @@ picoCTF{r3d_1s_th3_ult1m4t3_cur3_f0r_54dn355_}
 ---
 
 ### Verify
-**題目連結**: https://play.picoctf.org/practice/challenge/450
+**題目連結**: https://learn.cylabacademy.org/library/450
 
 >People keep trying to trick my players with imitation flags. I want to make sure they get the real thing! I'm going to provide the SHA-256 hash and a decrypt script to help you know that my flags are legitimate.
 ssh -p 56484 ctf-player@rhea.picoctf.net
@@ -964,7 +964,7 @@ picoCTF{trust_but_verify_451fd69b}
 ---
 
 ### Scan Surprise
-**題目連結**: https://play.picoctf.org/practice/challenge/444
+**題目連結**: https://learn.cylabacademy.org/library/444
 >I've gotten bored of handing out flags as text. Wouldn't it be cool if they were an image instead?
 You can download the challenge files here:
 [challenge.zip](https://artifacts.picoctf.net/c_atlas/3/challenge.zip)
@@ -983,7 +983,7 @@ picoCTF{p33k_@_b00_a81f0a35}
 ---
 
 ### Secret of the Polyglot
-**題目連結**: https://play.picoctf.org/practice/challenge/423
+**題目連結**: https://learn.cylabacademy.org/library/423
 >The Network Operations Center (NOC) of your local institution picked up a suspicious file, they're getting conflicting information on what type of file it is. They've brought you in as an external expert to examine the file. Can you extract all the information from this strange file?
 Download the suspicious file [here](https://artifacts.picoctf.net/c_titan/9/flag2of2-final.pdf).
 
@@ -1004,7 +1004,7 @@ picoCTF{f1u3n7_1n_pn9_&_pdf_7f9bccd1}
 ---
 
 ### CanYouSee
-**題目連結**: https://play.picoctf.org/practice/challenge/408
+**題目連結**: https://learn.cylabacademy.org/library/408
 >How about some hide and seek?
 Download this file [here](https://artifacts.picoctf.net/c_titan/129/unknown.zip).
 
@@ -1023,7 +1023,7 @@ picoCTF{ME74D47A_HIDD3N_b32040b8}
 ## 🟠Medium
 
 ### DISKO 2
-**題目連結**: https://play.picoctf.org/practice/challenge/506
+**題目連結**: https://learn.cylabacademy.org/library/506
 >Can you find the flag in this disk image? The right one is Linux! One wrong step and its all gone!
 Download the disk image [here](https://artifacts.picoctf.net/c/540/disko-2.dd.gz).
 
@@ -1046,12 +1046,12 @@ picoCTF{4_P4Rt_1t_i5_a93c3ba0}
 ---
 
 # General Skills
-**題目類別連結**: https://play.picoctf.org/practice?category=5
+**題目類別連結**: https://learn.cylabacademy.org/library?category=5&page=1
 
 ## 🟢Easy
 
 ### Log Hunt
-**題目連結**: https://play.picoctf.org/practice/challenge/527
+**題目連結**: https://learn.cylabacademy.org/library/527
 
 > Our server seems to be leaking pieces of a secret flag in its logs. The parts are scattered and sometimes repeated. Can you reconstruct the original flag?
 Download the [logs](https://challenge-files.picoctf.net/c_amiable_citadel/49cec6157142f24a599f4164d5b63322c2494f801390d6f22eb91b3aa592bc66/server.log) and figure out the full flag from the fragments.
@@ -1076,7 +1076,7 @@ picoCTF{us3_y0urlinux_sk1lls_cedfa5fb}
 ---
 
 ### Corrupted file
-**題目連結**: https://play.picoctf.org/practice/challenge/519
+**題目連結**: https://learn.cylabacademy.org/library/519
 
 > This file seems broken... or is it? Maybe a couple of bytes could make all the difference. Can you figure out how to bring it back to life?
 Download the file [here](https://challenge-files.picoctf.net/c_amiable_citadel/d5cf66acaae23a2634256d69988d9a77ff0dade995dc28432dc35e788699ea69/file).
@@ -1101,7 +1101,7 @@ picoCTF{r3st0r1ng_th3_by73s_1512b52a}
 ---
 
 ### FANTASY CTF
-**題目連結**: https://play.picoctf.org/practice/challenge/471
+**題目連結**: https://learn.cylabacademy.org/library/471
 
 > Play this short game to get familiar with terminal applications and some of the most important rules in scope for picoCTF.
 Connect to the program with netcat:
@@ -1124,7 +1124,7 @@ picoCTF{m1113n1um_3d1710n_dd015572}
 ---
 
 ### Super SSH
-**題目連結**: https://play.picoctf.org/practice/challenge/424?page=3
+**題目連結**: https://learn.cylabacademy.org/library/424?page=3
 
 >Using a Secure Shell (SSH) is going to be pretty important.
 Can you ssh as ctf-player to titan.picoctf.net at port 59265 to get the flag?
@@ -1143,7 +1143,7 @@ picoCTF{s3cur3_c0nn3ct10n_3e293eea}
 ---
 
 ### Time Machine
-**題目連結**: https://play.picoctf.org/practice/challenge/425
+**題目連結**: https://learn.cylabacademy.org/library/425
 
 >What was I last working on? I remember writing a note to help me remember...
 You can download the challenge files here:
@@ -1176,7 +1176,7 @@ picoCTF{t1m3m@ch1n3_8defe16a}
 ---
 
 ### runme.py
-**題目連結**: https://play.picoctf.org/practice/challenge/250
+**題目連結**: https://learn.cylabacademy.org/library/250
 
 >Run the runme.py script to get the flag. Download the script with your browser or with wget in the webshell.
 [Download runme.py Python script](https://artifacts.picoctf.net/c/34/runme.py)
@@ -1192,7 +1192,7 @@ picoCTF{run_s4n1ty_run}
 ---
 
 ### Big Zip
-**題目連結**: https://play.picoctf.org/practice/challenge/322
+**題目連結**: https://learn.cylabacademy.org/library/322
 
 >Unzip this archive and find the flag.
 [Download zip file](https://artifacts.picoctf.net/c/503/big-zip-files.zip)
@@ -1212,7 +1212,7 @@ picoCTF{gr3p_15_m4g1c_ef8790dc}
 ---
 
 ### fixme1.py
-**題目連結**: https://play.picoctf.org/practice/challenge/240
+**題目連結**: https://learn.cylabacademy.org/library/240
 
 >Fix the syntax error in this Python script to print the flag.
 [Download Python script](https://artifacts.picoctf.net/c/25/fixme1.py)
@@ -1234,7 +1234,7 @@ picoCTF{1nd3nt1ty_cr1515_6a476c8f}
 ---
 
 ### fixme2.py
-**題目連結**: https://play.picoctf.org/practice/challenge/241
+**題目連結**: https://learn.cylabacademy.org/library/241
 
 >Fix the syntax error in the Python script to print the flag.
 [Download Python script](https://artifacts.picoctf.net/c/5/fixme2.py)
@@ -1256,7 +1256,7 @@ picoCTF{3qu4l1ty_n0t_4551gnm3nt_4863e11b}
 ---
 
 ### Wave a flag
-**題目連結**: https://play.picoctf.org/practice/challenge/170
+**題目連結**: https://learn.cylabacademy.org/library/170
 
 >Can you invoke help flags for a tool or binary? This program has extraordinarily helpful information...
 [warm](https://challenge-files.picoctf.net/c_wily_courier/1e14db3a752e16eae2b0e0d73d9779f9c4ddfd8942f60f3285a2986068480316/warm)
@@ -1279,7 +1279,7 @@ picoCTF{b1scu1ts_4nd_gr4vy_ac5832c}
 ---
 
 ### 2warm
-**題目連結**: https://play.picoctf.org/practice/challenge/86
+**題目連結**: https://learn.cylabacademy.org/library/86
 
 >Can you convert the number 42 (base 10) to binary (base 2)?
 
@@ -1292,7 +1292,7 @@ picoCTF{101010}
 ---
 
 ### Bases
-**題目連結**: https://play.picoctf.org/practice/challenge/67
+**題目連結**: https://learn.cylabacademy.org/library/67
 
 >What does this bDNhcm5fdGgzX3IwcDM1 mean? I think it has something to do with bases.
 
@@ -1309,7 +1309,7 @@ picoCTF{l3arn_th3_r0p35}
 ---
 
 ### First Find
-**題目連結**: https://play.picoctf.org/practice/challenge/320
+**題目連結**: https://learn.cylabacademy.org/library/320
 >Unzip this archive and find the file named 'uber-secret.txt'
 [Download zip file](https://artifacts.picoctf.net/c/502/files.zip)
 
@@ -1320,7 +1320,7 @@ picoCTF{l3arn_th3_r0p35}
 ---
 
 ### Binary Search
-**題目連結**: https://play.picoctf.org/practice/challenge/442
+**題目連結**: https://learn.cylabacademy.org/library/442
 >Want to play a game? As you use more of the shell, you might be interested in how they work! Binary search is a classic algorithm used to quickly find an item in a sorted list. Can you find the flag? You'll have 1000 possibilities and only 10 guesses.
 Cyber security often has a huge amount of data to look through - from logs, vulnerability reports, and forensics. Practicing the fundamentals manually might help you in the future when you have to write your own tools!
 You can download the challenge files here:
@@ -1339,7 +1339,7 @@ picoCTF{g00d_gu355_1597707f}
 ---
 
 ### endianness
-**題目連結**:https://play.picoctf.org/practice/challenge/414
+**題目連結**:https://learn.cylabacademy.org/library/414
 >Know of little and big endian?
 [Source](https://artifacts.picoctf.net/c_titan/79/flag.c)
 nc titan.picoctf.net 49874
@@ -1379,7 +1379,7 @@ picoCTF{3ndi4n_sw4p_su33ess_d58517b6}
 ---
 
 ### Commitment Issues
-**題目連結**:https://play.picoctf.org/practice/challenge/411
+**題目連結**:https://learn.cylabacademy.org/library/411
 >I accidentally wrote the flag down. Good thing I deleted it!
 You download the challenge files here:
 [challenge.zip](https://artifacts.picoctf.net/c_titan/138/challenge.zip)
@@ -1399,7 +1399,7 @@ picoCTF{s@n1t1z3_c785c319}
 ---
 
 ### Undo
-**題目連結**:https://play.picoctf.org/practice/challenge/766
+**題目連結**:https://learn.cylabacademy.org/library/766
 >Can you reverse a series of Linux text transformations to recover the original flag?
 Start searching for the flag here nc foggy-cliff.picoctf.net 51531
 
@@ -1477,12 +1477,12 @@ picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_b75fc848}
 ---
 
 # Binary Exploitation
-**題目類別連結**: https://play.picoctf.org/practice?category=6
+**題目類別連結**: https://learn.cylabacademy.org/library?category=6&page=1
 
 ## 🟢Easy
 
 ### PIE TIME
-**題目連結**: https://play.picoctf.org/practice/challenge/490
+**題目連結**: https://learn.cylabacademy.org/library/490
 
 > Can you try to get the flag? Beware we have PIE!
 Connect to the program with netcat:

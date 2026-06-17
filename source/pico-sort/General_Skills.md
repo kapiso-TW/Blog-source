@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - General Skills
 date: 2026-03-06
-update: 2026-04-25
+update: 2026-06-17
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -10,12 +10,12 @@ copyright_url: write by kapiso
 ---
 
 # General Skills
-**題目類別連結**: https://play.picoctf.org/practice?category=5
+**題目類別連結**: https://learn.cylabacademy.org/library?category=5&page=1
 
 ## 🟢Easy
 
 ### Log Hunt
-**題目連結**: https://play.picoctf.org/practice/challenge/527
+**題目連結**: https://learn.cylabacademy.org/library/527
 
 > Our server seems to be leaking pieces of a secret flag in its logs. The parts are scattered and sometimes repeated. Can you reconstruct the original flag?
 Download the [logs](https://challenge-files.picoctf.net/c_amiable_citadel/49cec6157142f24a599f4164d5b63322c2494f801390d6f22eb91b3aa592bc66/server.log) and figure out the full flag from the fragments.
@@ -40,7 +40,7 @@ picoCTF{us3_y0urlinux_sk1lls_cedfa5fb}
 ---
 
 ### Corrupted file
-**題目連結**: https://play.picoctf.org/practice/challenge/519
+**題目連結**: https://learn.cylabacademy.org/library/519
 
 > This file seems broken... or is it? Maybe a couple of bytes could make all the difference. Can you figure out how to bring it back to life?
 Download the file [here](https://challenge-files.picoctf.net/c_amiable_citadel/d5cf66acaae23a2634256d69988d9a77ff0dade995dc28432dc35e788699ea69/file).
@@ -65,7 +65,7 @@ picoCTF{r3st0r1ng_th3_by73s_1512b52a}
 ---
 
 ### FANTASY CTF
-**題目連結**: https://play.picoctf.org/practice/challenge/471
+**題目連結**: https://learn.cylabacademy.org/library/471
 
 > Play this short game to get familiar with terminal applications and some of the most important rules in scope for picoCTF.
 Connect to the program with netcat:
@@ -88,7 +88,7 @@ picoCTF{m1113n1um_3d1710n_dd015572}
 ---
 
 ### Super SSH
-**題目連結**: https://play.picoctf.org/practice/challenge/424?page=3
+**題目連結**: https://learn.cylabacademy.org/library/424?page=3
 
 >Using a Secure Shell (SSH) is going to be pretty important.
 Can you ssh as ctf-player to titan.picoctf.net at port 59265 to get the flag?
@@ -107,7 +107,7 @@ picoCTF{s3cur3_c0nn3ct10n_3e293eea}
 ---
 
 ### Time Machine
-**題目連結**: https://play.picoctf.org/practice/challenge/425
+**題目連結**: https://learn.cylabacademy.org/library/425
 
 >What was I last working on? I remember writing a note to help me remember...
 You can download the challenge files here:
@@ -140,7 +140,7 @@ picoCTF{t1m3m@ch1n3_8defe16a}
 ---
 
 ### runme.py
-**題目連結**: https://play.picoctf.org/practice/challenge/250
+**題目連結**: https://learn.cylabacademy.org/library/250
 
 >Run the runme.py script to get the flag. Download the script with your browser or with wget in the webshell.
 [Download runme.py Python script](https://artifacts.picoctf.net/c/34/runme.py)
@@ -156,7 +156,7 @@ picoCTF{run_s4n1ty_run}
 ---
 
 ### Big Zip
-**題目連結**: https://play.picoctf.org/practice/challenge/322
+**題目連結**: https://learn.cylabacademy.org/library/322
 
 >Unzip this archive and find the flag.
 [Download zip file](https://artifacts.picoctf.net/c/503/big-zip-files.zip)
@@ -176,7 +176,7 @@ picoCTF{gr3p_15_m4g1c_ef8790dc}
 ---
 
 ### fixme1.py
-**題目連結**: https://play.picoctf.org/practice/challenge/240
+**題目連結**: https://learn.cylabacademy.org/library/240
 
 >Fix the syntax error in this Python script to print the flag.
 [Download Python script](https://artifacts.picoctf.net/c/25/fixme1.py)
@@ -198,7 +198,7 @@ picoCTF{1nd3nt1ty_cr1515_6a476c8f}
 ---
 
 ### fixme2.py
-**題目連結**: https://play.picoctf.org/practice/challenge/241
+**題目連結**: https://learn.cylabacademy.org/library/241
 
 >Fix the syntax error in the Python script to print the flag.
 [Download Python script](https://artifacts.picoctf.net/c/5/fixme2.py)
@@ -220,7 +220,7 @@ picoCTF{3qu4l1ty_n0t_4551gnm3nt_4863e11b}
 ---
 
 ### Wave a flag
-**題目連結**: https://play.picoctf.org/practice/challenge/170
+**題目連結**: https://learn.cylabacademy.org/library/170
 
 >Can you invoke help flags for a tool or binary? This program has extraordinarily helpful information...
 [warm](https://challenge-files.picoctf.net/c_wily_courier/1e14db3a752e16eae2b0e0d73d9779f9c4ddfd8942f60f3285a2986068480316/warm)
@@ -243,7 +243,7 @@ picoCTF{b1scu1ts_4nd_gr4vy_ac5832c}
 ---
 
 ### 2warm
-**題目連結**: https://play.picoctf.org/practice/challenge/86
+**題目連結**: https://learn.cylabacademy.org/library/86
 
 >Can you convert the number 42 (base 10) to binary (base 2)?
 
@@ -256,7 +256,7 @@ picoCTF{101010}
 ---
 
 ### Bases
-**題目連結**: https://play.picoctf.org/practice/challenge/67
+**題目連結**: https://learn.cylabacademy.org/library/67
 
 >What does this bDNhcm5fdGgzX3IwcDM1 mean? I think it has something to do with bases.
 
@@ -273,7 +273,7 @@ picoCTF{l3arn_th3_r0p35}
 ---
 
 ### First Find
-**題目連結**: https://play.picoctf.org/practice/challenge/320
+**題目連結**: https://learn.cylabacademy.org/library/320
 >Unzip this archive and find the file named 'uber-secret.txt'
 [Download zip file](https://artifacts.picoctf.net/c/502/files.zip)
 
@@ -284,7 +284,7 @@ picoCTF{l3arn_th3_r0p35}
 ---
 
 ### Binary Search
-**題目連結**: https://play.picoctf.org/practice/challenge/442
+**題目連結**: https://learn.cylabacademy.org/library/442
 >Want to play a game? As you use more of the shell, you might be interested in how they work! Binary search is a classic algorithm used to quickly find an item in a sorted list. Can you find the flag? You'll have 1000 possibilities and only 10 guesses.
 Cyber security often has a huge amount of data to look through - from logs, vulnerability reports, and forensics. Practicing the fundamentals manually might help you in the future when you have to write your own tools!
 You can download the challenge files here:
@@ -303,7 +303,7 @@ picoCTF{g00d_gu355_1597707f}
 ---
 
 ### endianness
-**題目連結**:https://play.picoctf.org/practice/challenge/414
+**題目連結**:https://learn.cylabacademy.org/library/414
 >Know of little and big endian?
 [Source](https://artifacts.picoctf.net/c_titan/79/flag.c)
 nc titan.picoctf.net 49874
@@ -343,7 +343,7 @@ picoCTF{3ndi4n_sw4p_su33ess_d58517b6}
 ---
 
 ### Commitment Issues
-**題目連結**:https://play.picoctf.org/practice/challenge/411
+**題目連結**:https://learn.cylabacademy.org/library/411
 >I accidentally wrote the flag down. Good thing I deleted it!
 You download the challenge files here:
 [challenge.zip](https://artifacts.picoctf.net/c_titan/138/challenge.zip)
@@ -363,7 +363,7 @@ picoCTF{s@n1t1z3_c785c319}
 ---
 
 ### Undo
-**題目連結**:https://play.picoctf.org/practice/challenge/766
+**題目連結**:https://learn.cylabacademy.org/library/766
 >Can you reverse a series of Linux text transformations to recover the original flag?
 Start searching for the flag here nc foggy-cliff.picoctf.net 51531
 

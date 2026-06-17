@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - Reverse Engineering
 date: 2026-03-06
-update: 2026-03-09
+update: 2026-06-17
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -10,12 +10,12 @@ copyright_url: write by kapiso
 ---
 
 # Reverse Engineering
-**題目類別連結**: https://play.picoctf.org/practice?category=3
+**題目類別連結**: https://learn.cylabacademy.org/library?category=3&page=1
 
 ## 🟢Easy
 
 ### Flag Hunters
-**題目連結**: https://play.picoctf.org/practice/challenge/472
+**題目連結**: https://learn.cylabacademy.org/library/472
 >Lyrics jump from verses to the refrain kind of like a subroutine call. There's a hidden refrain this program doesn't print by default. Can you get it to print it? There might be something in it for you.
 The program's source code can be downloaded [here](https://challenge-files.picoctf.net/c_verbal_sleep/16af4dbf5dde07d6b920829561f50f7afe9e9e457733e422537c64525e1a6772/lyric-reader.py).
 Connect to the program with netcat: $ nc verbal-sleep.picoctf.net 49285

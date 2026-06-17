@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - Cryptography
 date: 2026-03-06
-update: 2026-03-09
+update: 2026-06-17
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -10,12 +10,12 @@ copyright_url: write by kapiso
 ---
 
 # Cryptography
-**題目類別連結**: https://play.picoctf.org/practice?category=2
+**題目類別連結**: https://learn.cylabacademy.org/library?category=2&page=1
 
 ## 🟢Easy
 
 ### hashcrack
-**題目連結**: https://play.picoctf.org/practice/challenge/475
+**題目連結**: https://learn.cylabacademy.org/library/475
 
 >A company stored a secret message on a server which got breached due to the admin using weakly hashed passwords. Can you gain access to the secret stored within the server?
 Access the server using nc verbal-sleep.picoctf.net 57421
@@ -51,7 +51,7 @@ picoCTF{UseStr0nG_h@shEs_&PaSswDs!_4c95d69f}
 ---
 
 ### interencdec
-**題目連結**: https://play.picoctf.org/practice/challenge/418
+**題目連結**: https://learn.cylabacademy.org/library/418
 
 >Can you get the real meaning from this file.
 Download the file [here](https://artifacts.picoctf.net/c_titan/111/enc_flag).
@@ -81,7 +81,7 @@ picoCTF{caesar_d3cr9pt3d_890d2379}
 ---
 
 ### Mod 26
-**題目連結**: https://play.picoctf.org/practice/challenge/144
+**題目連結**: https://learn.cylabacademy.org/library/144
 
 >Cryptography can be easy, do you know what ROT13 is?
 [values.txt](https://challenge-files.picoctf.net/c_wily_courier/8b42cf1faceb5224789128447ae1c7682ae59c3e9810825a8fcef944e5687fdf/values.txt)
