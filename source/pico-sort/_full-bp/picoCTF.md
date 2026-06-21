@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup
 date: 2026-01-11
-update: 2026-06-17
+update: 2026-06-22
 tags: 資安
 categories: coding
 keywords:
@@ -1434,6 +1434,7 @@ picoCTF{Revers1ng_t3xt_Tr4nsf0rm@t10ns_3a939318}
 ---
 
 ### MY GIT
+**題目連結**:https://learn.cylabacademy.org/library/764
 >I have built my own Git server with my own rules!
 You can clone the challenge repo using the command below.
 git clone ssh://git@foggy-cliff.picoctf.net:60852/git/challenge.git
@@ -1459,6 +1460,7 @@ picoCTF{1mp3rs0n4t4_g17_345y_506743df}
 ---
 
 ## ping-cmd
+**題目連結**:https://learn.cylabacademy.org/library/757
 >Can you make the server reveal its secrets? It seems to be able to ping Google DNS, but what happens if you get a little creative with your input?
 You can connect to the service here nc mysterious-sea.picoctf.net 51563
 
@@ -1472,6 +1474,125 @@ You can connect to the service here nc mysterious-sea.picoctf.net 51563
 
 ```TXT
 picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_b75fc848}
+```
+
+---
+
+### bytemancy 1
+**題目連結**:https://learn.cylabacademy.org/library/762
+>Can you conjure the right bytes? The program's source code can be downloaded [here](https://challenge-files.picoctf.net/c_foggy_cliff/daa319a677eb71bb708aaa0943d7b89ed690c041c0ec5d554332f2e5432b4041/app.py).
+Connect to the program with netcat: 
+ $ nc foggy-cliff.picoctf.net 57579
+
+先連線看看
+
+![image](/img/picoCTF/General_Skills/bytemancy_1/01.png)
+
+發現他需要 連續發送 ASCII 值為 101(e) 的字連續 1751 次，且不能有空格，製作一個 python 發送字串即可獲得flag
+
+```python
+from pwn import *
+p = remote('foggy-cliff.picoctf.net', 57579)
+p.recvuntil(b'==>') 
+
+payload = 'e' * 1751
+
+p.sendline(payload)
+p.interactive()
+```
+
+![image](/img/picoCTF/General_Skills/bytemancy_1/02.png)
+
+```TXT
+picoCTF{h0w_m4ny_e's???_e0d51f4b}
+```
+
+---
+
+### Piece by Piece
+**題目連結**:https://learn.cylabacademy.org/library/740
+>After logging in, you will find multiple file parts in your home directory. These parts need to be combined and extracted to reveal the flag.
+SSH to dolphin-cove.picoctf.net:57642 and login as ctf-player with password 1ad5be0d.
+
+使用指令`ssh -p 57642 ctf-player@dolphin-cove.picoctf.net`並輸入密碼`1ad5be0d`連線，順便輸入`ls -la`看看有什麼檔案
+
+![image](/img/picoCTF/General_Skills/Piece_by_Piece/01.png)
+
+發現有一個`instructions.txt`，打開看看
+
+![image](/img/picoCTF/General_Skills/Piece_by_Piece/02.png)
+
+發現其他`part_a*`是被拆分的 flag，使用正則表達式`cat part_a* > combined_file && file combined_file`將分部組成原本的樣子，並使用查看是什麼檔案類型
+
+![image](/img/picoCTF/General_Skills/Piece_by_Piece/03.png)
+
+發現是 .zip 使用 `mv combined_file flag.zip && unzip flag.zip`重新命名並解壓縮。需輸入在 instructions 中提到的解壓縮密碼`supersecret`
+
+![image](/img/picoCTF/General_Skills/Piece_by_Piece/04.png)
+
+使用`flag.txt`查看解壓後檔案即可獲得 flag
+
+```TXT
+picoCTF{z1p_and_spl1t_f1l3s_4r3_fun_5b6e506b}
+```
+
+---
+
+## binhexa
+**題目連結**:https://learn.cylabacademy.org/library/404
+>How well can you perfom basic binary operations?
+Start searching for the flag here nc titan.picoctf.net 61269
+
+連線後發現是要回答二進為運算問題，根據問題回答即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/binhexa/01.png)
+
+`>>`與`<<`為右移與左移，是將原式向左或右移動後捨去該方向最後一位，另一方向補 0，詳細可參考 [Microsoft](https://learn.microsoft.com/zh-tw/cpp/cpp/left-shift-and-right-shift-operators-input-and-output?view=msvc-170) 提供之文檔。
+
+```TXT
+picoCTF{b1tw^3se_0p3eR@tI0n_su33essFuL_d6f8047e}
+```
+---
+
+## repetitions
+**題目連結**:https://learn.cylabacademy.org/library/371
+>Can you make sense of this file?
+Download the file [here](https://artifacts.picoctf.net/c/475/enc_flag).
+
+先下載下來看看是什麼
+
+![image](/img/picoCTF/General_Skills/repetitions/01.png)
+
+看起來是要解碼 base64，結合題目名稱與提示，應該是要解碼好幾次，寫個python解
+
+```python
+import base64
+
+def solve():
+    with open('enc_flag', 'r') as f:
+        data = f.read().strip()
+    count = 0
+
+    while True:
+        try:
+            decoded_bytes = base64.b64decode(data.encode())
+            decoded_str = decoded_bytes.decode('utf-8', errors='ignore')
+            if "picoCTF" in decoded_str:
+                print(f"Flag: {decoded_str.strip()}")
+                break
+            data = decoded_str.strip()
+        except Exception as e:
+            print(f"\nERR last: {data}")
+            break
+
+if __name__ == "__main__":
+    solve()
+```
+
+執行即可獲得 flag
+
+```TXT
+picoCTF{base64_n3st3d_dic0d!n8_d0wnl04d3d_492767d2}
 ```
 
 ---
