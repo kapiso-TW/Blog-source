@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup
 date: 2026-01-11
-update: 2026-06-22
+update: 2026-06-24
 tags: 資安
 categories: coding
 keywords:
@@ -44,21 +44,21 @@ The website is running [here](http://amiable-citadel.picoctf.net:51437/). Can yo
 
 先進入網站並隨意登入試試
 
-![image](/img/picoCTF/Web_Exploitation/Crack_the_Gate_1/01.png)
+![image](/img/picoCTF/Web_Exploitation/520/01.png)
 
 看起來是有少了什麼，依據提示查看開發人員選項
 
-![image](/img/picoCTF/Web_Exploitation/Crack_the_Gate_1/02.png)
+![image](/img/picoCTF/Web_Exploitation/520/02.png)
 
 發現一個 ROT13 加密的密文， 使用線上解碼器解碼
 
-![image](/img/picoCTF/Web_Exploitation/Crack_the_Gate_1/03.png)
+![image](/img/picoCTF/Web_Exploitation/520/03.png)
 
 發現需要使用 header `X-Dev-Access: yes`，使用 burp suite 攔截並修改封包
 
-![image](/img/picoCTF/Web_Exploitation/Crack_the_Gate_1/04.png)
+![image](/img/picoCTF/Web_Exploitation/520/04.png)
 
-![image](/img/picoCTF/Web_Exploitation/Crack_the_Gate_1/05.png)
+![image](/img/picoCTF/Web_Exploitation/520/05.png)
 
 即可獲得 flag
 
@@ -76,15 +76,15 @@ The website is running [picoCTF News](http://verbal-sleep.picoctf.net:51371/).
 
 依照提示探索網站後發現 `#API Documentation` 可以被點擊，進入後依照提示尋找 heade dump 相關的區域
 
-![image](/img/picoCTF/Web_Exploitation/head-dump/01.png)
+![image](/img/picoCTF/Web_Exploitation/476/01.png)
 
 找到後點擊 `Try it out` & `Execute` 即可獲得一串指令，整理後在 cmd 內使用發現吐出了許多數據
 
-![image](/img/picoCTF/Web_Exploitation/head-dump/01.png)
+![image](/img/picoCTF/Web_Exploitation/476/02.png)
 
 改用 linux 下載檔案配合正則表達式 `strings heapdump | grep "picoCTF{.*}"` 找出 flag
 
-``` TXT
+``` txt
 picoCTF{Pat!3nt_15_Th3_K3y_871ffa9a}
 ```
 
@@ -98,7 +98,7 @@ Browse [here](http://titan.picoctf.net:55350/), and find the flag!
 
 連線後開啟開發人員工具即可發現 flag
 
-![image](/img/picoCTF/Web_Exploitation/Unminify/01.png)
+![image](/img/picoCTF/Web_Exploitation/426/01.png)
 
 ``` txt
 picoCTF{pr3tty_c0d3_743d0f9b}
@@ -113,17 +113,17 @@ picoCTF{pr3tty_c0d3_743d0f9b}
 
 先連線觀察網站
 
-![image](/img/picoCTF/Web_Exploitation/IntroToBurp/01.png)
+![image](/img/picoCTF/Web_Exploitation/419/01.png)
 
 發現是一個註冊網站，先隨意嘗試看看
 
-![image](/img/picoCTF/Web_Exploitation/IntroToBurp/02.png)
+![image](/img/picoCTF/Web_Exploitation/419/02.png)
 
 輸入後發現要驗證碼，結合題目的提示應該可以繞過驗證碼檢查，使用 burp suite 將 OPT 參數刪除即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/IntroToBurp/03.png)
+![image](/img/picoCTF/Web_Exploitation/419/03.png)
 
-![image](/img/picoCTF/Web_Exploitation/IntroToBurp/04.png)
+![image](/img/picoCTF/Web_Exploitation/419/04.png)
 
 ``` txt
 picoCTF{#0TP_Bypvss_SuCc3$S_2e80f1fd}
@@ -139,10 +139,10 @@ Go to this [website](http://saturn.picoctf.net:51364/) and see what you can disc
 
 打開開發者工具即可在來源的兩個 css 檔中發現 flag，拼起來即可
 
-![image](/img/picoCTF/Web_Exploitation/Includes/01.png)
+![image](/img/picoCTF/Web_Exploitation/274/01.png)
 
 
-![image](/img/picoCTF/Web_Exploitation/Includes/01.png)
+![image](/img/picoCTF/Web_Exploitation/274/02.png)
 
 ``` txt
 picoCTF{1nclu51v17y_1of2_f7w_2of2_b8f4b022}
@@ -158,11 +158,11 @@ Go to this [website](http://saturn.picoctf.net:54847/) and see what you can disc
 
 先連線觀察網站
 
-![image](/img/picoCTF/Web_Exploitation/Local_Authority/01.png)
+![image](/img/picoCTF/Web_Exploitation/278/01.png)
 
 發現是一個登入網站，先隨意嘗試看看
 
-![image](/img/picoCTF/Web_Exploitation/Local_Authority/02.png)
+![image](/img/picoCTF/Web_Exploitation/278/02.png)
 
 登入失敗，但是在開發人員工具的網路監控裡發現多了一個 js，且附上了帳號密碼，輸入後即可獲得 flag
 
@@ -180,7 +180,7 @@ Go to this [website](http://saturn.picoctf.net:63132/) and see what you can disc
 
 連線後開啟開發人員工具即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/Inspect_HTML/01.png)
+![image](/img/picoCTF/Web_Exploitation/275/01.png)
 
 ``` txt
 picoCTF{1n5p3t0r_0f_h7ml_1fd8425b}
@@ -189,26 +189,26 @@ picoCTF{1n5p3t0r_0f_h7ml_1fd8425b}
 ---
 
 ### Cookie Monster Secret Recipe
-**題目連結**: https://learn.cylabacademy.org/library/469?page=2
+**題目連結**: https://learn.cylabacademy.org/library/469
 
 >Cookie Monster has hidden his top-secret cookie recipe somewhere on his website. As an aspiring cookie detective, your mission is to uncover this delectable secret. Can you outsmart Cookie Monster and find the hidden recipe?
 You can access the Cookie Monster [here](http://verbal-sleep.picoctf.net:56097/) and good luck
 
 先連線觀察
 
-![image](/img/picoCTF/Web_Exploitation/Cookie_Monster_Secret_Recipe/01.png)
+![image](/img/picoCTF/Web_Exploitation/469/01.png)
 
 發現是一個登入網站，隨意輸入試試
 
-![image](/img/picoCTF/Web_Exploitation/Cookie_Monster_Secret_Recipe/02.png)
+![image](/img/picoCTF/Web_Exploitation/469/02.png)
 
 登入後他說檢查 cookie，打開開發人員工具，應用程式 cookie
 
-![image](/img/picoCTF/Web_Exploitation/Cookie_Monster_Secret_Recipe/03.png)
+![image](/img/picoCTF/Web_Exploitation/469/03.png)
 
 發現一個 base64 密文，解碼後即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/Cookie_Monster_Secret_Recipe/04.png)
+![image](/img/picoCTF/Web_Exploitation/469/04.png)
 
 ``` txt
 picoCTF{c00k1e_m0nster_l0ves_c00kies_C430AE20}
@@ -224,15 +224,15 @@ Start searching [here](http://titan.picoctf.net:63456/) to find the flag
 
 先連線觀察網站
 
-![image](/img/picoCTF/Web_Exploitation/WebDecode/01.png)
+![image](/img/picoCTF/Web_Exploitation/427/01.png)
 
 看起來沒甚麼特別的，原始碼也沒有異常，先點 ABOUT 試試
 
-![image](/img/picoCTF/Web_Exploitation/WebDecode/02.png)
+![image](/img/picoCTF/Web_Exploitation/427/02.png)
 
 發現密文，試試 base64 解碼
 
-![image](/img/picoCTF/Web_Exploitation/WebDecode/03.png)
+![image](/img/picoCTF/Web_Exploitation/427/03.png)
 
 獲得 flag
 
@@ -250,7 +250,7 @@ Browse [here](http://titan.picoctf.net:58038/), and find the flag!
 
 先連線觀察
 
-![image](/img/picoCTF/Web_Exploitation/Bookmarklet/01.png)
+![image](/img/picoCTF/Web_Exploitation/406/01.png)
 
 中間的格子有一串 javascript，看起來是要解碼被加密的 flag，寫一個 html 執行即可獲得 flag
 
@@ -269,7 +269,7 @@ Browse [here](http://titan.picoctf.net:58038/), and find the flag!
 </script>
 ```
 
-![image](/img/picoCTF/Web_Exploitation/Bookmarklet/02.png)
+![image](/img/picoCTF/Web_Exploitation/406/02.png)
 
 ``` txt
 picoCTF{p@g3_turn3r_1d1ba7e0}
@@ -278,34 +278,34 @@ picoCTF{p@g3_turn3r_1d1ba7e0}
 ---
 
 ### Cookies
-**題目連結**: https://learn.cylabacademy.org/library/173?page=5
+**題目連結**: https://learn.cylabacademy.org/library/173
 
 >Who doesn't love cookies? Try to figure out the best one.
 http://wily-courier.picoctf.net:64779/
 
 先連線觀察，既然題目與 cookie 有關就先開啟開發人員工具觀察 cookie
 
-![image](/img/picoCTF/Web_Exploitation/Cookies/01.png)
+![image](/img/picoCTF/Web_Exploitation/173/01.png)
 
 現在 name value 是 -1，改成 0 並重整觀察
 
-![image](/img/picoCTF/Web_Exploitation/Cookies/02.png)
+![image](/img/picoCTF/Web_Exploitation/173/02.png)
 
 發現能成功連線，推測應該可以一直改，某個數字會有 flag，再改成 1 驗證想法
 
-![image](/img/picoCTF/Web_Exploitation/Cookies/03.png)
+![image](/img/picoCTF/Web_Exploitation/173/03.png)
 
 想法成立，使用 Burp Suite Intruder 製作 playload，先使用 proxy 攔截封包並送入 Intruder
 
-![image](/img/picoCTF/Web_Exploitation/Cookies/04.png)
+![image](/img/picoCTF/Web_Exploitation/173/04.png)
 
 再將 `Cookie: name` 設定成變量並設定其從 0 開始 playload
 
-![image](/img/picoCTF/Web_Exploitation/Cookies/05.png)
+![image](/img/picoCTF/Web_Exploitation/173/05.png)
 
 完成後即可在 `Cookie: name=18` 處發現 flag
 
-![image](/img/picoCTF/Web_Exploitation/Cookies/06.png)
+![image](/img/picoCTF/Web_Exploitation/173/06.png)
 
 ``` txt
 picoCTF{3v3ry1_l0v3s_c00k135_a4dadb49}
@@ -321,31 +321,31 @@ http://wily-courier.picoctf.net:53152/
 
 先連線觀察
 
-![image](/img/picoCTF/Web_Exploitation/Scavenger_Hunt/01.png)
+![image](/img/picoCTF/Web_Exploitation/161/01.png)
 
 感覺沒什麼，先開啟開發人員工具尋找線索，會先在 html 內找到 first part `picoCTF{t`
 
-![image](/img/picoCTF/Web_Exploitation/Scavenger_Hunt/02.png)
+![image](/img/picoCTF/Web_Exploitation/161/02.png)
 
 那 css 與 js 內可能都有，先查看 css 可以找到 part 2 `h4ts_4_l0`
 
-![image](/img/picoCTF/Web_Exploitation/Scavenger_Hunt/03.png)
+![image](/img/picoCTF/Web_Exploitation/161/03.png)
 
 就剩 js 了，打開會看到 `How can I keep Google from indexing my website?`
 
-![image](/img/picoCTF/Web_Exploitation/Scavenger_Hunt/04.png)
+![image](/img/picoCTF/Web_Exploitation/161/04.png)
 
 說到阻止 gooogle 搜索就只有 robots.txt 了，進入即可找到 part 3 `t_0f_pl4c`
 
-![image](/img/picoCTF/Web_Exploitation/Scavenger_Hunt/05.png)
+![image](/img/picoCTF/Web_Exploitation/161/05.png)
 
 他說還有 next part，同時提到這是使用 apache 開發的網站，但我沒使用過 apache，於是我請教 gemini 相關事項得知 最核心的隱藏檔案：`.htaccess`，進入看看
 
-![image](/img/picoCTF/Web_Exploitation/Scavenger_Hunt/06.png)
+![image](/img/picoCTF/Web_Exploitation/161/06.png)
 
 得到 part 4 `3s_2_lO0k` ，但他說 `I love making websites on my Mac` 感覺還有 part 5，請教 gemini 得知 Mac 最常在資料夾中留下的「足跡」： `.DS_Store`，前往看看
 
-![image](/img/picoCTF/Web_Exploitation/Scavenger_Hunt/07.png)
+![image](/img/picoCTF/Web_Exploitation/161/07.png)
 
 即可獲得最後一部份 `_9588550}` 組合後即可獲得 flag
 
@@ -355,65 +355,98 @@ picoCTF{th4ts_4_l0t_0f_pl4c3s_2_lO0k_9588550}
 
 ---
 
+### Old Sessions
+**題目連結**: https://learn.cylabacademy.org/library/739
+>Proper session timeout controls are critical for securing user accounts. If a user logs in on a public or shared computer but doesn’t explicitly log out (instead simply closing the browser tab), and session expiration dates are misconfigured, the session may remain active indefinitely.
+This then allows an attacker using the same browser later to access the user’s account without needing credentials, exploiting the fact that sessions never expire and remain authenticated.
+Your friend tells you to check out a new social media platform he built a few years ago. Although its still under development, he said the site is almost complete. He also mentioned that he hates constantly logging into sites, and so has made his page that 'once you login, you never have to log-out again'!
+Browse [here](http://dolphin-cove.picoctf.net:54958/), and find the flag!
+
+連線後發現是一個登入網站，有個Register，點擊後可以創建帳號
+
+![image](/img/picoCTF/Web_Exploitation/739/01.png)
+
+隨便打然後去登入就可以進入網站，發現有人提到他找到了奇怪的頁面，跳轉過去看看
+
+![image](/img/picoCTF/Web_Exploitation/739/02.png)
+
+![image](/img/picoCTF/Web_Exploitation/739/03.png)
+
+發現有 admin 的 session，在 cookie 中發現有 session 可以更改，將自己的改為 admin 的並返回主頁即可獲得 flag
+
+![image](/img/picoCTF/Web_Exploitation/739/04.png)
+
+![image](/img/picoCTF/Web_Exploitation/739/05.png)
+
+```txt
+picoCTF{s3t_s3ss10n_3xp1rat10n5_77b6684a}
+```
+
+---
+
 ## logon
+**題目連結**: https://learn.cylabacademy.org/library/46
 >The factory is hiding things from all of its users.
 Can you login as Joe and find what they've been looking at? http://fickle-tempest.picoctf.net:60547
 
 進入網站後發現是一個簡單的等入網頁，嘗試幾次後發現其實什麼都不打也可以登入，且 cookie 內有一個 admin 的值為 `False`，改為 `True` 後重新載入頁面即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/01.png)
+![image](/img/picoCTF/Web_Exploitation/46/01.png)
 
-```TXT
+```txt
 picoCTF{th3_c0nsp1r4cy_l1v3s_4d184b0d}
 ```
 
 ---
 
 ## dont-use-client-side
+**題目連結**: https://learn.cylabacademy.org/library/66
 >Can you break into this super secure portal?
 http://fickle-tempest.picoctf.net:57428
 
 連線後在原始碼的 script 內可以看到被拆開的 flag，照順序組回去即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/dont-use-client-side/01.png)
+![image](/img/picoCTF/Web_Exploitation/66/01.png)
 
-```TXT
+```txt
 picoCTF{no_clients_plz_2eb02b45}
 ```
 
 ---
 
 ## where are the robots
+**題目連結**: https://learn.cylabacademy.org/library/4
 >Can you find the robots?
 http://fickle-tempest.picoctf.net:52269
 
 題目提到 robots，直接查看 robots.txt
 
-![image](/img/picoCTF/Web_Exploitation/where_are_the_robots/01.png)
+![image](/img/picoCTF/Web_Exploitation/4/01.png)
 
 看到 `disallow: /cc6b1.html` 前往察看即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/where_are_the_robots/02.png)
+![image](/img/picoCTF/Web_Exploitation/4/02.png)
 
-```TXT
+```txt
 picoCTF{ca1cu1at1ng_Mach1n3s_cc6b1}
 ```
 
 ---
 
 ## Insp3ct0r
+**題目連結**: https://learn.cylabacademy.org/library/18
 >Kishor Balan tipped us off that the following code may need inspection:
 http://fickle-tempest.picoctf.net:50602
 
 連線後可以分別在 html, css, js 找到 flag 的一部份，組起來即可
 
-![image](/img/picoCTF/Web_Exploitation/Insp3ct0r/01.png)
+![image](/img/picoCTF/Web_Exploitation/18/01.png)
 
-![image](/img/picoCTF/Web_Exploitation/Insp3ct0r/02.png)
+![image](/img/picoCTF/Web_Exploitation/18/02.png)
 
-![image](/img/picoCTF/Web_Exploitation/Insp3ct0r/03.png)
+![image](/img/picoCTF/Web_Exploitation/18/03.png)
 
-```TXT
+```txt
 picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?302945a7}
 ```
 
@@ -423,17 +456,16 @@ picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?302945a7}
 
 ### MatchTheRegex
 **題目連結**: https://learn.cylabacademy.org/library/356
-
 >How about trying to match a regular expression
 The website is running [here](http://saturn.picoctf.net:65046/).
 
 連線並開啟開發人員工具觀察網站
 
-![image](/img/picoCTF/Web_Exploitation/MatchTheRegex/01.png)
+![image](/img/picoCTF/Web_Exploitation/356/01.png)
 
 在 script 內發現了被註解的正則表達式 ^p.....F!?，其中 `^p` 表示必須以 p 開頭，`.....F` 五個點每一點表示任意一個字元，且須在最後接上 F，而最後的 `!?` 表示必須接上 ! ，但是 ? 表示匹配 0 次或 1 次，所以 ! 可有可無，解完後依照規則輸入即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/MatchTheRegex/02.png)
+![image](/img/picoCTF/Web_Exploitation/356/02.png)
 
 ``` txt
 picoCTF{succ3ssfully_matchtheregex_f89ea585}
@@ -443,15 +475,14 @@ picoCTF{succ3ssfully_matchtheregex_f89ea585}
 
 ### Search source
 **題目連結**: https://learn.cylabacademy.org/library/295
-
 >The developer of this website mistakenly left an important artifact in the website source, can you find it?
 The website is [here](http://saturn.picoctf.net:56826/)
 
 題目說有留了東西在網站源碼裡面，先將整個網站下載下來在做搜索
 
-![image](/img/picoCTF/Web_Exploitation/Search_source/01.png)
+![image](/img/picoCTF/Web_Exploitation/295/01.png)
 
-![image](/img/picoCTF/Web_Exploitation/Search_source/02.png)
+![image](/img/picoCTF/Web_Exploitation/295/02.png)
 
 即可獲得 flag
 
@@ -463,17 +494,16 @@ picoCTF{1nsp3ti0n_0f_w3bpag3s_8de925a7}
 
 ### Roboto Sans
 **題目連結**: https://learn.cylabacademy.org/library/291
-
 >The flag is somewhere on this web application not necessarily on the website. Find it.
 Check [this](http://saturn.picoctf.net:57473/) out.
 
 根據題目所述 flag 不在網站本身，又題目名稱與 robots.txt 相似，去看看有沒有甚麼特別的
 
-![image](/img/picoCTF/Web_Exploitation/Roboto_Sans/01.png)
+![image](/img/picoCTF/Web_Exploitation/291/01.png)
 
 有三條看起來像加密的東西，一一嘗試後只有第二列看起來像正常的東西
 
-![image](/img/picoCTF/Web_Exploitation/Roboto_Sans/02.png)
+![image](/img/picoCTF/Web_Exploitation/291/02.png)
 
 進入後即可獲得 flag
 
@@ -485,14 +515,13 @@ picoCTF{Who_D03sN7_L1k5_90B0T5_718c9043}
 
 ### Forbidden Paths
 **題目連結**: https://learn.cylabacademy.org/library/270
-
 >Can you get the flag?
 We know that the website files live in /usr/share/nginx/html/ and the flag is at /flag.txt but the website is filtering absolute file paths. Can you get past the filter to read the flag?
 Here's the [website](http://saturn.picoctf.net:63312/).
 
 先連線觀察，發現是一個可以輸入 path 去瀏覽檔案的網站
 
-![image](/img/picoCTF/Web_Exploitation/Forbidden_Paths/01.png)
+![image](/img/picoCTF/Web_Exploitation/270/01.png)
 
 依據題目所述輸入 `../../../../flag.txt` 即可獲得 flag
 
@@ -504,26 +533,25 @@ picoCTF{7h3_p47h_70_5ucc355_e5a6fcbc}
 
 ### caas
 **題目連結**: https://learn.cylabacademy.org/library/202
-
 >Now presenting [cowsay as a service](https://caas.mars.picoctf.net/)
 Challenge Endpoints
 Download [index.js](https://artifacts.picoctf.net/picoMini+by+redpwn/Web+Exploitation/caas/index.js)
 
 先連線觀察
 
-![image](/img/picoCTF/Web_Exploitation/caas/01.png)
+![image](/img/picoCTF/Web_Exploitation/202/01.png)
 
 發現可以依照他所述讓網頁顯示訊息，同時觀察一下一同給與的 index.js
 
-![image](/img/picoCTF/Web_Exploitation/caas/02.png)
+![image](/img/picoCTF/Web_Exploitation/202/02.png)
 
 發現第八行的 `exec` 會產生漏洞，exec 會將 `req.params.message` 直接當作 Shell 指令的一部分執行，因此可以透過特殊字符執行 shell 指令，使用後綴 `t;ls -la` 查看當前目錄
 
-![image](/img/picoCTF/Web_Exploitation/caas/03.png)
+![image](/img/picoCTF/Web_Exploitation/202/03.png)
 
 發現有 falg 與 flag 相近，使用後綴 `t;cat falg.txt` 查看檔案即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/caas/04.png)
+![image](/img/picoCTF/Web_Exploitation/202/04.png)
 
 ``` txt
 picoCTF{moooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo0o}
@@ -538,15 +566,15 @@ The website running [here](http://saturn.picoctf.net:59765/).
 
 先連線並使用題目的 username & password，登入時注意到上面往只有跳轉，按一下返回上一頁即可看到頁面
 
-![image](/img/picoCTF/Web_Exploitation/findme/01.png)
+![image](/img/picoCTF/Web_Exploitation/349/01.png)
 
-![image](/img/picoCTF/Web_Exploitation/findme/02.png)
+![image](/img/picoCTF/Web_Exploitation/349/02.png)
 
 是全白頁面，重點在網址，id 疑似是 base64 ，將兩段組起來進行解碼即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/findme/03.png)
+![image](/img/picoCTF/Web_Exploitation/349/03.png)
 
-``` TXT
+``` txt
 picoCTF{proxies_all_the_way_01e748db}
 ```
 
@@ -559,96 +587,68 @@ Log in as admin http://shape-facility.picoctf.net:51151/ http://shape-facility.p
 
 先進入兩個網站看看，index 就是登入網站， filter 根據網址判斷應該是會過濾什麼
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/01.png)
+![image](/img/picoCTF/Web_Exploitation/88/01.png)
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/02.png)
+![image](/img/picoCTF/Web_Exploitation/88/02.png)
 
 亂輸入會輸出 SQL 的查詢指令，這題應該就是 SQL injection 了
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/03.png)
+![image](/img/picoCTF/Web_Exploitation/88/03.png)
 
 既然過濾了 `or` 就使用 `admin'--` 將密碼判斷註解掉即可進入 round 2
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/04.png)
+![image](/img/picoCTF/Web_Exploitation/88/04.png)
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/05.png)
+![image](/img/picoCTF/Web_Exploitation/88/05.png)
 
 round 2 是過濾了 `or and like = --`，那改用 `admin'/*` 同樣註解掉密碼判斷即可進入 round 3
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/06.png)
+![image](/img/picoCTF/Web_Exploitation/88/06.png)
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/07.png)
+![image](/img/picoCTF/Web_Exploitation/88/07.png)
 
 round 3 過濾了 `or and = like > < --`，同樣使用 `admin'/*` 註解掉密碼判斷進入 round 4
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/08.png)
+![image](/img/picoCTF/Web_Exploitation/88/08.png)
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/09.png)
+![image](/img/picoCTF/Web_Exploitation/88/09.png)
 
 round 4 過濾了 `or and = like > < -- admin`，使用 `ad'||'min'/*` 規避掉 admin 並註解掉密碼判斷即可進入 round 5
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/10.png)
+![image](/img/picoCTF/Web_Exploitation/88/10.png)
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/11.png)
+![image](/img/picoCTF/Web_Exploitation/88/11.png)
 
 round 5 過濾 `or and = like > < -- union admin`，繼續使用 `ad'||'min'/*` 即可進入 round 6 並獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/12.png)
+![image](/img/picoCTF/Web_Exploitation/88/12.png)
 
-![image](/img/picoCTF/Web_Exploitation/Web_Gauntlet/13.png)
+![image](/img/picoCTF/Web_Exploitation/88/13.png)
 
-``` TXT
+``` txt
 picoCTF{y0u_m4d3_1t_79a0ddc6}
 ```
 
 ---
 
-### Old Sessions
-**題目連結**: https://learn.cylabacademy.org/library/739
->Proper session timeout controls are critical for securing user accounts. If a user logs in on a public or shared computer but doesn’t explicitly log out (instead simply closing the browser tab), and session expiration dates are misconfigured, the session may remain active indefinitely.
-This then allows an attacker using the same browser later to access the user’s account without needing credentials, exploiting the fact that sessions never expire and remain authenticated.
-Your friend tells you to check out a new social media platform he built a few years ago. Although its still under development, he said the site is almost complete. He also mentioned that he hates constantly logging into sites, and so has made his page that 'once you login, you never have to log-out again'!
-Browse [here](http://dolphin-cove.picoctf.net:54958/), and find the flag!
-
-連線後發現是一個登入網站，有個Register，點擊後可以創建帳號
-
-![image](/img/picoCTF/Web_Exploitation/Old_Sessions/01.png)
-
-隨便打然後去登入就可以進入網站，發現有人提到他找到了奇怪的頁面，跳轉過去看看
-
-![image](/img/picoCTF/Web_Exploitation/Old_Sessions/02.png)
-
-![image](/img/picoCTF/Web_Exploitation/Old_Sessions/03.png)
-
-發現有 admin 的 session，在 cookie 中發現有 session 可以更改，將自己的改為 admin 的並返回主頁即可獲得 flag
-
-![image](/img/picoCTF/Web_Exploitation/Old_Sessions/04.png)
-
-![image](/img/picoCTF/Web_Exploitation/Old_Sessions/05.png)
-
-```TXT
-picoCTF{s3t_s3ss10n_3xp1rat10n5_77b6684a}
-```
-
----
-
-## Hashgate
+### Hashgate
+**題目連結**: https://learn.cylabacademy.org/library/750
 >You have gotten access to an organisation's portal. Submit your email and password, and it redirects you to your profile. But be careful: just because access to the admin isn’t directly exposed doesn’t mean it’s secure. Maybe someone forgot that obscurity isn’t security... Can you find your way into the admin’s profile for this organisation and capture the flag?
 The website is running [here](http://crystal-peak.picoctf.net:51259/).
 
 連線後發現是登入網站，可以在 html 內找到 guest 的帳號密碼，嘗試登入看看
 
-![image](/img/picoCTF/Web_Exploitation/Hashgate/01.png)
+![image](/img/picoCTF/Web_Exploitation/750/01.png)
 
-![image](/img/picoCTF/Web_Exploitation/Hashgate/02.png)
+![image](/img/picoCTF/Web_Exploitation/750/02.png)
 
 觀察登入後的頁面，發現網址有一串加密文字，嘗試後發現是 MD5，結合提示所述，公司有 20 人製作 playload 並執行即可獲得 flag
 
-![image](/img/picoCTF/Web_Exploitation/Hashgate/03.png)
+![image](/img/picoCTF/Web_Exploitation/750/03.png)
 
-![image](/img/picoCTF/Web_Exploitation/Hashgate/04.png)
+![image](/img/picoCTF/Web_Exploitation/750/04.png)
 
-```TXT
+```txt
 picoCTF{id0r_unl0ck_8b02a9fd}
 ```
 
@@ -667,27 +667,27 @@ Access the server using nc verbal-sleep.picoctf.net 57421
 
 先連線查看內容
 
-![image](/img/picoCTF/Cryptography/hashcrack/01.png)
+![image](/img/picoCTF/Cryptography/475/01.png)
 
 看起來是要解碼 `482c811da5d5b4bc6d497ffa98491e38`，因為是32位的 hash，故嘗試 MD5
 
-![image](/img/picoCTF/Cryptography/hashcrack/02.png)
+![image](/img/picoCTF/Cryptography/475/02.png)
 
-![image](/img/picoCTF/Cryptography/hashcrack/03.png)
+![image](/img/picoCTF/Cryptography/475/03.png)
 
 再解碼 `b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3`，因為是40位的 hash，故嘗試 SHA-1
 
-![image](/img/picoCTF/Cryptography/hashcrack/04.png)
+![image](/img/picoCTF/Cryptography/475/04.png)
 
-![image](/img/picoCTF/Cryptography/hashcrack/05.png)
+![image](/img/picoCTF/Cryptography/475/05.png)
 
 再解碼 `916e8c4f79b25028c9e467f1eb8eee6d6bbdff965f9928310ad30a8d88697745`，因為是64位的 hash，故嘗試 SHA-256
 
-![image](/img/picoCTF/Cryptography/hashcrack/06.png)
+![image](/img/picoCTF/Cryptography/475/06.png)
 
 輸入完成即可獲得 flag
 
-![image](/img/picoCTF/Cryptography/hashcrack/07.png)
+![image](/img/picoCTF/Cryptography/475/07.png)
 
 ``` txt
 picoCTF{UseStr0nG_h@shEs_&PaSswDs!_4c95d69f}
@@ -703,19 +703,19 @@ Download the file [here](https://artifacts.picoctf.net/c_titan/111/enc_flag).
 
 先下載檔案並觀察
 
-![image](/img/picoCTF/Cryptography/interencdec/01.png)
+![image](/img/picoCTF/Cryptography/418/01.png)
 
 此檔為 base64，使用線上解碼器解碼
 
-![image](/img/picoCTF/Cryptography/interencdec/02.png)
+![image](/img/picoCTF/Cryptography/418/02.png)
 
 解碼完成看起來還要進行一次 base64 解碼
 
-![image](/img/picoCTF/Cryptography/interencdec/03.png)
+![image](/img/picoCTF/Cryptography/418/03.png)
 
 這個看起來是 Caesar Cipher，使用線上解碼器
 
-![image](/img/picoCTF/Cryptography/interencdec/04.png)
+![image](/img/picoCTF/Cryptography/418/04.png)
 
 獲得 flag
 
@@ -733,7 +733,7 @@ picoCTF{caesar_d3cr9pt3d_890d2379}
 
 先將檔案下載並依照題目敘述，使用 ROT13 線上解碼器解碼即可獲得 flag
 
-![image](/img/picoCTF/Cryptography/Mod_26/01.png)
+![image](/img/picoCTF/Cryptography/144/01.png)
 
 ``` txt
 picoCTF{next_time_I'll_try_2_rounds_of_rot13_45559abd}
@@ -754,7 +754,7 @@ Connect to the program with netcat: $ nc verbal-sleep.picoctf.net 49285
 
 先連線觀察發現可以輸入東西
 
-![image](/img/picoCTF/Reverse_Engineering/Flag_Hunters/01.png)
+![image](/img/picoCTF/Reverse_Engineering/472/01.png)
 
 解析檔案後發現在 `Print lyrics` 區域內有以下程式控制輸出
 
@@ -788,7 +788,7 @@ elif re.match(r"RETURN [0-9]+", line):
 
 可以透過 `RETURN` 使歌詞跳轉到指定的行數，又因程式一開始將 flag 放在開頭了，所以只需使用指令 `a;RETURN 0` 即可使程式讀取並執行我們的指令並成功獲取 flag
 
-![image](/img/picoCTF/Reverse_Engineering/Flag_Hunters/02.png)
+![image](/img/picoCTF/Reverse_Engineering/472/02.png)
 
 ``` TXT
 picoCTF{70637h3r_f0r3v3r_836f0788}
@@ -808,15 +808,15 @@ picoCTF{70637h3r_f0r3v3r_836f0788}
 Find the PDF file here [Hidden Confidential Document](https://challenge-files.picoctf.net/c_amiable_citadel/ec88ce83253c1bd53af98533a401b9ea0b37602fd6276271c724d5cdd126b285/confidential.pdf) and uncover the flag within the metadata.
 
 先下載檔案
-![image](/img/picoCTF/Forensics/Riddle_Registry/01.png)
+![image](/img/picoCTF/Forensics/530/01.png)
 
 根據提示使用 `pdfinfo confidential.pdf` 檢查 PDF 的 metadata 後發現 Author 看起來像 Base64
 
-![image](/img/picoCTF/Forensics/Riddle_Registry/02.png)
+![image](/img/picoCTF/Forensics/530/02.png)
 
 使用線上解密器解密後即可獲得 flag
 
-![image](/img/picoCTF/Forensics/Riddle_Registry/03.png)
+![image](/img/picoCTF/Forensics/530/03.png)
 
 ``` txt
 picoCTF{puzzl3d_m3tadata_f0und!_0e2de5a1}
@@ -832,29 +832,29 @@ Download the jpg image [here](https://challenge-files.picoctf.net/c_amiable_cita
 
 先下載檔案
 
-![image](/img/picoCTF/Forensics/Hidden_in_plainsight/01.png)
+![image](/img/picoCTF/Forensics/524/01.png)
 
 根據提示使用 `file img.jpg` 檢查 img 的 metadata 後發現 comment 看起來像 Base64
 
-![image](/img/picoCTF/Forensics/Hidden_in_plainsight/02.png)
+![image](/img/picoCTF/Forensics/524/02.png)
 
 使用線上解密器解密
 
-![image](/img/picoCTF/Forensics/Hidden_in_plainsight/03.png)
+![image](/img/picoCTF/Forensics/524/03.png)
 
 解密後得到 `steghide:cEF6endvcmQ=`，看起來像一個指令接一個 Base64 加密字串，查詢後得知前半部分為意指令，可以將資料嵌入檔案或提取隱藏資料 (參考自此[網站](https://www.geeksforgeeks.org/linux-unix/how-to-use-steghide-and-stegosuite-steganography-tools-in-kali-linux/))
 
 先使用 `steghide info img.jpg` 查看是否有隱藏資料
 
-![image](/img/picoCTF/Forensics/Hidden_in_plainsight/04.png)
+![image](/img/picoCTF/Forensics/524/04.png)
 
 發現要提取崁入的檔案需要密碼，驗證後半部份為加密後的密碼，使用線上解密器解密得到密碼
 
-![image](/img/picoCTF/Forensics/Hidden_in_plainsight/05.png)
+![image](/img/picoCTF/Forensics/524/05.png)
 
 使用 `steghide extract -sf img.jpg` 並輸入解碼後的密碼即可獲得 flag
 
-![image](/img/picoCTF/Forensics/Hidden_in_plainsight/06.png)
+![image](/img/picoCTF/Forensics/524/06.png)
 
 ``` txt
 picoCTF{h1dd3n_1n_1m4g3_67479645}
@@ -870,15 +870,15 @@ Download the encoded data here: [Logs Data](https://challenge-files.picoctf.net/
 
 先下載檔案
 
-![image](/img/picoCTF/Forensics/Flag_in_Flame/01.png)
+![image](/img/picoCTF/Forensics/532/01.png)
 
 因為提示裡面說用 Base64 解碼並轉換成圖片因此使用指令 `cat logs.txt | base64 --decode > output.jpg` 得到一張圖片
 
-![image](/img/picoCTF/Forensics/Flag_in_Flame/02.png)
+![image](/img/picoCTF/Forensics/532/02.png)
 
 得到 `7069636F4354467B666F72656E736963735F616E616C797369735F69735F616D617A696E675F35646161346132667D` 這串 16 進位，因為答案是 picoCTF{...} 因此推斷應該是要 Hex to ASCII，使用線上解碼器
 
-![image](/img/picoCTF/Forensics/Flag_in_Flame/03.png)
+![image](/img/picoCTF/Forensics/532/03.png)
 
 ``` txt
 picoCTF{forensics_analysis_is_amazing_5daa4a2f}
@@ -894,19 +894,19 @@ Download the disk image [here](https://artifacts.picoctf.net/c/538/disko-1.dd.gz
 
 先下載檔案
 
-![image](/img/picoCTF/Forensics/DISKO_1/01.png)
+![image](/img/picoCTF/Forensics/505/01.png)
 
 看到副檔名為 .gz，先使用`gzip -d disko-1.dd.gz` 解壓縮檔案獲得 `disko-1.dd`
 
-![image](/img/picoCTF/Forensics/DISKO_1/02.png)
+![image](/img/picoCTF/Forensics/505/02.png)
 
 根據提示使用 `strings disko-1.dd` 試試
 
-![image](/img/picoCTF/Forensics/DISKO_1/03.png)
+![image](/img/picoCTF/Forensics/505/03.png)
 
 然後就跑出了一大串資料，顯然直接在裡面找 flag 是不切實際得，因此使用 `strings disko-1.dd | grep picoCTF` 在輸出時同時搜索 picoCTF 並印出搜索結果，即可獲得 flag
 
-![image](/img/picoCTF/Forensics/DISKO_1/04.png)
+![image](/img/picoCTF/Forensics/505/04.png)
 
 ``` txt
 picoCTF{1t5_ju5t_4_5tr1n9_e3408eef}
@@ -922,17 +922,17 @@ Download the image: [red.png](https://challenge-files.picoctf.net/c_verbal_sleep
 
 先使用 `binwalk` 檢查圖片
 
-![image](/img/picoCTF/Forensics/RED/01.png)
+![image](/img/picoCTF/Forensics/460/01.png)
 
 發現沒有隱藏東西，根據提示應該與像素有關，查詢網路後常是指令 `zsteg red.png`
 
-![image](/img/picoCTF/Forensics/RED/02.png)
+![image](/img/picoCTF/Forensics/460/02.png)
 
 發現疑似 base64 密文，解密後即可獲得 flag
 
-![image](/img/picoCTF/Forensics/RED/03.png)
+![image](/img/picoCTF/Forensics/460/03.png)
 
-``` TXT
+``` txt
 picoCTF{r3d_1s_th3_ult1m4t3_cur3_f0r_54dn355_}
 ```
 
@@ -953,11 +953,11 @@ To decrypt the file once you've verified the hash, run ./decrypt.sh files/<file>
 sha256sum ./files/* | grep "b09c99c555e2b39a7e97849181e8996bc6a62501f0149c32447d8e65e205d6d2"
 ```
 
-![image](/img/picoCTF/Forensics/Verify/01.png)
+![image](/img/picoCTF/Forensics/450/01.png)
 
 找到後使用 `./decrypt.sh ./files/451fd69b` 將檔案解密即可獲得 flag
 
-``` TXT
+``` txt
 picoCTF{trust_but_verify_451fd69b}
 ```
 
@@ -974,9 +974,9 @@ Using the password 6dd28e9b. Accept the fingerprint with yes, and ls once connec
 
 連線後發現有一個 QR code，使用 `zbarimg flag.png` 即可獲得 flag
 
-![image](/img/picoCTF/Forensics/Scan_Surprise/01.png)
+![image](/img/picoCTF/Forensics/444/01.png)
 
-``` TXT
+``` txt
 picoCTF{p33k_@_b00_a81f0a35}
 ```
 
@@ -989,15 +989,15 @@ Download the suspicious file [here](https://artifacts.picoctf.net/c_titan/9/flag
 
 先下載檔案並使用 `file` 檢查檔案格式
 
-![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/01.png)
+![image](/img/picoCTF/Forensics/423/01.png)
 
 發現為 `PNG image`，複製一份並改為 `.png` 即可獲得前半個 flag，後半個直接開啟 pdf 即可獲得
 
-![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/02.png)
+![image](/img/picoCTF/Forensics/423/02.png)
 
-![image](/img/picoCTF/Forensics/Secret_of_the_Polyglot/03.png)
+![image](/img/picoCTF/Forensics/423/03.png)
 
-``` TXT
+``` txt
 picoCTF{f1u3n7_1n_pn9_&_pdf_7f9bccd1}
 ```
 
@@ -1010,11 +1010,11 @@ Download this file [here](https://artifacts.picoctf.net/c_titan/129/unknown.zip)
 
 下載並解壓所檔案會獲得一張圖片，使用各種指令檢查後在 `head ukn_reality.jpg` 內發現疑似 base64 的文字
 
-![image](/img/picoCTF/Forensics/CanYouSee/01.png)
+![image](/img/picoCTF/Forensics/408/01.png)
 
 使用 `echo "cGljb0NURntNRTc0RDQ3QV9ISUREM05fYjMyMDQwYjh9Cg==" | base64 -d` 即可獲得 flag
 
-``` TXT
+``` txt
 picoCTF{ME74D47A_HIDD3N_b32040b8}
 ```
 
@@ -1029,17 +1029,17 @@ Download the disk image [here](https://artifacts.picoctf.net/c/540/disko-2.dd.gz
 
 下載並解壓縮檔案後有一個 .dd 檔，先使用 `file disko-2.dd` 檢查檔案
 
-![image](/img/picoCTF/Forensics/DISKO_2/01.png)
+![image](/img/picoCTF/Forensics/506/01.png)
 
 輸出顯示有兩個分區，使用 `mmls disko-2.dd` 讀取分區資訊
 
-![image](/img/picoCTF/Forensics/DISKO_2/02.png)
+![image](/img/picoCTF/Forensics/506/02.png)
 
 因為題目有提到 `The right one is Linux!`，故正確分區應為 002 ，start at 2048, end at 51200 使用 `dd if=disko-2.dd of=partition1.dd bs=512 skip=2048 count=51200` 提取分區並使用 `strings partition1.dd | grep "picoCTF{.*}"` 查找即可獲取 flag
 
-![image](/img/picoCTF/Forensics/DISKO_2/03.png)
+![image](/img/picoCTF/Forensics/506/03.png)
 
-``` TXT
+``` txt
 picoCTF{4_P4Rt_1t_i5_a93c3ba0}
 ```
 
@@ -1058,15 +1058,15 @@ Download the [logs](https://challenge-files.picoctf.net/c_amiable_citadel/49cec6
 
 先下載檔案
 
-![image](/img/picoCTF/General_Skills/Log_Hunt/01.png)
+![image](/img/picoCTF/General_Skills/527/01.png)
 
 提示有說可以使用 grep 搜索文字，先使用 `grep picoCTF server.log` 搜索 picoCTF 試試
 
-![image](/img/picoCTF/General_Skills/Log_Hunt/02.png)
+![image](/img/picoCTF/General_Skills/527/02.png)
 
 發現有一部份的 flag 出現了，但少了一部份，改成使用前面的 INFO FLAGPART 搜索
 
-![image](/img/picoCTF/General_Skills/Log_Hunt/03.png)
+![image](/img/picoCTF/General_Skills/527/03.png)
 
 拼起來即可獲得 flag
 ``` txt
@@ -1083,15 +1083,15 @@ Download the file [here](https://challenge-files.picoctf.net/c_amiable_citadel/d
 
 先下載檔案
 
-![image](/img/picoCTF/General_Skills/Corrupted_file/01.png)
+![image](/img/picoCTF/General_Skills/519/01.png)
 
 依照提示使用 `xxd -l 10 file` 查看檔案前幾行部份，提示又說與 JPEG 有關，先查 JPEG headr format 應該為何
 
-![image](/img/picoCTF/General_Skills/Corrupted_file/02.png)
+![image](/img/picoCTF/General_Skills/519/02.png)
 
 應為 `FF D8` 明顯與檔案不符，推斷應該將前兩位元修復即可獲得 flag，使用 `printf '\xFF\xD8' | cat - <(tail -c +3 file) > fixed.jpg`，將檔案前兩位元替換並輸出成 jpg
 
-![image](/img/picoCTF/General_Skills/Corrupted_file/03.png)
+![image](/img/picoCTF/General_Skills/519/03.png)
 
 即可獲得 flag
 ``` txt
@@ -1109,11 +1109,11 @@ Connect to the program with netcat:
 
 連線後發現是一個要一直按 enter 的東西
 
-![image](/img/picoCTF/General_Skills/FANTASY_CTF/01.png)
+![image](/img/picoCTF/General_Skills/471/01.png)
 
 按到中間要選選項，都選 a 試試
 
-![image](/img/picoCTF/General_Skills/FANTASY_CTF/02.png)
+![image](/img/picoCTF/General_Skills/471/02.png)
 
 然後就拿到 flag 了
 
@@ -1124,7 +1124,7 @@ picoCTF{m1113n1um_3d1710n_dd015572}
 ---
 
 ### Super SSH
-**題目連結**: https://learn.cylabacademy.org/library/424?page=3
+**題目連結**: https://learn.cylabacademy.org/library/424
 
 >Using a Secure Shell (SSH) is going to be pretty important.
 Can you ssh as ctf-player to titan.picoctf.net at port 59265 to get the flag?
@@ -1134,7 +1134,7 @@ If you're not sure what a shell is, check out our Primer: https://primer.picoctf
 
 依照題目敘述使用指令 `ssh -p 59265 ctf-player@titan.picoctf.net` 並輸入密碼 `f3b61b38` 即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Super_SSH/01.png)
+![image](/img/picoCTF/General_Skills/424/01.png)
 
 ``` txt
 picoCTF{s3cur3_c0nn3ct10n_3e293eea}
@@ -1151,23 +1151,23 @@ You can download the challenge files here:
 
 先下載檔案並解壓縮
 
-![image](/img/picoCTF/General_Skills/Time_Machine/01.png)
+![image](/img/picoCTF/General_Skills/425/01.png)
 
 可以看到他創建了一個 `drop-in` 資料夾，進入看看
 
-![image](/img/picoCTF/General_Skills/Time_Machine/02.png)
+![image](/img/picoCTF/General_Skills/425/02.png)
 
 可以看到裡面有一個文字檔跟一個隱藏的資料夾，先查看文字檔
 
-![image](/img/picoCTF/General_Skills/Time_Machine/03.png)
+![image](/img/picoCTF/General_Skills/425/03.png)
 
 他說要查看 commit history，進入隱藏資料夾看看
 
-![image](/img/picoCTF/General_Skills/Time_Machine/04.png)
+![image](/img/picoCTF/General_Skills/425/04.png)
 
 可以看到裡面有個 `COMMIT_EDITMSG` 與 commit history 有關，查看這個檔案即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Time_Machine/05.png)
+![image](/img/picoCTF/General_Skills/425/05.png)
 
 ``` txt
 picoCTF{t1m3m@ch1n3_8defe16a}
@@ -1183,7 +1183,7 @@ picoCTF{t1m3m@ch1n3_8defe16a}
 
 依照題目敘述，下載檔案並運行即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/runme.py/01.png)
+![image](/img/picoCTF/General_Skills/250/01.png)
 
 ``` txt
 picoCTF{run_s4n1ty_run}
@@ -1199,11 +1199,11 @@ picoCTF{run_s4n1ty_run}
 
 先下載並解壓縮
 
-![image](/img/picoCTF/General_Skills/Big_Zip/01.png)
+![image](/img/picoCTF/General_Skills/322/01.png)
 
 解壓縮時發現有非常多檔案，一個一個慢慢找肯定不行，於是使用指令 `grep -r "picoCTF"` 在資料夾內搜尋 flag
 
-![image](/img/picoCTF/General_Skills/Big_Zip/02.png)
+![image](/img/picoCTF/General_Skills/322/02.png)
 
 ``` txt
 picoCTF{gr3p_15_m4g1c_ef8790dc}
@@ -1219,13 +1219,13 @@ picoCTF{gr3p_15_m4g1c_ef8790dc}
 
 先下載並開啟檔案
 
-![image](/img/picoCTF/General_Skills/fixme1.py/01.png)
+![image](/img/picoCTF/General_Skills/240/01.png)
 
-![image](/img/picoCTF/General_Skills/fixme1.py/02.png)
+![image](/img/picoCTF/General_Skills/240/02.png)
 
 是一個 python，問題很明顯就是第二十行並未正確縮排，把前面的空格刪除並執行即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/fixme1.py/03.png)
+![image](/img/picoCTF/General_Skills/240/03.png)
 
 ``` txt
 picoCTF{1nd3nt1ty_cr1515_6a476c8f}
@@ -1241,13 +1241,13 @@ picoCTF{1nd3nt1ty_cr1515_6a476c8f}
 
 先下載並開啟檔案
 
-![image](/img/picoCTF/General_Skills/fixme2.py/01.png)
+![image](/img/picoCTF/General_Skills/241/01.png)
 
-![image](/img/picoCTF/General_Skills/fixme2.py/02.png)
+![image](/img/picoCTF/General_Skills/241/02.png)
 
 是一個 python，問題很明顯就是第二十二行，if 判斷式應該使用 == 而不是 =，修正並執行即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/fixme2.py/03.png)
+![image](/img/picoCTF/General_Skills/241/03.png)
 
 ``` txt
 picoCTF{3qu4l1ty_n0t_4551gnm3nt_4863e11b}
@@ -1263,15 +1263,15 @@ picoCTF{3qu4l1ty_n0t_4551gnm3nt_4863e11b}
 
 先下載檔案並根據提示運行檔案
 
-![image](/img/picoCTF/General_Skills/Wave_a_flag/01.png)
+![image](/img/picoCTF/General_Skills/170/01.png)
 
 發現權限不足，更改權限並重新運行
 
-![image](/img/picoCTF/General_Skills/Wave_a_flag/02.png)
+![image](/img/picoCTF/General_Skills/170/02.png)
 
 根據運行結果添加 `-h`，即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Wave_a_flag/03.png)
+![image](/img/picoCTF/General_Skills/170/03.png)
 
 ``` txt
 picoCTF{b1scu1ts_4nd_gr4vy_ac5832c}
@@ -1298,7 +1298,7 @@ picoCTF{101010}
 
 既然題目提到 base 第一個想到的就是 base64，使用 base64 線上解碼器試試
 
-![image](/img/picoCTF/General_Skills/Bases/01.png)
+![image](/img/picoCTF/General_Skills/67/01.png)
 
 看起來就是答案沒錯，用 picoCTF{} 包起來即可
 
@@ -1315,7 +1315,7 @@ picoCTF{l3arn_th3_r0p35}
 
 下載並解壓縮後使用指令 `find ./files -name "uber-secret.txt"` 即可找到檔案，再查看文件即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/First_Find/01.png)
+![image](/img/picoCTF/General_Skills/320/01.png)
 
 ---
 
@@ -1330,9 +1330,9 @@ Using the password 1db87a14. Accept the fingerprint with yes, and ls once connec
 
 連線後發現是一個猜數字遊戲，根據題目標題，使用二分搜索概念配合輸出輸入數字即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Binary_Search/01.png)
+![image](/img/picoCTF/General_Skills/442/01.png)
 
-``` TXT
+``` txt
 picoCTF{g00d_gu355_1597707f}
 ```
 
@@ -1364,15 +1364,15 @@ char *find_little_endian(const char *word)
 
 再深入查看要比對字串的函式定義後發現 `"%02X"` ，推測目標字串應該是十六進位的，且有正反兩個目標。結合其變數名稱 `Little/Big Endian` ，應該是將原指 **記憶體寫入方式** 的定義轉化為 **字串正反轉後的十六進位數值**。
 
-![image](/img/picoCTF/General_Skills/endianness/01.png)
+![image](/img/picoCTF/General_Skills/414/01.png)
 
 連線獲得字串後分別使用 `echo "fzcgq" | rev | xxd -p -u` 與 `echo "fzcgq" | xxd -p -u`，獲得 Little/Big Endian 後輸入即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/endianness/02.png)
+![image](/img/picoCTF/General_Skills/414/02.png)
 
-![image](/img/picoCTF/General_Skills/endianness/03.png)
+![image](/img/picoCTF/General_Skills/414/03.png)
 
-``` TXT
+``` txt
 picoCTF{3ndi4n_sw4p_su33ess_d58517b6}
 ```
 
@@ -1386,13 +1386,13 @@ You download the challenge files here:
 
 先下載並解壓縮進入資料夾探索
 
-![image](/img/picoCTF/General_Skills/Commitment_Issues/01.png)
+![image](/img/picoCTF/General_Skills/441/01.png)
 
 解壓縮時發現有 `.git` 資料夾，題目應該和其有關，根據提示使用 `git log` 檢查 commit，發現 commit b562f... 有 creat flag ，使用 `git checkout b562f0b425907789d11d2fe2793e67592dc6be93` 將版本切換至其即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Commitment_Issues/02.png)
+![image](/img/picoCTF/General_Skills/441/02.png)
 
-``` TXT
+``` txt
 picoCTF{s@n1t1z3_c785c319}
 ```
 
@@ -1405,29 +1405,29 @@ Start searching for the flag here nc foggy-cliff.picoctf.net 51531
 
 直接連線可以看到題目，要求輸入對應的指令。
 
-![image](/img/picoCTF/General_Skills/Undo/01.png)
+![image](/img/picoCTF/General_Skills/766/01.png)
 
 第一題是Base64 encoded string，使用指令 `base64 -d` 即可進入下一題
 
-![image](/img/picoCTF/General_Skills/Undo/02.png)
+![image](/img/picoCTF/General_Skills/766/02.png)
 
 第二題是Reversed text，使用指令 `rev` 即可進入下一題
 
-![image](/img/picoCTF/General_Skills/Undo/03.png)
+![image](/img/picoCTF/General_Skills/766/03.png)
 
 第三題是要用 _ 替代 -，使用指令 `tr '-' '_'` 即可進入下一題
 
-![image](/img/picoCTF/General_Skills/Undo/04.png)
+![image](/img/picoCTF/General_Skills/766/04.png)
 
 第四題是要用 {} 替換 ()，使用指令 `tr '()' '{}'` 即可進入下一題
 
-![image](/img/picoCTF/General_Skills/Undo/05.png)
+![image](/img/picoCTF/General_Skills/766/05.png)
 
 第五題要用 ROT13 進行轉換，使指令 `tr 'A-Za-z' 'N-ZA-Mn-za-m'` 即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Undo/06.png)
+![image](/img/picoCTF/General_Skills/766/06.png)
 
-```TXT
+```txt
 picoCTF{Revers1ng_t3xt_Tr4nsf0rm@t10ns_3a939318}
 ```
 
@@ -1443,37 +1443,57 @@ Check the README to get your flag!
 
 根據題目將檔案下載並查看 README
 
-![image](/img/picoCTF/General_Skills/MY_GIT/01.png)
+![image](/img/picoCTF/General_Skills/764/01.png)
 
 只有當 flag.txt 被 root:root@picoctf 上傳時才能獲取 flag，先透過`echo flag > flag.txt`創建檔案，並將名字與郵件設成題目所需
 
-![image](/img/picoCTF/General_Skills/MY_GIT/02.png)
+![image](/img/picoCTF/General_Skills/764/02.png)
 
 完成後 push 即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/MY_GIT/03.png)
+![image](/img/picoCTF/General_Skills/764/03.png)
 
-```TXT
+```txt
 picoCTF{1mp3rs0n4t4_g17_345y_506743df}
 ```
 
 ---
 
-## ping-cmd
+### ping-cmd
 **題目連結**:https://learn.cylabacademy.org/library/757
 >Can you make the server reveal its secrets? It seems to be able to ping Google DNS, but what happens if you get a little creative with your input?
 You can connect to the service here nc mysterious-sea.picoctf.net 51563
 
 根據題目連線後發現可以自行輸入 IP 做使用，結合提示說可以執行多項指令，輸入 `8.8.8.8 | ls` 看看有什麼
 
-![image](/img/picoCTF/General_Skills/ping-cmd/01.png)
+![image](/img/picoCTF/General_Skills/757/01.png)
 
 發現有 flag.txt，改成 `cat flag.txt` 即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/ping-cmd/02.png)
+![image](/img/picoCTF/General_Skills/757/02.png)
 
-```TXT
+```txt
 picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_b75fc848}
+```
+
+---
+
+### bytemancy 0
+**題目連結**:https://learn.cylabacademy.org/library/742
+>Can you conjure the right bytes? The program's source code can be downloaded [here](https://challenge-files.picoctf.net/c_candy_mountain/87600c43f9f35274d6269e8237fcd84602c631a5ebcf5251266fb11dc0e94f3b/app.py).
+Connect to the program with netcat:
+ $ nc candy-mountain.picoctf.net 59467
+
+先連線觀察
+
+![image](/img/picoCTF/General_Skills/742/01.png)
+
+根據他的要求輸入`eee`，即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/742/02.png)
+
+```txt
+picoCTF{pr1n74813_ch4r5_4daf27d8}
 ```
 
 ---
@@ -1484,9 +1504,9 @@ picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_b75fc848}
 Connect to the program with netcat: 
  $ nc foggy-cliff.picoctf.net 57579
 
-先連線看看
+先連線觀察
 
-![image](/img/picoCTF/General_Skills/bytemancy_1/01.png)
+![image](/img/picoCTF/General_Skills/762/01.png)
 
 發現他需要 連續發送 ASCII 值為 101(e) 的字連續 1751 次，且不能有空格，製作一個 python 發送字串即可獲得flag
 
@@ -1501,9 +1521,9 @@ p.sendline(payload)
 p.interactive()
 ```
 
-![image](/img/picoCTF/General_Skills/bytemancy_1/02.png)
+![image](/img/picoCTF/General_Skills/762/02.png)
 
-```TXT
+```txt
 picoCTF{h0w_m4ny_e's???_e0d51f4b}
 ```
 
@@ -1516,52 +1536,53 @@ SSH to dolphin-cove.picoctf.net:57642 and login as ctf-player with password 1ad5
 
 使用指令`ssh -p 57642 ctf-player@dolphin-cove.picoctf.net`並輸入密碼`1ad5be0d`連線，順便輸入`ls -la`看看有什麼檔案
 
-![image](/img/picoCTF/General_Skills/Piece_by_Piece/01.png)
+![image](/img/picoCTF/General_Skills/740/01.png)
 
 發現有一個`instructions.txt`，打開看看
 
-![image](/img/picoCTF/General_Skills/Piece_by_Piece/02.png)
+![image](/img/picoCTF/General_Skills/740/02.png)
 
 發現其他`part_a*`是被拆分的 flag，使用正則表達式`cat part_a* > combined_file && file combined_file`將分部組成原本的樣子，並使用查看是什麼檔案類型
 
-![image](/img/picoCTF/General_Skills/Piece_by_Piece/03.png)
+![image](/img/picoCTF/General_Skills/740/03.png)
 
 發現是 .zip 使用 `mv combined_file flag.zip && unzip flag.zip`重新命名並解壓縮。需輸入在 instructions 中提到的解壓縮密碼`supersecret`
 
-![image](/img/picoCTF/General_Skills/Piece_by_Piece/04.png)
+![image](/img/picoCTF/General_Skills/740/04.png)
 
 使用`flag.txt`查看解壓後檔案即可獲得 flag
 
-```TXT
+```txt
 picoCTF{z1p_and_spl1t_f1l3s_4r3_fun_5b6e506b}
 ```
 
 ---
 
-## binhexa
+### binhexa
 **題目連結**:https://learn.cylabacademy.org/library/404
 >How well can you perfom basic binary operations?
 Start searching for the flag here nc titan.picoctf.net 61269
 
 連線後發現是要回答二進為運算問題，根據問題回答即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/binhexa/01.png)
+![image](/img/picoCTF/General_Skills/404/01.png)
 
 `>>`與`<<`為右移與左移，是將原式向左或右移動後捨去該方向最後一位，另一方向補 0，詳細可參考 [Microsoft](https://learn.microsoft.com/zh-tw/cpp/cpp/left-shift-and-right-shift-operators-input-and-output?view=msvc-170) 提供之文檔。
 
-```TXT
+```txt
 picoCTF{b1tw^3se_0p3eR@tI0n_su33essFuL_d6f8047e}
 ```
+
 ---
 
-## repetitions
+### repetitions
 **題目連結**:https://learn.cylabacademy.org/library/371
 >Can you make sense of this file?
 Download the file [here](https://artifacts.picoctf.net/c/475/enc_flag).
 
 先下載下來看看是什麼
 
-![image](/img/picoCTF/General_Skills/repetitions/01.png)
+![image](/img/picoCTF/General_Skills/371/01.png)
 
 看起來是要解碼 base64，結合題目名稱與提示，應該是要解碼好幾次，寫個python解
 
@@ -1591,8 +1612,89 @@ if __name__ == "__main__":
 
 執行即可獲得 flag
 
-```TXT
+```txt
 picoCTF{base64_n3st3d_dic0d!n8_d0wnl04d3d_492767d2}
+```
+
+---
+
+### Blame Game
+**題目連結**:https://learn.cylabacademy.org/library/405
+>Someone's commits seems to be preventing the program from working. Who is it?
+You can download the challenge files here:
+[challenge.zip](https://artifacts.picoctf.net/c_titan/156/challenge.zip)
+
+下載並解壓縮後根據題目，檢查一下上傳紀錄即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/405/01.png)
+
+```txt
+picoCTF{@sk_th3_1nt3rn_d2d29f22}
+```
+
+---
+
+### Collaborative Development
+**題目連結**:https://learn.cylabacademy.org/library/410
+>My team has been working very hard on new features for our flag printing program! I wonder how they'll work together?
+You can download the challenge files here:
+[challenge.zip](https://artifacts.picoctf.net/c_titan/177/challenge.zip)
+
+下載並解壓縮後根據題目，看一下分支
+
+![image](/img/picoCTF/General_Skills/410/01.png)
+
+發現有三個，分別用`git chekout feature/part-*`查看一下，發現有分散的 flag，組合一下即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/410/02.png)
+
+```txt
+picoCTF{t3@mw0rk_m@k3s_th3_dr3@m_w0rk_7ae8dd33}
+```
+
+---
+
+### Codebook
+**題目連結**:https://learn.cylabacademy.org/library/238
+>Run the Python script code.py in the same directory as codebook.txt.
+[Download code.py](https://artifacts.picoctf.net/c/3/code.py)
+[Download codebook.txt](https://artifacts.picoctf.net/c/3/codebook.txt)
+
+下載並運行`code.py`即可獲得 flag
+
+```txt
+picoCTF{c0d3b00k_455157_197a982c}
+```
+
+---
+
+### Magikarp Ground Mission
+**題目連結**:https://learn.cylabacademy.org/library/189
+>Do you know how to move between directories and read files in the shell? Start the container, ssh to it, and then ls once connected to begin.
+Login via ssh as ctf-player with the password, 8c606eb1 on the host wily-courier.picoctf.net and port 63750.
+
+根據題目所述使用`ssh -p 63750 ctf-player@wily-courier.picoctf.net`連線，並使用`ls -la`查看檔案
+
+![image](/img/picoCTF/General_Skills/189/01.png)
+
+看到有 flag 1 of 3 與 2 of 3 的資訊，都打開看看
+
+![image](/img/picoCTF/General_Skills/189/02.png)
+
+記下 1 of 3 ，同時前往 `/` 
+
+![image](/img/picoCTF/General_Skills/189/03.png)
+
+同樣把 2 of 3 與 3 of 3 的資訊，都打開看看，並記下 2 of 3 ，同時前往下一個目標資料夾
+
+![image](/img/picoCTF/General_Skills/189/04.png)
+
+查看 3 of 3 並組合即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/189/05.png)
+
+```txt
+picoCTF{xxsh_0ut_0f_//4t3r_0b24fc4f}
 ```
 
 ---
@@ -1612,21 +1714,21 @@ The program's source code can be downloaded [here](https://challenge-files.picoc
 
 先連線看看
 
-![image](/img/picoCTF/Binary_Exploitation/PIE_TIME/01.png)
+![image](/img/picoCTF/Binary_Exploitation/490/01.png)
 
 看起來是需要知道某個位址然後跳過去，在下載檔案並打開來看看
 
-![image](/img/picoCTF/Binary_Exploitation/PIE_TIME/02.png)
-![image](/img/picoCTF/Binary_Exploitation/PIE_TIME/03.png)
+![image](/img/picoCTF/Binary_Exploitation/490/02.png)
+![image](/img/picoCTF/Binary_Exploitation/490/03.png)
 
 看起來應該是要想辦法從 main 跳到 win 裡面取得 flag，因為 `實際位址 = PIE_base + 函式 offset --> win_real = main_real - main_offset + win_offset
 `，剛好題目也有提供 Binary，可以直接做查詢並計算，使用 `nm vuln | grep "win"` 及 `nm vuln | grep " main"` 查詢兩者的位置
 
-![image](/img/picoCTF/Binary_Exploitation/PIE_TIME/04.png)
+![image](/img/picoCTF/Binary_Exploitation/490/04.png)
 
 位置差為 `133d - 12a7 = 96` 故只需將連線後提供的 main 位置減去 0x96 即可獲得 flag
 
-![image](/img/picoCTF/Binary_Exploitation/PIE_TIME/05.png)
+![image](/img/picoCTF/Binary_Exploitation/490/05.png)
 
 ``` txt
 picoCTF{b4s1c_p051t10n_1nd3p3nd3nc3_0392ebba}

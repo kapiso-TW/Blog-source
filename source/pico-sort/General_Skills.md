@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - General Skills
 date: 2026-03-06
-update: 2026-06-22
+update: 2026-06-24
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -22,15 +22,15 @@ Download the [logs](https://challenge-files.picoctf.net/c_amiable_citadel/49cec6
 
 先下載檔案
 
-![image](/img/picoCTF/General_Skills/Log_Hunt/01.png)
+![image](/img/picoCTF/General_Skills/527/01.png)
 
 提示有說可以使用 grep 搜索文字，先使用 `grep picoCTF server.log` 搜索 picoCTF 試試
 
-![image](/img/picoCTF/General_Skills/Log_Hunt/02.png)
+![image](/img/picoCTF/General_Skills/527/02.png)
 
 發現有一部份的 flag 出現了，但少了一部份，改成使用前面的 INFO FLAGPART 搜索
 
-![image](/img/picoCTF/General_Skills/Log_Hunt/03.png)
+![image](/img/picoCTF/General_Skills/527/03.png)
 
 拼起來即可獲得 flag
 ``` txt
@@ -47,15 +47,15 @@ Download the file [here](https://challenge-files.picoctf.net/c_amiable_citadel/d
 
 先下載檔案
 
-![image](/img/picoCTF/General_Skills/Corrupted_file/01.png)
+![image](/img/picoCTF/General_Skills/519/01.png)
 
 依照提示使用 `xxd -l 10 file` 查看檔案前幾行部份，提示又說與 JPEG 有關，先查 JPEG headr format 應該為何
 
-![image](/img/picoCTF/General_Skills/Corrupted_file/02.png)
+![image](/img/picoCTF/General_Skills/519/02.png)
 
 應為 `FF D8` 明顯與檔案不符，推斷應該將前兩位元修復即可獲得 flag，使用 `printf '\xFF\xD8' | cat - <(tail -c +3 file) > fixed.jpg`，將檔案前兩位元替換並輸出成 jpg
 
-![image](/img/picoCTF/General_Skills/Corrupted_file/03.png)
+![image](/img/picoCTF/General_Skills/519/03.png)
 
 即可獲得 flag
 ``` txt
@@ -73,11 +73,11 @@ Connect to the program with netcat:
 
 連線後發現是一個要一直按 enter 的東西
 
-![image](/img/picoCTF/General_Skills/FANTASY_CTF/01.png)
+![image](/img/picoCTF/General_Skills/471/01.png)
 
 按到中間要選選項，都選 a 試試
 
-![image](/img/picoCTF/General_Skills/FANTASY_CTF/02.png)
+![image](/img/picoCTF/General_Skills/471/02.png)
 
 然後就拿到 flag 了
 
@@ -88,7 +88,7 @@ picoCTF{m1113n1um_3d1710n_dd015572}
 ---
 
 ### Super SSH
-**題目連結**: https://learn.cylabacademy.org/library/424?page=3
+**題目連結**: https://learn.cylabacademy.org/library/424
 
 >Using a Secure Shell (SSH) is going to be pretty important.
 Can you ssh as ctf-player to titan.picoctf.net at port 59265 to get the flag?
@@ -98,7 +98,7 @@ If you're not sure what a shell is, check out our Primer: https://primer.picoctf
 
 依照題目敘述使用指令 `ssh -p 59265 ctf-player@titan.picoctf.net` 並輸入密碼 `f3b61b38` 即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Super_SSH/01.png)
+![image](/img/picoCTF/General_Skills/424/01.png)
 
 ``` txt
 picoCTF{s3cur3_c0nn3ct10n_3e293eea}
@@ -115,23 +115,23 @@ You can download the challenge files here:
 
 先下載檔案並解壓縮
 
-![image](/img/picoCTF/General_Skills/Time_Machine/01.png)
+![image](/img/picoCTF/General_Skills/425/01.png)
 
 可以看到他創建了一個 `drop-in` 資料夾，進入看看
 
-![image](/img/picoCTF/General_Skills/Time_Machine/02.png)
+![image](/img/picoCTF/General_Skills/425/02.png)
 
 可以看到裡面有一個文字檔跟一個隱藏的資料夾，先查看文字檔
 
-![image](/img/picoCTF/General_Skills/Time_Machine/03.png)
+![image](/img/picoCTF/General_Skills/425/03.png)
 
 他說要查看 commit history，進入隱藏資料夾看看
 
-![image](/img/picoCTF/General_Skills/Time_Machine/04.png)
+![image](/img/picoCTF/General_Skills/425/04.png)
 
 可以看到裡面有個 `COMMIT_EDITMSG` 與 commit history 有關，查看這個檔案即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Time_Machine/05.png)
+![image](/img/picoCTF/General_Skills/425/05.png)
 
 ``` txt
 picoCTF{t1m3m@ch1n3_8defe16a}
@@ -147,7 +147,7 @@ picoCTF{t1m3m@ch1n3_8defe16a}
 
 依照題目敘述，下載檔案並運行即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/runme.py/01.png)
+![image](/img/picoCTF/General_Skills/250/01.png)
 
 ``` txt
 picoCTF{run_s4n1ty_run}
@@ -163,11 +163,11 @@ picoCTF{run_s4n1ty_run}
 
 先下載並解壓縮
 
-![image](/img/picoCTF/General_Skills/Big_Zip/01.png)
+![image](/img/picoCTF/General_Skills/322/01.png)
 
 解壓縮時發現有非常多檔案，一個一個慢慢找肯定不行，於是使用指令 `grep -r "picoCTF"` 在資料夾內搜尋 flag
 
-![image](/img/picoCTF/General_Skills/Big_Zip/02.png)
+![image](/img/picoCTF/General_Skills/322/02.png)
 
 ``` txt
 picoCTF{gr3p_15_m4g1c_ef8790dc}
@@ -183,13 +183,13 @@ picoCTF{gr3p_15_m4g1c_ef8790dc}
 
 先下載並開啟檔案
 
-![image](/img/picoCTF/General_Skills/fixme1.py/01.png)
+![image](/img/picoCTF/General_Skills/240/01.png)
 
-![image](/img/picoCTF/General_Skills/fixme1.py/02.png)
+![image](/img/picoCTF/General_Skills/240/02.png)
 
 是一個 python，問題很明顯就是第二十行並未正確縮排，把前面的空格刪除並執行即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/fixme1.py/03.png)
+![image](/img/picoCTF/General_Skills/240/03.png)
 
 ``` txt
 picoCTF{1nd3nt1ty_cr1515_6a476c8f}
@@ -205,13 +205,13 @@ picoCTF{1nd3nt1ty_cr1515_6a476c8f}
 
 先下載並開啟檔案
 
-![image](/img/picoCTF/General_Skills/fixme2.py/01.png)
+![image](/img/picoCTF/General_Skills/241/01.png)
 
-![image](/img/picoCTF/General_Skills/fixme2.py/02.png)
+![image](/img/picoCTF/General_Skills/241/02.png)
 
 是一個 python，問題很明顯就是第二十二行，if 判斷式應該使用 == 而不是 =，修正並執行即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/fixme2.py/03.png)
+![image](/img/picoCTF/General_Skills/241/03.png)
 
 ``` txt
 picoCTF{3qu4l1ty_n0t_4551gnm3nt_4863e11b}
@@ -227,15 +227,15 @@ picoCTF{3qu4l1ty_n0t_4551gnm3nt_4863e11b}
 
 先下載檔案並根據提示運行檔案
 
-![image](/img/picoCTF/General_Skills/Wave_a_flag/01.png)
+![image](/img/picoCTF/General_Skills/170/01.png)
 
 發現權限不足，更改權限並重新運行
 
-![image](/img/picoCTF/General_Skills/Wave_a_flag/02.png)
+![image](/img/picoCTF/General_Skills/170/02.png)
 
 根據運行結果添加 `-h`，即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Wave_a_flag/03.png)
+![image](/img/picoCTF/General_Skills/170/03.png)
 
 ``` txt
 picoCTF{b1scu1ts_4nd_gr4vy_ac5832c}
@@ -262,7 +262,7 @@ picoCTF{101010}
 
 既然題目提到 base 第一個想到的就是 base64，使用 base64 線上解碼器試試
 
-![image](/img/picoCTF/General_Skills/Bases/01.png)
+![image](/img/picoCTF/General_Skills/67/01.png)
 
 看起來就是答案沒錯，用 picoCTF{} 包起來即可
 
@@ -279,7 +279,7 @@ picoCTF{l3arn_th3_r0p35}
 
 下載並解壓縮後使用指令 `find ./files -name "uber-secret.txt"` 即可找到檔案，再查看文件即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/First_Find/01.png)
+![image](/img/picoCTF/General_Skills/320/01.png)
 
 ---
 
@@ -294,9 +294,9 @@ Using the password 1db87a14. Accept the fingerprint with yes, and ls once connec
 
 連線後發現是一個猜數字遊戲，根據題目標題，使用二分搜索概念配合輸出輸入數字即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Binary_Search/01.png)
+![image](/img/picoCTF/General_Skills/442/01.png)
 
-``` TXT
+``` txt
 picoCTF{g00d_gu355_1597707f}
 ```
 
@@ -328,15 +328,15 @@ char *find_little_endian(const char *word)
 
 再深入查看要比對字串的函式定義後發現 `"%02X"` ，推測目標字串應該是十六進位的，且有正反兩個目標。結合其變數名稱 `Little/Big Endian` ，應該是將原指 **記憶體寫入方式** 的定義轉化為 **字串正反轉後的十六進位數值**。
 
-![image](/img/picoCTF/General_Skills/endianness/01.png)
+![image](/img/picoCTF/General_Skills/414/01.png)
 
 連線獲得字串後分別使用 `echo "fzcgq" | rev | xxd -p -u` 與 `echo "fzcgq" | xxd -p -u`，獲得 Little/Big Endian 後輸入即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/endianness/02.png)
+![image](/img/picoCTF/General_Skills/414/02.png)
 
-![image](/img/picoCTF/General_Skills/endianness/03.png)
+![image](/img/picoCTF/General_Skills/414/03.png)
 
-``` TXT
+``` txt
 picoCTF{3ndi4n_sw4p_su33ess_d58517b6}
 ```
 
@@ -350,13 +350,13 @@ You download the challenge files here:
 
 先下載並解壓縮進入資料夾探索
 
-![image](/img/picoCTF/General_Skills/Commitment_Issues/01.png)
+![image](/img/picoCTF/General_Skills/441/01.png)
 
 解壓縮時發現有 `.git` 資料夾，題目應該和其有關，根據提示使用 `git log` 檢查 commit，發現 commit b562f... 有 creat flag ，使用 `git checkout b562f0b425907789d11d2fe2793e67592dc6be93` 將版本切換至其即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Commitment_Issues/02.png)
+![image](/img/picoCTF/General_Skills/441/02.png)
 
-``` TXT
+``` txt
 picoCTF{s@n1t1z3_c785c319}
 ```
 
@@ -369,29 +369,29 @@ Start searching for the flag here nc foggy-cliff.picoctf.net 51531
 
 直接連線可以看到題目，要求輸入對應的指令。
 
-![image](/img/picoCTF/General_Skills/Undo/01.png)
+![image](/img/picoCTF/General_Skills/766/01.png)
 
 第一題是Base64 encoded string，使用指令 `base64 -d` 即可進入下一題
 
-![image](/img/picoCTF/General_Skills/Undo/02.png)
+![image](/img/picoCTF/General_Skills/766/02.png)
 
 第二題是Reversed text，使用指令 `rev` 即可進入下一題
 
-![image](/img/picoCTF/General_Skills/Undo/03.png)
+![image](/img/picoCTF/General_Skills/766/03.png)
 
 第三題是要用 _ 替代 -，使用指令 `tr '-' '_'` 即可進入下一題
 
-![image](/img/picoCTF/General_Skills/Undo/04.png)
+![image](/img/picoCTF/General_Skills/766/04.png)
 
 第四題是要用 {} 替換 ()，使用指令 `tr '()' '{}'` 即可進入下一題
 
-![image](/img/picoCTF/General_Skills/Undo/05.png)
+![image](/img/picoCTF/General_Skills/766/05.png)
 
 第五題要用 ROT13 進行轉換，使指令 `tr 'A-Za-z' 'N-ZA-Mn-za-m'` 即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/Undo/06.png)
+![image](/img/picoCTF/General_Skills/766/06.png)
 
-```TXT
+```txt
 picoCTF{Revers1ng_t3xt_Tr4nsf0rm@t10ns_3a939318}
 ```
 
@@ -407,17 +407,17 @@ Check the README to get your flag!
 
 根據題目將檔案下載並查看 README
 
-![image](/img/picoCTF/General_Skills/MY_GIT/01.png)
+![image](/img/picoCTF/General_Skills/764/01.png)
 
 只有當 flag.txt 被 root:root@picoctf 上傳時才能獲取 flag，先透過`echo flag > flag.txt`創建檔案，並將名字與郵件設成題目所需
 
-![image](/img/picoCTF/General_Skills/MY_GIT/02.png)
+![image](/img/picoCTF/General_Skills/764/02.png)
 
 完成後 push 即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/MY_GIT/03.png)
+![image](/img/picoCTF/General_Skills/764/03.png)
 
-```TXT
+```txt
 picoCTF{1mp3rs0n4t4_g17_345y_506743df}
 ```
 
@@ -430,32 +430,33 @@ You can connect to the service here nc mysterious-sea.picoctf.net 51563
 
 根據題目連線後發現可以自行輸入 IP 做使用，結合提示說可以執行多項指令，輸入 `8.8.8.8 | ls` 看看有什麼
 
-![image](/img/picoCTF/General_Skills/ping-cmd/01.png)
+![image](/img/picoCTF/General_Skills/757/01.png)
 
 發現有 flag.txt，改成 `cat flag.txt` 即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/ping-cmd/02.png)
+![image](/img/picoCTF/General_Skills/757/02.png)
 
-```TXT
+```txt
 picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_b75fc848}
 ```
 
 ---
 
 ### bytemancy 0
+**題目連結**:https://learn.cylabacademy.org/library/742
 >Can you conjure the right bytes? The program's source code can be downloaded [here](https://challenge-files.picoctf.net/c_candy_mountain/87600c43f9f35274d6269e8237fcd84602c631a5ebcf5251266fb11dc0e94f3b/app.py).
 Connect to the program with netcat:
  $ nc candy-mountain.picoctf.net 59467
 
 先連線觀察
 
-![image](/img/picoCTF/General_Skills/bytemancy_0/01.png)
+![image](/img/picoCTF/General_Skills/742/01.png)
 
 根據他的要求輸入`eee`，即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/bytemancy_0/02.png)
+![image](/img/picoCTF/General_Skills/742/02.png)
 
-```TXT
+```txt
 picoCTF{pr1n74813_ch4r5_4daf27d8}
 ```
 
@@ -469,7 +470,7 @@ Connect to the program with netcat:
 
 先連線觀察
 
-![image](/img/picoCTF/General_Skills/bytemancy_1/01.png)
+![image](/img/picoCTF/General_Skills/762/01.png)
 
 發現他需要 連續發送 ASCII 值為 101(e) 的字連續 1751 次，且不能有空格，製作一個 python 發送字串即可獲得flag
 
@@ -484,9 +485,9 @@ p.sendline(payload)
 p.interactive()
 ```
 
-![image](/img/picoCTF/General_Skills/bytemancy_1/02.png)
+![image](/img/picoCTF/General_Skills/762/02.png)
 
-```TXT
+```txt
 picoCTF{h0w_m4ny_e's???_e0d51f4b}
 ```
 
@@ -499,53 +500,53 @@ SSH to dolphin-cove.picoctf.net:57642 and login as ctf-player with password 1ad5
 
 使用指令`ssh -p 57642 ctf-player@dolphin-cove.picoctf.net`並輸入密碼`1ad5be0d`連線，順便輸入`ls -la`看看有什麼檔案
 
-![image](/img/picoCTF/General_Skills/Piece_by_Piece/01.png)
+![image](/img/picoCTF/General_Skills/740/01.png)
 
 發現有一個`instructions.txt`，打開看看
 
-![image](/img/picoCTF/General_Skills/Piece_by_Piece/02.png)
+![image](/img/picoCTF/General_Skills/740/02.png)
 
 發現其他`part_a*`是被拆分的 flag，使用正則表達式`cat part_a* > combined_file && file combined_file`將分部組成原本的樣子，並使用查看是什麼檔案類型
 
-![image](/img/picoCTF/General_Skills/Piece_by_Piece/03.png)
+![image](/img/picoCTF/General_Skills/740/03.png)
 
 發現是 .zip 使用 `mv combined_file flag.zip && unzip flag.zip`重新命名並解壓縮。需輸入在 instructions 中提到的解壓縮密碼`supersecret`
 
-![image](/img/picoCTF/General_Skills/Piece_by_Piece/04.png)
+![image](/img/picoCTF/General_Skills/740/04.png)
 
 使用`flag.txt`查看解壓後檔案即可獲得 flag
 
-```TXT
+```txt
 picoCTF{z1p_and_spl1t_f1l3s_4r3_fun_5b6e506b}
 ```
 
 ---
 
-## binhexa
+### binhexa
 **題目連結**:https://learn.cylabacademy.org/library/404
 >How well can you perfom basic binary operations?
 Start searching for the flag here nc titan.picoctf.net 61269
 
 連線後發現是要回答二進為運算問題，根據問題回答即可獲得 flag
 
-![image](/img/picoCTF/General_Skills/binhexa/01.png)
+![image](/img/picoCTF/General_Skills/404/01.png)
 
 `>>`與`<<`為右移與左移，是將原式向左或右移動後捨去該方向最後一位，另一方向補 0，詳細可參考 [Microsoft](https://learn.microsoft.com/zh-tw/cpp/cpp/left-shift-and-right-shift-operators-input-and-output?view=msvc-170) 提供之文檔。
 
-```TXT
+```txt
 picoCTF{b1tw^3se_0p3eR@tI0n_su33essFuL_d6f8047e}
 ```
 
 ---
 
-## repetitions
+### repetitions
 **題目連結**:https://learn.cylabacademy.org/library/371
 >Can you make sense of this file?
 Download the file [here](https://artifacts.picoctf.net/c/475/enc_flag).
 
 先下載下來看看是什麼
 
-![image](/img/picoCTF/General_Skills/repetitions/01.png)
+![image](/img/picoCTF/General_Skills/371/01.png)
 
 看起來是要解碼 base64，結合題目名稱與提示，應該是要解碼好幾次，寫個python解
 
@@ -575,8 +576,89 @@ if __name__ == "__main__":
 
 執行即可獲得 flag
 
-```TXT
+```txt
 picoCTF{base64_n3st3d_dic0d!n8_d0wnl04d3d_492767d2}
+```
+
+---
+
+### Blame Game
+**題目連結**:https://learn.cylabacademy.org/library/405
+>Someone's commits seems to be preventing the program from working. Who is it?
+You can download the challenge files here:
+[challenge.zip](https://artifacts.picoctf.net/c_titan/156/challenge.zip)
+
+下載並解壓縮後根據題目，檢查一下上傳紀錄即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/405/01.png)
+
+```txt
+picoCTF{@sk_th3_1nt3rn_d2d29f22}
+```
+
+---
+
+### Collaborative Development
+**題目連結**:https://learn.cylabacademy.org/library/410
+>My team has been working very hard on new features for our flag printing program! I wonder how they'll work together?
+You can download the challenge files here:
+[challenge.zip](https://artifacts.picoctf.net/c_titan/177/challenge.zip)
+
+下載並解壓縮後根據題目，看一下分支
+
+![image](/img/picoCTF/General_Skills/410/01.png)
+
+發現有三個，分別用`git chekout feature/part-*`查看一下，發現有分散的 flag，組合一下即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/410/02.png)
+
+```txt
+picoCTF{t3@mw0rk_m@k3s_th3_dr3@m_w0rk_7ae8dd33}
+```
+
+---
+
+### Codebook
+**題目連結**:https://learn.cylabacademy.org/library/238
+>Run the Python script code.py in the same directory as codebook.txt.
+[Download code.py](https://artifacts.picoctf.net/c/3/code.py)
+[Download codebook.txt](https://artifacts.picoctf.net/c/3/codebook.txt)
+
+下載並運行`code.py`即可獲得 flag
+
+```txt
+picoCTF{c0d3b00k_455157_197a982c}
+```
+
+---
+
+### Magikarp Ground Mission
+**題目連結**:https://learn.cylabacademy.org/library/189
+>Do you know how to move between directories and read files in the shell? Start the container, ssh to it, and then ls once connected to begin.
+Login via ssh as ctf-player with the password, 8c606eb1 on the host wily-courier.picoctf.net and port 63750.
+
+根據題目所述使用`ssh -p 63750 ctf-player@wily-courier.picoctf.net`連線，並使用`ls -la`查看檔案
+
+![image](/img/picoCTF/General_Skills/189/01.png)
+
+看到有 flag 1 of 3 與 2 of 3 的資訊，都打開看看
+
+![image](/img/picoCTF/General_Skills/189/02.png)
+
+記下 1 of 3 ，同時前往 `/` 
+
+![image](/img/picoCTF/General_Skills/189/03.png)
+
+同樣把 2 of 3 與 3 of 3 的資訊，都打開看看，並記下 2 of 3 ，同時前往下一個目標資料夾
+
+![image](/img/picoCTF/General_Skills/189/04.png)
+
+查看 3 of 3 並組合即可獲得 flag
+
+![image](/img/picoCTF/General_Skills/189/05.png)
+
+```txt
+picoCTF{xxsh_0ut_0f_//4t3r_0b24fc4f}
 ```
 
 # [⬅️ 回到總覽索引](/2026/01/11/picoCTF/)

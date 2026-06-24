@@ -1,7 +1,7 @@
 ---
 title: picoCTF writeup - Reverse Engineering
 date: 2026-03-06
-update: 2026-06-17
+update: 2026-06-23
 description: picoCTF writeup
 comments: true
 copyright_author: kapiso
@@ -22,7 +22,7 @@ Connect to the program with netcat: $ nc verbal-sleep.picoctf.net 49285
 
 先連線觀察發現可以輸入東西
 
-![image](/img/picoCTF/Reverse_Engineering/Flag_Hunters/01.png)
+![image](/img/picoCTF/Reverse_Engineering/472/01.png)
 
 解析檔案後發現在 `Print lyrics` 區域內有以下程式控制輸出
 
@@ -56,7 +56,7 @@ elif re.match(r"RETURN [0-9]+", line):
 
 可以透過 `RETURN` 使歌詞跳轉到指定的行數，又因程式一開始將 flag 放在開頭了，所以只需使用指令 `a;RETURN 0` 即可使程式讀取並執行我們的指令並成功獲取 flag
 
-![image](/img/picoCTF/Reverse_Engineering/Flag_Hunters/02.png)
+![image](/img/picoCTF/Reverse_Engineering/472/02.png)
 
 ``` TXT
 picoCTF{70637h3r_f0r3v3r_836f0788}
